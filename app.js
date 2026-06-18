@@ -140,8 +140,9 @@ setTimeout(() => {
     });
   }
 
-  const numbersSection = document.getElementById('numbers');
-  if (numbersSection) {
+  // Observe any numbers section (homepage or subpages)
+  const numbersSections = document.querySelectorAll('#numbers, #aboutNumbers');
+  numbersSections.forEach(section => {
     const numbersObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -150,9 +151,52 @@ setTimeout(() => {
         }
       });
     }, { threshold: 0.3 });
+    numbersObserver.observe(section);
+  });
+})();
 
-    numbersObserver.observe(numbersSection);
-  }
+/* ========== SCROLL-HIGHLIGHT TEXT (dark section, line-by-line) ========== */
+(function() {
+  const scrollSections = document.querySelectorAll('.scroll-text-section');
+  if (!scrollSections.length) return;
+
+  scrollSections.forEach(section => {
+    const lines = section.querySelectorAll('.scroll-text-line');
+    if (!lines.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate lines one by one
+          lines.forEach((line, i) => {
+            setTimeout(() => {
+              line.classList.add('highlighted');
+            }, i * 300);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(section);
+  });
+})();
+
+/* ========== ALSO REVEAL .reveal ELEMENTS INSIDE SUBPAGES ========== */
+(function() {
+  const subpageReveals = document.querySelectorAll('.reveal:not(.visible)');
+  if (!subpageReveals.length) return;
+
+  const revObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  subpageReveals.forEach(el => revObs.observe(el));
 })();
 
 /* ========== INTERACTIVE MAP (LEAFLET) ========== */
