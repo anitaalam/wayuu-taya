@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wayuu Taya Foundation — Improving Lives of Indigenous Communities</title>
+  <meta name="description" content="The Wayuu Taya Foundation improves the lives of Latin-American indigenous communities while maintaining and respecting their traditions, culture and beliefs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Wayuu Taya Home">
+        <span class="logo-text">WAYUU TAYA</span>
+        <span class="logo-sub">FOUNDATION</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="active">Home</a>
+        <div class="nav-dropdown">
+          <a href="our-story.html" class="nav-dropdown-trigger">Our Story <span class="chevron">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="our-story.html">About Us</a>
+            <a href="the-wayuu.html">The Wayuu</a>
+            <a href="administration.html">Administration</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="programs.html" class="nav-dropdown-trigger">Programs <span class="chevron">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="programs/help-for-those-in-need.html">Help for Those in Need</a>
+            <a href="programs/water-for-all.html">Water for All</a>
+            <a href="programs/agroecology.html">Agroecology</a>
+            <a href="programs/education.html">Education</a>
+            <a href="programs/music.html">Music</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="ways-to-give.html" class="nav-dropdown-trigger">Ways to Give <span class="chevron">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="ways-to-give.html">Donate</a>
+            <a href="store.html">Store</a>
+          </div>
+        </div>
+        <a href="news.html">News &amp; Updates</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-outline-light btn-sm">Contact Us</a>
+        <a href="https://donate.wayuutaya.org/give/340494/#!/donation/checkout" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Donate</a>
+        <button class="lang-toggle" aria-label="Switch language">EN / ES</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1920&q=80">
+        <source src="https://cdn.coverr.co/videos/coverr-indigenous-woman-weaving-6855/1080p.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <span class="hero-eyebrow">Since 2002</span>
+      <h1 class="hero-title">Improving the lives of <em>indigenous communities</em></h1>
+      <p class="hero-sub">The Wayuu Taya Foundation works to improve the living quality of indigenous communities in Latin America, maintaining and respecting their traditions, culture and beliefs.</p>
+      <div class="hero-actions">
+        <a href="our-story.html" class="btn btn-primary">Our Story</a>
+        <a href="https://donate.wayuutaya.org/give/340494/#!/donation/checkout" class="btn btn-outline-light" target="_blank" rel="noopener">Donate Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== MISSION ========== -->
+  <section class="mission" id="mission">
+    <div class="container mission-grid">
+      <div class="mission-text">
+        <span class="section-eyebrow">Our Mission</span>
+        <h2 class="section-title">Empowering communities through <em>sustainable change</em></h2>
+        <p>We help improve the lives of Latin-American indigenous people while maintaining and respecting their traditions, culture and beliefs. From food and medicine to education and cultural preservation — every program is built on dignity and respect.</p>
+        <a href="our-story.html" class="btn btn-dark">Learn More</a>
+      </div>
+      <div class="mission-images">
+        <div class="mission-img-stack">
+          <img class="mission-img active" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&h=900&fit=crop" alt="Community support" />
+          <img class="mission-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=700&h=900&fit=crop" alt="Children education" />
+          <img class="mission-img" src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=700&h=900&fit=crop" alt="Cultural traditions" />
+          <img class="mission-img" src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=700&h=900&fit=crop" alt="Water access" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRAMS ========== -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <span class="section-eyebrow light">What We Do</span>
+      <h2 class="section-title light">Our Programs</h2>
+      <div class="programs-grid">
+
+        <a href="programs/help-for-those-in-need.html" class="program-tile">
+          <div class="program-images">
+            <img class="program-img active" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&h=800&fit=crop" alt="" />
+          </div>
+          <div class="program-info">
+            <span class="program-num">Program 01</span>
+            <h3>Help for Those in Need</h3>
+            <span class="program-link">Read More →</span>
+          </div>
+        </a>
+
+        <a href="programs/water-for-all.html" class="program-tile">
+          <div class="program-images">
+            <img class="program-img active" src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1538300342682-cf57afb97285?w=600&h=800&fit=crop" alt="" />
+          </div>
+          <div class="program-info">
+            <span class="program-num">Program 02</span>
+            <h3>Water for All</h3>
+            <span class="program-link">Read More →</span>
+          </div>
+        </a>
+
+        <a href="programs/agroecology.html" class="program-tile">
+          <div class="program-images">
+            <img class="program-img active" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=600&h=800&fit=crop" alt="" />
+          </div>
+          <div class="program-info">
+            <span class="program-num">Program 03</span>
+            <h3>Agroecology</h3>
+            <span class="program-link">Read More →</span>
+          </div>
+        </a>
+
+        <a href="programs/education.html" class="program-tile">
+          <div class="program-images">
+            <img class="program-img active" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=800&fit=crop" alt="" />
+            <img class="program-img" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=800&fit=crop" alt="" />
+          </div>
+          <div class="program-info">
+            <span class="program-num">Program 04</span>
+            <h3>Education</h3>
+            <span class="program-link">Read More →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BY THE NUMBERS ========== -->
+  <section class="numbers" id="numbers">
+    <div class="container">
+      <span class="section-eyebrow">Our Impact</span>
+      <h2 class="section-title">By the Numbers</h2>
+      <div class="numbers-grid">
+        <div class="number-card">
+          <div class="number-value" data-target="1000000" data-suffix="+">0</div>
+          <div class="number-label">People Reached</div>
+        </div>
+        <div class="number-card">
+          <div class="number-value" data-target="400" data-suffix="+">0</div>
+          <div class="number-label">Children in School</div>
+        </div>
+        <div class="number-card">
+          <div class="number-value" data-target="85" data-suffix="">0</div>
+          <div class="number-label">Communities Served</div>
+        </div>
+        <div class="number-card">
+          <div class="number-value" data-target="22" data-suffix="+">0</div>
+          <div class="number-label">Years of Impact</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHERE WE WORK ========== -->
+  <section class="map-section" id="where-we-work">
+    <div class="container">
+      <span class="section-eyebrow">Our Reach</span>
+      <h2 class="section-title">Where We Work</h2>
+      <p class="section-sub">The Wayuu Taya Foundation operates primarily in the La Guajira region along the border between Venezuela and Colombia, reaching communities across both countries.</p>
+      <div class="map-wrap">
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta" id="cta">
+    <div class="container cta-inner">
+      <h2>Together we can make a <em>lasting difference</em></h2>
+      <p>Your contribution fuels our diverse range of programs, touching lives and fostering sustainable development across communities.</p>
+      <div class="cta-actions">
+        <a href="https://donate.wayuutaya.org/give/340494/#!/donation/checkout" class="btn btn-primary" target="_blank" rel="noopener">Donate Now</a>
+        <a href="ways-to-give.html" class="btn btn-outline-light">Ways to Give</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-text">WAYUU TAYA</span>
+          <span class="logo-sub">FOUNDATION</span>
+          <p class="footer-desc">Improving the lives of indigenous communities in Latin America since 2002.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Our Story</h4>
+            <a href="our-story.html">About Us</a>
+            <a href="the-wayuu.html">The Wayuu</a>
+            <a href="administration.html">Administration</a>
+            <a href="news.html">News &amp; Updates</a>
+          </div>
+          <div class="footer-col">
+            <h4>Programs</h4>
+            <a href="programs/help-for-those-in-need.html">Help for Those in Need</a>
+            <a href="programs/water-for-all.html">Water for All</a>
+            <a href="programs/agroecology.html">Agroecology</a>
+            <a href="programs/education.html">Education</a>
+            <a href="programs/music.html">Music</a>
+          </div>
+          <div class="footer-col">
+            <h4>Get Involved</h4>
+            <a href="ways-to-give.html">Ways to Give</a>
+            <a href="store.html">Store</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/WayuuTaya" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/wayuutayafoundation/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@wayuutaya" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46v-7.13a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-2-.57z"/></svg>
+        </a>
+        <a href="https://x.com/WayuuTaya" target="_blank" rel="noopener" aria-label="X / Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TheWayuuTayaFoundation" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Wayuu Taya Foundation. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
