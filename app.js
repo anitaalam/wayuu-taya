@@ -155,6 +155,44 @@ setTimeout(() => {
   });
 })();
 
+/* ========== PROGRAM PAGE — STAT COUNTERS ========== */
+(function() {
+  const programStats = document.querySelectorAll('.program-stat-value');
+  if (!programStats.length) return;
+  let counted = false;
+
+  function animateProgramNumbers() {
+    if (counted) return;
+    counted = true;
+    programStats.forEach(el => {
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 2200;
+      const startTime = performance.now();
+      function formatNumber(n) { return n.toLocaleString('en-US'); }
+      function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+      function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.round(easeOutExpo(progress) * target);
+        el.textContent = formatNumber(currentValue) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  const section = document.querySelector('#programNumbers');
+  if (section) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { animateProgramNumbers(); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(section);
+  }
+})();
+
 /* ========== SCROLL-HIGHLIGHT TEXT (dark section, line-by-line) ========== */
 (function() {
   const scrollSections = document.querySelectorAll('.scroll-text-section');
