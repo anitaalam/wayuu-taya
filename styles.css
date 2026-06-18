@@ -1386,6 +1386,45 @@ em { font-style: italic; font-family: var(--font-display); }
 .founder-social a:hover { background: var(--blue); color: var(--white); }
 
 /* ========== TEAM GRID ========== */
+/* ========== FOUNDER SECTION ========== */
+.founder-section {
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #fff;
+}
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+.founder-photo img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+.founder-bio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(26, 26, 26, 0.75);
+  margin-bottom: 1.2em;
+}
+.founder-bio p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .founder-photo img {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 .team-section {
   padding: clamp(80px, 10vw, 140px) 0;
   background: #f8f9fa;
