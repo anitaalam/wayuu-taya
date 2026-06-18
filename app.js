@@ -1,3 +1,15 @@
+/* ========== FOOTER REVEAL (margin-bottom sync) ========== */
+const pageContent = document.querySelector('.page-content');
+const siteFooter = document.querySelector('.site-footer');
+function syncFooterSpace() {
+  if (pageContent && siteFooter) {
+    pageContent.style.marginBottom = siteFooter.offsetHeight + 'px';
+  }
+}
+syncFooterSpace();
+window.addEventListener('resize', syncFooterSpace, { passive: true });
+document.fonts?.ready?.then(syncFooterSpace);
+
 /* ========== HERO VIDEO FALLBACK ========== */
 const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {

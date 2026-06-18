@@ -110,9 +110,10 @@ em { font-style: italic; font-family: var(--font-display); }
   transition: background var(--transition), box-shadow var(--transition);
 }
 .site-header.scrolled {
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 .site-header.scrolled .main-nav > a,
 .site-header.scrolled .nav-dropdown-trigger {
@@ -544,8 +545,21 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* ========== PAGE CONTENT (for footer reveal) ========== */
+.page-content {
+  position: relative;
+  z-index: 2;
+  background: var(--white);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
 /* ========== FOOTER ========== */
 .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   background: var(--white);
   padding: clamp(60px, 8vw, 100px) 0 40px;
   color: rgba(26,26,26,0.6);
