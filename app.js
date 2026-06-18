@@ -1,3 +1,10 @@
+/* ========== HERO VIDEO FALLBACK ========== */
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'));
+  heroVideo.addEventListener('error', () => heroVideo.style.display = 'none');
+}
+
 /* ========== HEADER SCROLL STATE ========== */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {

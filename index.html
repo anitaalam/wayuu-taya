@@ -17,8 +17,7 @@
   <header class="site-header" id="header">
     <div class="container header-inner">
       <a href="index.html" class="logo" aria-label="Wayuu Taya Home">
-        <span class="logo-text">WAYUU TAYA</span>
-        <span class="logo-sub">FOUNDATION</span>
+        <img src="assets/wayuu-logo.webp" alt="The Wayuu Taya Foundation" class="logo-img" />
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="index.html" class="active">Home</a>
@@ -63,9 +62,16 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero-video-wrap">
-      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1920&q=80">
-        <source src="https://cdn.coverr.co/videos/coverr-indigenous-woman-weaving-6855/1080p.mp4" type="video/mp4" />
+      <!-- Replace src with client's actual video file when available -->
+      <video class="hero-video" autoplay muted loop playsinline
+        poster="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1920&q=80">
+        <!-- Placeholder: Pexels La Guajira landscape — swap with foundation's own footage -->
+        <source src="https://videos.pexels.com/video-files/13831147/13831147-uhd_2560_1440_25fps.mp4" type="video/mp4" />
       </video>
+      <!-- Animated image fallback if video doesn't load -->
+      <div class="hero-img-fallback" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1920&q=80" alt="" />
+      </div>
       <div class="hero-overlay"></div>
     </div>
     <div class="container hero-content">
@@ -221,8 +227,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo-text">WAYUU TAYA</span>
-          <span class="logo-sub">FOUNDATION</span>
+          <a href="index.html"><img src="assets/wayuu-logo.webp" alt="The Wayuu Taya Foundation" class="footer-logo-img" /></a>
           <p class="footer-desc">Improving the lives of indigenous communities in Latin America since 2002.</p>
         </div>
         <div class="footer-links">
