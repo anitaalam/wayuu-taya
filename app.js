@@ -182,6 +182,56 @@ setTimeout(() => {
   });
 })();
 
+/* ========== TIMELINE SCROLL ANIMATION ========== */
+(function() {
+  const timeline = document.querySelector('.timeline');
+  if (!timeline) return;
+
+  const items = timeline.querySelectorAll('.timeline-item');
+  if (!items.length) return;
+
+  // Stagger each item with IntersectionObserver
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('tl-visible');
+        tlObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+
+  items.forEach((item, i) => {
+    // Add staggered delay so they cascade one after another
+    item.style.transitionDelay = `${i * 0.08}s`;
+    item.querySelector('.timeline-dot').style.transitionDelay = `${i * 0.08 + 0.1}s`;
+    item.querySelector('.timeline-card').style.transitionDelay = `${i * 0.08 + 0.2}s`;
+    tlObserver.observe(item);
+  });
+
+  // Draw the vertical line progressively as user scrolls through the section
+  const section = document.querySelector('.timeline-section');
+  function updateLineProgress() {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionHeight = rect.height;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate how far through the section we've scrolled
+    const scrolledInto = viewportHeight - sectionTop;
+    const totalScroll = sectionHeight + viewportHeight * 0.3;
+    const progress = Math.min(Math.max(scrolledInto / totalScroll, 0), 1) * 100;
+
+    timeline.style.setProperty('--tl-progress', progress + '%');
+
+    if (progress > 0 && !timeline.classList.contains('tl-active')) {
+      timeline.classList.add('tl-active');
+    }
+  }
+
+  window.addEventListener('scroll', updateLineProgress, { passive: true });
+  updateLineProgress(); // Initial check
+})();
+
 /* ========== ALSO REVEAL .reveal ELEMENTS INSIDE SUBPAGES ========== */
 (function() {
   const subpageReveals = document.querySelectorAll('.reveal:not(.visible)');
