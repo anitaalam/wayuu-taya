@@ -148,6 +148,16 @@ em { font-style: italic; font-family: var(--font-display); }
   color: var(--text);
   background: rgba(0,0,0,0.03);
 }
+.site-header.scrolled .btn-outline-light {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: transparent;
+}
+.site-header.scrolled .btn-outline-light:hover {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
 .header-inner {
   display: flex;
   align-items: center;
