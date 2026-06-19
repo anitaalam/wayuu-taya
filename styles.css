@@ -1921,20 +1921,24 @@ em { font-style: italic; font-family: var(--font-display); }
   border: 0;
 }
 
-/* Photo Gallery */
+/* Photo Gallery — shadow gives "peeling away" depth into dark video section */
 .program-gallery {
+  position: relative;
+  z-index: 2;
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--white);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
 }
 
 
 
-/* Partners — z-index ensures it covers sticky video */
+/* Partners — shadow on top gives feeling of sliding over the video */
 .program-partners {
   position: relative;
   z-index: 2;
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  box-shadow: 0 -30px 80px rgba(0,0,0,0.25);
 }
 .program-partners-desc {
   max-width: 640px;
