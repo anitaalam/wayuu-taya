@@ -1893,38 +1893,16 @@ em { font-style: italic; font-family: var(--font-display); }
   transform: scale(1.05);
 }
 
-/* Gallery → Video reveal wrapper */
-.gallery-video-wrapper {
-  position: relative;
-}
-
-/* Video — sticky inside wrapper, stays in place while gallery scrolls away */
-.program-video-reveal {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(60px, 8vw, 100px) 0;
+/* Video section (after gallery) */
+.program-video-section {
+  padding: clamp(80px, 10vw, 140px) 0;
   background: var(--black);
 }
-.program-video-reveal .container { width: 100%; }
-
-/* Gallery — pulled up over the sticky video with negative margin, peels away on scroll */
-.gallery-video-wrapper .program-gallery {
-  position: relative;
-  z-index: 2;
-  margin-top: -100vh;
-  padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--white);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-}
+.program-video-section .section-eyebrow { color: var(--blue-light); }
+.program-video-section .section-title { color: var(--white); }
 
 
-.program-video-reveal .section-eyebrow { color: var(--blue-light); }
-.program-video-reveal .section-title { color: var(--white); }
+
 .program-video-wrap {
   position: relative;
   width: 100%;
@@ -1943,7 +1921,11 @@ em { font-style: italic; font-family: var(--font-display); }
   border: 0;
 }
 
-/* Photo Gallery (base padding/bg — reveal overrides above) */
+/* Photo Gallery */
+.program-gallery {
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: var(--white);
+}
 
 
 
