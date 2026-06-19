@@ -683,8 +683,6 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* ========== CTA ========== */
 .cta {
-  position: relative;
-  z-index: 2;
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--blue-deep);
   text-align: center;
@@ -1895,18 +1893,27 @@ em { font-style: italic; font-family: var(--font-display); }
   transform: scale(1.05);
 }
 
-/* Video Reveal — sticky behind gallery, revealed as gallery scrolls away */
+/* Video Reveal — fixed behind page-content; footer becomes normal flow on these pages */
 .program-video-reveal {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--black);
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .program-video-reveal .container { width: 100%; }
+
+/* On video-reveal pages, footer is normal flow so it scrolls over the fixed video */
+.has-video-reveal .site-footer {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.08);
+}
 .program-video-reveal .section-eyebrow { color: var(--blue-light); }
 .program-video-reveal .section-title { color: var(--white); }
 .program-video-wrap {
@@ -1938,13 +1945,10 @@ em { font-style: italic; font-family: var(--font-display); }
 
 
 
-/* Partners — scrolls up over sticky video to cover it */
+/* Partners */
 .program-partners {
-  position: relative;
-  z-index: 2;
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
-  box-shadow: 0 -20px 60px rgba(0,0,0,0.08);
 }
 .program-partners-desc {
   max-width: 640px;
@@ -1983,10 +1987,8 @@ em { font-style: italic; font-family: var(--font-display); }
   line-height: 1.5;
 }
 
-/* Other Programs — scrolls over sticky video */
+/* Other Programs */
 .program-other {
-  position: relative;
-  z-index: 2;
   padding: clamp(60px, 8vw, 100px) 0;
   background: #fff;
 }
