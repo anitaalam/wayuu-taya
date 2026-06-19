@@ -1921,13 +1921,22 @@ em { font-style: italic; font-family: var(--font-display); }
   border: 0;
 }
 
-/* Photo Gallery — shadow gives "peeling away" depth into dark video section */
+/* Photo Gallery — peel-away: lifts up and scales down as you scroll past */
 .program-gallery {
   position: relative;
   z-index: 2;
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--white);
   box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  will-change: transform;
+}
+
+/* Video section — content parallaxes up slightly for depth */
+.program-video-section {
+  overflow: hidden;
+}
+.program-video-section .container {
+  will-change: transform;
 }
 
 

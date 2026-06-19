@@ -270,6 +270,53 @@ setTimeout(() => {
   updateLineProgress(); // Initial check
 })();
 
+/* ========== GALLERY → VIDEO PEEL-AWAY SCROLL EFFECT ========== */
+(function() {
+  const gallery = document.querySelector('.program-gallery');
+  const videoSec = document.querySelector('.program-video-section');
+  if (!gallery || !videoSec) return;
+
+  const videoContainer = videoSec.querySelector('.container');
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const galleryRect = gallery.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      // Gallery peel-away: as it scrolls off screen, it lifts up and scales down slightly
+      if (galleryRect.bottom < vh && galleryRect.bottom > -100) {
+        const progress = Math.max(0, Math.min(1, 1 - galleryRect.bottom / vh));
+        const lift = progress * -30;        // moves up 30px
+        const scale = 1 - progress * 0.03;  // scales down to 0.97
+        const shadow = 0.25 + progress * 0.3; // shadow intensifies
+        gallery.style.transform = `translateY(${lift}px) scale(${scale})`;
+        gallery.style.boxShadow = `0 30px 80px rgba(0,0,0,${shadow})`;
+      } else if (galleryRect.bottom >= vh) {
+        gallery.style.transform = '';
+        gallery.style.boxShadow = '';
+      }
+
+      // Video parallax: content slides up slightly as section enters view
+      if (videoContainer) {
+        const videoRect = videoSec.getBoundingClientRect();
+        if (videoRect.top < vh && videoRect.bottom > 0) {
+          const progress = Math.max(0, Math.min(1, 1 - videoRect.top / vh));
+          const shift = (1 - progress) * 60; // starts 60px down, moves to 0
+          videoContainer.style.transform = `translateY(${shift}px)`;
+        }
+      }
+
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
 /* ========== ALSO REVEAL .reveal ELEMENTS INSIDE SUBPAGES ========== */
 (function() {
   const subpageReveals = document.querySelectorAll('.reveal:not(.visible)');
