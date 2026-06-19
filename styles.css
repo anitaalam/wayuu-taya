@@ -28,8 +28,8 @@
   --blue-dark: #267A95;
   --blue-deep: #141414;
   --black: #0A0A0A;
-  --white: #FFFFFF;
-  --off-white: #F5F7FA;
+  --white: #FAF7F2;
+  --off-white: #F5F0E8;
   --grey: #6B7280;
   --grey-light: #E5E7EB;
   --text: #1A1A1A;
@@ -133,7 +133,7 @@ em { font-style: italic; font-family: var(--font-display); }
   transition: background var(--transition), box-shadow var(--transition);
 }
 .site-header.scrolled {
-  background: rgba(255,255,255,0.82);
+  background: rgba(250,247,242,0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
@@ -161,7 +161,7 @@ em { font-style: italic; font-family: var(--font-display); }
   color: var(--white);
 }
 .site-header.scrolled .nav-dropdown-menu {
-  background: rgba(255,255,255,0.98);
+  background: rgba(250,247,242,0.98);
   border: 1px solid rgba(0,0,0,0.08);
 }
 .site-header.scrolled .nav-dropdown-menu a {
@@ -1581,7 +1581,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== FOUNDER SECTION ========== */
 .founder-section {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: #fff;
+  background: var(--white);
 }
 .founder-grid {
   display: grid;
@@ -1800,7 +1800,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* Intro section */
 .program-intro {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: #fff;
+  background: var(--white);
 }
 .program-intro-grid {
   display: grid;
@@ -1865,7 +1865,7 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-top: 48px;
 }
 .program-area-card {
-  background: #fff;
+  background: var(--white);
   border-radius: var(--radius-lg);
   padding: 40px;
   border: 1px solid var(--grey-light);
@@ -2012,7 +2012,7 @@ em { font-style: italic; font-family: var(--font-display); }
   gap: 24px;
 }
 .partner-card {
-  background: #fff;
+  background: var(--white);
   padding: 32px;
   border-radius: var(--radius);
   border: 1px solid var(--grey-light);
@@ -2038,7 +2038,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* Other Programs */
 .program-other {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: #fff;
+  background: var(--white);
 }
 .program-other-grid {
   display: grid;
