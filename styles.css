@@ -1024,46 +1024,54 @@ em { font-style: italic; font-family: var(--font-display); }
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-start;
   padding: clamp(28px, 4vw, 48px);
+  transition: justify-content 0.5s ease;
 }
+
+/* Label — centered by default, slides up on hover */
 .vision-label {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   color: #fff;
-  margin-bottom: 16px;
   letter-spacing: -0.01em;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.vision-card-img:hover .vision-label {
+  transform: translateY(-12px);
+}
+
+/* Body — hidden by default, reveals on hover */
+.vision-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.5s ease 0.1s;
+}
+.vision-card-img:hover .vision-body {
+  max-height: 300px;
+  opacity: 1;
+}
+
 .vision-card-content p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.75;
   max-width: 480px;
-  transform: translateY(8px);
-  opacity: 0.8;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.vision-card-img:hover .vision-card-content p {
-  transform: translateY(0);
-  opacity: 1;
+  margin-top: 16px;
 }
 .vision-card-content ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  transform: translateY(8px);
-  opacity: 0.8;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.vision-card-img:hover .vision-card-content ul {
-  transform: translateY(0);
-  opacity: 1;
+  margin: 16px 0 0;
 }
 .vision-card-content li {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
   padding: 6px 0;
   padding-left: 20px;
