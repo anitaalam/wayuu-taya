@@ -3,7 +3,7 @@
   --blue: #3199BD;
   --blue-light: #4DB0CF;
   --blue-dark: #267A95;
-  --blue-deep: #091D24;
+  --blue-deep: #141414;
   --black: #0A0A0A;
   --white: #FFFFFF;
   --off-white: #F5F7FA;
@@ -270,6 +270,19 @@ em { font-style: italic; font-family: var(--font-display); }
 .hero-video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+.hero-video-yt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 120vh;
+  min-width: 120%;
+  min-height: 120%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  pointer-events: none;
   object-fit: cover;
 }
 /* Animated image fallback — shows if video fails to load */
