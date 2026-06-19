@@ -193,6 +193,42 @@ setTimeout(() => {
   }
 })();
 
+/* ========== FOCUS AREA CARD — MINI STAT COUNTERS ========== */
+(function() {
+  const miniCounts = document.querySelectorAll('.mini-stat-count');
+  if (!miniCounts.length) return;
+
+  function animateMiniCount(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 2000;
+    const startTime = performance.now();
+    function formatNumber(n) { return n.toLocaleString('en-US'); }
+    function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      el.textContent = formatNumber(Math.round(easeOutExpo(progress) * target)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Animate all mini-stat-count elements within this card
+        entry.target.querySelectorAll('.mini-stat-count').forEach(animateMiniCount);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.program-area-card').forEach(card => obs.observe(card));
+})();
+
 /* ========== SCROLL-HIGHLIGHT TEXT (dark section, line-by-line) ========== */
 (function() {
   const scrollSections = document.querySelectorAll('.scroll-text-section');
