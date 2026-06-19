@@ -413,6 +413,27 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--white);
 }
+
+/* Video background for mission section */
+.mission--video {
+  position: relative;
+  overflow: hidden;
+}
+.mission-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.40;
+  filter: brightness(0.7) saturate(1.3) sepia(0.3) hue-rotate(30deg);
+  pointer-events: none;
+  z-index: 0;
+}
+.mission--video .container {
+  position: relative;
+  z-index: 1;
+}
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
