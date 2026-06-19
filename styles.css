@@ -1893,27 +1893,36 @@ em { font-style: italic; font-family: var(--font-display); }
   transform: scale(1.05);
 }
 
-/* Video Reveal — fixed behind page-content; footer becomes normal flow on these pages */
+/* Gallery → Video reveal wrapper */
+.gallery-video-wrapper {
+  position: relative;
+}
+
+/* Video — sticky inside wrapper, stays in place while gallery scrolls away */
 .program-video-reveal {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: sticky;
+  top: 0;
   z-index: 1;
-  padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--black);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--black);
 }
 .program-video-reveal .container { width: 100%; }
 
-/* On video-reveal pages, footer is normal flow so it scrolls over the fixed video */
-.has-video-reveal .site-footer {
+/* Gallery — pulled up over the sticky video with negative margin, peels away on scroll */
+.gallery-video-wrapper .program-gallery {
   position: relative;
   z-index: 2;
-  box-shadow: 0 -20px 60px rgba(0,0,0,0.08);
+  margin-top: -100vh;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: var(--white);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
+
+
 .program-video-reveal .section-eyebrow { color: var(--blue-light); }
 .program-video-reveal .section-title { color: var(--white); }
 .program-video-wrap {
@@ -1934,19 +1943,14 @@ em { font-style: italic; font-family: var(--font-display); }
   border: 0;
 }
 
-/* Gallery peels away to reveal sticky video behind it */
-.program-gallery {
+/* Photo Gallery (base padding/bg — reveal overrides above) */
+
+
+
+/* Partners — z-index ensures it covers sticky video */
+.program-partners {
   position: relative;
   z-index: 2;
-  padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--white);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-}
-
-
-
-/* Partners */
-.program-partners {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
 }

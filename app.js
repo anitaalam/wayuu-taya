@@ -1,20 +1,14 @@
-/* ========== FOOTER / VIDEO REVEAL (margin-bottom sync) ========== */
+/* ========== FOOTER REVEAL (margin-bottom sync) ========== */
 const pageContent = document.querySelector('.page-content');
 const siteFooter = document.querySelector('.site-footer');
-const videoReveal = document.querySelector('.program-video-reveal');
-function syncRevealSpace() {
-  if (!pageContent) return;
-  if (videoReveal) {
-    /* Video-reveal page: footer is normal flow, only need space for fixed video */
-    pageContent.style.marginBottom = videoReveal.offsetHeight + 'px';
-  } else if (siteFooter) {
-    /* Normal page: footer is fixed, need space for it */
+function syncFooterSpace() {
+  if (pageContent && siteFooter) {
     pageContent.style.marginBottom = siteFooter.offsetHeight + 'px';
   }
 }
-syncRevealSpace();
-window.addEventListener('resize', syncRevealSpace, { passive: true });
-document.fonts?.ready?.then(syncRevealSpace);
+syncFooterSpace();
+window.addEventListener('resize', syncFooterSpace, { passive: true });
+document.fonts?.ready?.then(syncFooterSpace);
 
 /* ========== HERO VIDEO FALLBACK ========== */
 const heroVideo = document.querySelector('.hero-video');

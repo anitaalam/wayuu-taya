@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="has-video-reveal">
+<body>
 
   <div class="page-content">
   <!-- ========== HEADER ========== -->
@@ -208,33 +208,54 @@
     </div>
   </section>
 
-  <!-- ========== IMAGE GALLERY ========== -->
-  <section class="program-gallery">
-    <div class="container">
-      <span class="section-eyebrow">In the Field</span>
-      <h2 class="section-title">Our Work in <em>Action</em></h2>
-      <div class="program-gallery-grid">
-        <div class="program-gallery-item reveal">
-          <img src="../assets/homepage-whatsapp.jpeg" alt="Community outreach and food distribution" />
-        </div>
-        <div class="program-gallery-item reveal">
-          <img src="../assets/wayuu-wt10.jpg" alt="Health services for Wayuu communities" />
-        </div>
-        <div class="program-gallery-item reveal">
-          <img src="../assets/water-dsc05084.jpg" alt="Water distribution to rural areas" />
-        </div>
-        <div class="program-gallery-item reveal">
-          <img src="../assets/wayuu-dsc00071.jpg" alt="Education and nutrition programs" />
-        </div>
-        <div class="program-gallery-item tall reveal">
-          <img src="../assets/about-img5762.jpg" alt="Supporting indigenous families" />
-        </div>
-        <div class="program-gallery-item reveal">
-          <img src="../assets/water-whatsapp-apr12.jpeg" alt="Clean water access for children" />
+  <!-- ========== GALLERY → VIDEO REVEAL WRAPPER ========== -->
+  <div class="gallery-video-wrapper">
+
+    <!-- Video (sticky layer — stays in place while gallery scrolls over it) -->
+    <section class="program-video-reveal">
+      <div class="container">
+        <span class="section-eyebrow">See Our Impact</span>
+        <h2 class="section-title">Our Story in <em>Motion</em></h2>
+        <div class="program-video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/Ts6FmrtMRhI?rel=0&modestbranding=1"
+            title="Wayuu Taya Foundation — Help for Those in Need"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Gallery (scrolls over the sticky video, then peels away to reveal it) -->
+    <section class="program-gallery">
+      <div class="container">
+        <span class="section-eyebrow">In the Field</span>
+        <h2 class="section-title">Our Work in <em>Action</em></h2>
+        <div class="program-gallery-grid">
+          <div class="program-gallery-item reveal">
+            <img src="../assets/homepage-whatsapp.jpeg" alt="Community outreach and food distribution" />
+          </div>
+          <div class="program-gallery-item reveal">
+            <img src="../assets/wayuu-wt10.jpg" alt="Health services for Wayuu communities" />
+          </div>
+          <div class="program-gallery-item reveal">
+            <img src="../assets/water-dsc05084.jpg" alt="Water distribution to rural areas" />
+          </div>
+          <div class="program-gallery-item reveal">
+            <img src="../assets/wayuu-dsc00071.jpg" alt="Education and nutrition programs" />
+          </div>
+          <div class="program-gallery-item tall reveal">
+            <img src="../assets/about-img5762.jpg" alt="Supporting indigenous families" />
+          </div>
+          <div class="program-gallery-item reveal">
+            <img src="../assets/water-whatsapp-apr12.jpeg" alt="Clean water access for children" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.gallery-video-wrapper -->
 
   <!-- ========== PARTNERS ========== -->
   <section class="program-partners">
@@ -314,22 +335,6 @@
   </section>
 
   </div><!-- /.page-content -->
-
-  <!-- ========== VIDEO REVEAL (fixed behind page-content, revealed as CTA scrolls away) ========== -->
-  <section class="program-video-reveal">
-    <div class="container">
-      <span class="section-eyebrow">See Our Impact</span>
-      <h2 class="section-title">Our Story in <em>Motion</em></h2>
-      <div class="program-video-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/Ts6FmrtMRhI?rel=0&modestbranding=1"
-          title="Wayuu Taya Foundation — Help for Those in Need"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
