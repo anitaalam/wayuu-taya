@@ -1034,31 +1034,6 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-bottom: 24px;
 }
 
-/* ========== BACKGROUND VIDEO ========== */
-.bg-video-wrap {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.bg-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.06;
-}
-
-.has-bg-video .page-content {
-  background: transparent;
-}
-.has-bg-video .story-section {
-  background: rgba(248,249,250,0.85);
-}
-.has-bg-video .timeline-section {
-  background: rgba(250,248,245,0.85);
-}
-
 /* ========== SCROLL-HIGHLIGHT TEXT ========== */
 .scroll-text-section {
   background: var(--black);
