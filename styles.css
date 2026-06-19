@@ -683,6 +683,8 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* ========== CTA ========== */
 .cta {
+  position: relative;
+  z-index: 2;
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--blue-deep);
   text-align: center;
@@ -1868,10 +1870,6 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 
 /* Photo Gallery */
-.program-gallery {
-  padding: clamp(60px, 8vw, 120px) 0;
-  background: #fff;
-}
 .program-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1897,13 +1895,20 @@ em { font-style: italic; font-family: var(--font-display); }
   transform: scale(1.05);
 }
 
-/* Video Section */
-.program-video-section {
+/* Video Reveal — sticky behind gallery, revealed as gallery scrolls away */
+.program-video-reveal {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--black);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
-.program-video-section .section-eyebrow { color: var(--blue-light); }
-.program-video-section .section-title { color: var(--white); }
+.program-video-reveal .container { width: 100%; }
+.program-video-reveal .section-eyebrow { color: var(--blue-light); }
+.program-video-reveal .section-title { color: var(--white); }
 .program-video-wrap {
   position: relative;
   width: 100%;
@@ -1922,10 +1927,24 @@ em { font-style: italic; font-family: var(--font-display); }
   border: 0;
 }
 
-/* Partners */
+/* Gallery peels away to reveal sticky video behind it */
+.program-gallery {
+  position: relative;
+  z-index: 2;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: var(--white);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+
+
+/* Partners — scrolls up over sticky video to cover it */
 .program-partners {
+  position: relative;
+  z-index: 2;
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.08);
 }
 .program-partners-desc {
   max-width: 640px;
@@ -1964,8 +1983,10 @@ em { font-style: italic; font-family: var(--font-display); }
   line-height: 1.5;
 }
 
-/* Other Programs */
+/* Other Programs — scrolls over sticky video */
 .program-other {
+  position: relative;
+  z-index: 2;
   padding: clamp(60px, 8vw, 100px) 0;
   background: #fff;
 }
