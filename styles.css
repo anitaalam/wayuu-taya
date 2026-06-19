@@ -564,6 +564,28 @@ em { font-style: italic; font-family: var(--font-display); }
   height: clamp(60px, 8vw, 120px);
 }
 
+/* ========== PARALLAX BREAK ========== */
+.parallax-break {
+  position: relative;
+  height: clamp(300px, 50vh, 600px);
+  overflow: hidden;
+}
+.parallax-img {
+  position: absolute;
+  inset: -20% 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 140%;
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  .parallax-img { background-attachment: scroll; }
+}
+@media (max-width: 768px) {
+  .parallax-img { background-attachment: scroll; }
+}
+
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
