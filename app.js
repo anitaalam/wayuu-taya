@@ -79,6 +79,27 @@ setTimeout(() => {
   }, 3500);
 })();
 
+/* ========== MISSION IMAGE PARALLAX ========== */
+(function() {
+  const stack = document.querySelector('.mission-img-stack');
+  if (!stack) return;
+  const imgs = stack.querySelectorAll('.mission-img');
+  function updateParallax() {
+    const rect = stack.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // progress: 0 when section enters bottom, 1 when it exits top
+    const progress = 1 - (rect.bottom / (vh + rect.height));
+    const clamped = Math.max(0, Math.min(1, progress));
+    // Shift from +8% to -8% as you scroll through
+    const yShift = 16 * (0.5 - clamped); // range: +8 to -8
+    imgs.forEach(img => {
+      img.style.transform = `translateY(${yShift}%)`;
+    });
+  }
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  updateParallax();
+})();
+
 /* ========== PROGRAM TILE IMAGE CYCLING ========== */
 (function() {
   const tiles = document.querySelectorAll('.program-tile');
