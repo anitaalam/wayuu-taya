@@ -550,6 +550,20 @@ em { font-style: italic; font-family: var(--font-display); }
   letter-spacing: 0.01em;
 }
 
+/* ========== ARC DIVIDER ========== */
+.arc-divider {
+  position: relative;
+  margin-top: -1px;
+  background: var(--off-white);
+  line-height: 0;
+  overflow: hidden;
+}
+.arc-divider svg {
+  display: block;
+  width: 100%;
+  height: clamp(60px, 8vw, 120px);
+}
+
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
