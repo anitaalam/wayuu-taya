@@ -976,59 +976,108 @@ em { font-style: italic; font-family: var(--font-display); }
 .vision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 24px;
 }
-.vision-card {
-  background: #f8f9fa;
+
+/* Image card */
+.vision-card-img {
+  position: relative;
   border-radius: var(--radius-lg);
-  padding: clamp(32px, 4vw, 48px);
-  border: 1px solid var(--grey-light);
-  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  min-height: 480px;
+  cursor: default;
 }
-.vision-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+.vision-card-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.vision-icon {
-  width: 56px;
-  height: 56px;
-  color: var(--blue);
-  margin-bottom: 24px;
+.vision-card-img:hover img {
+  transform: scale(1.05);
 }
-.vision-card h3 {
+.vision-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  transition: background 0.5s ease;
+  z-index: 1;
+}
+.vision-card-img:hover .vision-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+.vision-card-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(28px, 4vw, 48px);
+}
+.vision-label {
+  display: inline-block;
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 700;
-  color: var(--text);
+  color: #fff;
   margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
-.vision-card p {
-  font-size: 16px;
-  color: var(--text-soft);
-  line-height: 1.7;
+.vision-card-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  max-width: 480px;
+  transform: translateY(8px);
+  opacity: 0.8;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.vision-card ul {
+.vision-card-img:hover .vision-card-content p {
+  transform: translateY(0);
+  opacity: 1;
+}
+.vision-card-content ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  transform: translateY(8px);
+  opacity: 0.8;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.vision-card li {
-  font-size: 15px;
-  color: var(--text-soft);
+.vision-card-img:hover .vision-card-content ul {
+  transform: translateY(0);
+  opacity: 1;
+}
+.vision-card-content li {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
-  padding: 8px 0;
-  padding-left: 24px;
+  padding: 6px 0;
+  padding-left: 20px;
   position: relative;
 }
-.vision-card li::before {
+.vision-card-content li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 16px;
+  top: 14px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--blue-light);
 }
 
 /* ========== FOUNDING STORY ========== */
@@ -1588,6 +1637,7 @@ em { font-style: italic; font-family: var(--font-display); }
   .page-hero { min-height: 55vh; }
   .page-hero--short { min-height: 45vh; }
   .vision-grid { grid-template-columns: 1fr; }
+  .vision-card-img { min-height: 400px; }
   .story-grid { grid-template-columns: 1fr; }
   .story-img-accent {
     position: relative;
