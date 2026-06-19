@@ -970,122 +970,151 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* ========== VISION / OBJECTIVES ========== */
 .vision-section {
-  padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
-}
-.vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  padding: 0;
+  background: var(--black);
 }
 
-/* Image card */
-.vision-card-img {
+/* Full-width split layout */
+.vision-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+}
+
+/* Each panel */
+.vision-panel {
   position: relative;
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 480px;
   cursor: default;
 }
-.vision-card-img img {
+.vision-panel img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: visionZoom 18s ease-in-out infinite alternate;
 }
-.vision-card-img:hover img {
-  transform: scale(1.05);
+.vision-panel:nth-child(2) img {
+  animation-delay: -9s;
 }
-.vision-card-overlay {
+@keyframes visionZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.vision-panel:hover img {
+  animation-play-state: paused;
+  transform: scale(1.06);
+  transition: transform 0.8s ease;
+}
+
+/* Overlay */
+.vision-panel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
+  background: rgba(0, 0, 0, 0.35);
   transition: background 0.5s ease;
   z-index: 1;
 }
-.vision-card-img:hover .vision-card-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.7) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+.vision-panel:hover .vision-panel-overlay {
+  background: rgba(0, 0, 0, 0.7);
 }
-.vision-card-content {
+
+/* Content */
+.vision-panel-content {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: clamp(28px, 4vw, 48px);
-  transition: justify-content 0.5s ease;
+  align-items: center;
+  text-align: center;
+  padding: clamp(32px, 5vw, 64px);
 }
 
-/* Label — centered by default, slides up on hover */
+/* Label — large, centered */
 .vision-label {
-  display: inline-block;
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   color: #fff;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.vision-card-img:hover .vision-label {
-  transform: translateY(-12px);
+.vision-panel:hover .vision-label {
+  transform: translateY(-20px);
 }
 
-/* Body — hidden by default, reveals on hover */
+/* Hover hint */
+.vision-hint {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: hintPulse 2.5s ease-in-out infinite;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.9; }
+}
+.vision-panel:hover .vision-hint {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Body — hidden, reveals on hover */
 .vision-body {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.5s ease 0.1s;
+              opacity 0.5s ease 0.15s;
 }
-.vision-card-img:hover .vision-body {
-  max-height: 300px;
+.vision-panel:hover .vision-body {
+  max-height: 350px;
   opacity: 1;
 }
 
-.vision-card-content p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.75;
-  max-width: 480px;
-  margin-top: 16px;
+.vision-panel-content p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.8;
+  max-width: 420px;
+  margin-top: 20px;
 }
-.vision-card-content ul {
+.vision-panel-content ul {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0;
+  margin: 20px 0 0;
+  text-align: left;
+  max-width: 420px;
 }
-.vision-card-content li {
+.vision-panel-content li {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.7;
-  padding: 6px 0;
-  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.75;
+  padding: 7px 0;
+  padding-left: 22px;
   position: relative;
 }
-.vision-card-content li::before {
+.vision-panel-content li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 14px;
+  top: 15px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--blue-light);
+}
+
+/* Divider line between panels */
+.vision-panel + .vision-panel {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ========== FOUNDING STORY ========== */
@@ -1644,8 +1673,9 @@ em { font-style: italic; font-family: var(--font-display); }
 @media (max-width: 768px) {
   .page-hero { min-height: 55vh; }
   .page-hero--short { min-height: 45vh; }
-  .vision-grid { grid-template-columns: 1fr; }
-  .vision-card-img { min-height: 400px; }
+  .vision-split { grid-template-columns: 1fr; }
+  .vision-panel { min-height: 60vh; }
+  .vision-panel + .vision-panel { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
   .story-grid { grid-template-columns: 1fr; }
   .story-img-accent {
     position: relative;
