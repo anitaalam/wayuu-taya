@@ -572,12 +572,12 @@ em { font-style: italic; font-family: var(--font-display); }
 .number-card {
   text-align: center;
   padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.70);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  box-shadow: none;
   transition: transform var(--transition);
 }
 .number-card:hover { transform: translateY(-4px); }
