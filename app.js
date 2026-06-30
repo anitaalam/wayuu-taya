@@ -131,6 +131,7 @@ setTimeout(() => {
 
     numberValues.forEach(el => {
       const target = parseInt(el.dataset.target, 10);
+      const start = parseInt(el.dataset.start || '0', 10);
       const suffix = el.dataset.suffix || '';
       const duration = 2200;
       const startTime = performance.now();
@@ -148,7 +149,7 @@ setTimeout(() => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const easedProgress = easeOutExpo(progress);
-        const currentValue = Math.round(easedProgress * target);
+        const currentValue = Math.round(start + easedProgress * (target - start));
 
         el.textContent = formatNumber(currentValue) + suffix;
 
