@@ -542,6 +542,26 @@ em { font-style: italic; font-family: var(--font-display); }
 .numbers {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+.numbers::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: url('assets/swirl.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.numbers .container {
+  position: relative;
+  z-index: 1;
 }
 .numbers-grid {
   display: grid;
@@ -1423,6 +1443,10 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* ========== ABOUT NUMBERS (override bg) ========== */
 .about-numbers { background: var(--blue-deep); }
+.about-numbers::before {
+  opacity: 0.06;
+  filter: brightness(0) invert(1);
+}
 .about-numbers .section-eyebrow,
 .about-numbers .section-title { color: var(--white); }
 .about-numbers .section-title em { color: var(--blue-light); }
