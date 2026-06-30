@@ -572,7 +572,10 @@ em { font-style: italic; font-family: var(--font-display); }
 .number-card {
   text-align: center;
   padding: 40px 20px;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
   transition: transform var(--transition);
