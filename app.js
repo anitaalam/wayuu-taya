@@ -481,37 +481,24 @@ setTimeout(() => {
   });
 })();
 
-/* ========== CHALLENGE CARD OVERLAY ========== */
+/* ========== CHALLENGE CARD TAP-TO-REVEAL (touch devices) ========== */
 (function () {
-  var readBtns = document.querySelectorAll('.challenge-read-more');
-  var closeBtns = document.querySelectorAll('.challenge-close');
-  if (!readBtns.length) return;
+  var cards = document.querySelectorAll('.challenge-card');
+  if (!cards.length) return;
 
-  readBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var card = btn.closest('.challenge-card');
-      // Close any other open cards
-      document.querySelectorAll('.challenge-card.active').forEach(function (c) {
-        if (c !== card) c.classList.remove('active');
-      });
-      card.classList.add('active');
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      var isActive = card.classList.contains('active');
+      // Close all others
+      cards.forEach(function (c) { c.classList.remove('active'); });
+      if (!isActive) card.classList.add('active');
     });
   });
 
-  closeBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      btn.closest('.challenge-card').classList.remove('active');
-    });
-  });
-
-  // Close on click outside
+  // Close on tap outside
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.challenge-card')) {
-      document.querySelectorAll('.challenge-card.active').forEach(function (c) {
-        c.classList.remove('active');
-      });
+      cards.forEach(function (c) { c.classList.remove('active'); });
     }
   });
 })();
