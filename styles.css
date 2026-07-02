@@ -1521,11 +1521,19 @@ em { font-style: italic; font-family: var(--font-display); }
   overflow: hidden;
 }
 
-/* Front: image with title overlay */
+/* Front: image with slow Ken Burns zoom */
 .flip-card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: flip-card-zoom 8s ease-in-out infinite alternate;
+}
+.flip-card:nth-child(2) .flip-card-front img { animation-delay: -2s; }
+.flip-card:nth-child(3) .flip-card-front img { animation-delay: -4s; }
+.flip-card:nth-child(4) .flip-card-front img { animation-delay: -6s; }
+@keyframes flip-card-zoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }
 .flip-card-label {
   position: absolute;
@@ -2251,4 +2259,5 @@ em { font-style: italic; font-family: var(--font-display); }
   .timeline-dot { transform: scale(1); }
   .timeline-card { opacity: 1; transform: none; }
   .timeline-line::after { height: 100% !important; }
+  .flip-card-front img { animation: none !important; }
 }
