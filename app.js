@@ -414,3 +414,44 @@ setTimeout(() => {
   const group = L.featureGroup(locations.map(l => L.marker(l.coords)));
   map.fitBounds(group.getBounds().pad(0.3));
 })();
+
+/* ========== WORD CARD AUDIO PRONUNCIATION ========== */
+(function () {
+  const audioCards = document.querySelectorAll('.word-card--audio');
+  if (!audioCards.length) return;
+
+  let currentAudio = null;
+
+  audioCards.forEach(card => {
+    const src = card.dataset.audio;
+    const btn = card.querySelector('.word-listen');
+    if (!src || !btn) return;
+
+    btn.addEventListener('click', () => {
+      // Stop any currently playing audio
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        document.querySelectorAll('.word-listen.playing').forEach(b => b.classList.remove('playing'));
+      }
+
+      const audio = new Audio(src);
+      currentAudio = audio;
+      btn.classList.add('playing');
+
+      audio.addEventListener('ended', () => {
+        btn.classList.remove('playing');
+        currentAudio = null;
+      });
+      audio.addEventListener('error', () => {
+        btn.classList.remove('playing');
+        currentAudio = null;
+      });
+
+      audio.play().catch(() => {
+        btn.classList.remove('playing');
+        currentAudio = null;
+      });
+    });
+  });
+})();
