@@ -550,7 +550,6 @@ em { font-style: italic; font-family: var(--font-display); }
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
   background: url('assets/swirl.png') no-repeat center center;
@@ -558,6 +557,11 @@ em { font-style: italic; font-family: var(--font-display); }
   opacity: 0.08;
   pointer-events: none;
   z-index: 0;
+  animation: swirl-spin 60s linear infinite;
+}
+@keyframes swirl-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 .numbers .container {
   position: relative;
