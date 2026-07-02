@@ -1532,7 +1532,8 @@ em { font-style: italic; font-family: var(--font-display); }
   background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 60%, transparent 100%);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.reveal-card:hover .reveal-card-overlay {
+.reveal-card:hover .reveal-card-overlay,
+.reveal-card.active .reveal-card-overlay {
   padding-bottom: 28px;
   background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 70%, transparent 100%);
 }
@@ -1566,11 +1567,13 @@ em { font-style: italic; font-family: var(--font-display); }
   color: #fff;
   font-style: italic;
 }
-.reveal-card:hover .reveal-card-preview {
+.reveal-card:hover .reveal-card-preview,
+.reveal-card.active .reveal-card-preview {
   opacity: 0;
   max-height: 0;
 }
-.reveal-card:hover .reveal-card-full {
+.reveal-card:hover .reveal-card-full,
+.reveal-card.active .reveal-card-full {
   max-height: 200px;
   opacity: 1;
 }
@@ -1947,8 +1950,12 @@ em { font-style: italic; font-family: var(--font-display); }
     margin-top: -40px;
     margin-left: auto;
   }
-  .culture-grid { grid-template-columns: 1fr; }
-  .reveal-card { aspect-ratio: 3 / 2; }
+  .culture-grid { grid-template-columns: 1fr; gap: 20px; }
+  .reveal-card { aspect-ratio: 3 / 2; cursor: pointer; }
+  .reveal-card-overlay { padding: 20px 20px 18px; }
+  .reveal-card-overlay h3 { font-size: 20px; margin-bottom: 6px; }
+  .reveal-card-preview { font-size: 13px; max-height: 40px; }
+  .reveal-card-full { font-size: 14px; }
   .language-grid { grid-template-columns: 1fr; }
   .founder-grid { grid-template-columns: 1fr; }
   .timeline { padding-left: 32px; }
@@ -1960,6 +1967,12 @@ em { font-style: italic; font-family: var(--font-display); }
   .board-grid { grid-template-columns: repeat(2, 1fr); }
   .values-grid { grid-template-columns: 1fr; }
   .language-words { grid-template-columns: 1fr; }
+  .reveal-card { aspect-ratio: 3 / 4; }
+  .reveal-card-overlay { padding: 16px 16px 14px; }
+  .reveal-card-overlay h3 { font-size: 18px; }
+  .reveal-card-preview { font-size: 12px; max-height: 36px; }
+  .reveal-card-full { font-size: 13px; line-height: 1.6; }
+  .reveal-card.active .reveal-card-full { max-height: 260px; }
 }
 
 /* ========== PROGRAM DETAIL PAGE ========== */
@@ -2293,4 +2306,15 @@ em { font-style: italic; font-family: var(--font-display); }
   .timeline-card { opacity: 1; transform: none; }
   .timeline-line::after { height: 100% !important; }
   .reveal-card img { animation: none !important; }
+}
+
+/* Disable hover on touch — use tap (.active) instead */
+@media (pointer: coarse) {
+  .reveal-card:hover .reveal-card-overlay { padding-bottom: 24px; background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 60%, transparent 100%); }
+  .reveal-card:hover .reveal-card-preview { opacity: 1; max-height: 44px; }
+  .reveal-card:hover .reveal-card-full { max-height: 0; opacity: 0; }
+  /* Re-enable for active (tapped) */
+  .reveal-card.active .reveal-card-overlay { padding-bottom: 28px; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 70%, transparent 100%); }
+  .reveal-card.active .reveal-card-preview { opacity: 0; max-height: 0; }
+  .reveal-card.active .reveal-card-full { max-height: 260px; opacity: 1; }
 }

@@ -455,3 +455,28 @@ setTimeout(() => {
     });
   });
 })();
+
+/* ========== REVEAL CARDS — TAP TO TOGGLE ON TOUCH ========== */
+(function () {
+  const cards = document.querySelectorAll('.reveal-card');
+  if (!cards.length) return;
+
+  cards.forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      // Only act on touch devices (coarse pointer)
+      if (!matchMedia('(pointer: coarse)').matches) return;
+      e.preventDefault();
+      const wasActive = card.classList.contains('active');
+      // Close all others
+      cards.forEach(function (c) { c.classList.remove('active'); });
+      if (!wasActive) card.classList.add('active');
+    });
+  });
+
+  // Close on tap outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.reveal-card')) {
+      cards.forEach(function (c) { c.classList.remove('active'); });
+    }
+  });
+})();
