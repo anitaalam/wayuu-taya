@@ -251,31 +251,39 @@ setTimeout(() => {
   document.querySelectorAll('.program-area-card').forEach(card => obs.observe(card));
 })();
 
-/* ========== SCROLL-HIGHLIGHT TEXT (dark section, line-by-line) ========== */
+/* ========== SCROLL-HIGHLIGHT TEXT (dark section, line-by-line, reversible) ========== */
 (function() {
   const scrollSections = document.querySelectorAll('.scroll-text-section');
   if (!scrollSections.length) return;
 
-  scrollSections.forEach(section => {
-    const lines = section.querySelectorAll('.scroll-text-line');
-    if (!lines.length) return;
+  function updateLines() {
+    scrollSections.forEach(section => {
+      const lines = section.querySelectorAll('.scroll-text-line');
+      if (!lines.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Animate lines one by one
-          lines.forEach((line, i) => {
-            setTimeout(() => {
-              line.classList.add('highlighted');
-            }, i * 300);
-          });
-          observer.unobserve(entry.target);
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // Progress: 0 when section top hits 80% of viewport, 1 when section top hits 20%
+      const start = vh * 0.8;
+      const end = vh * 0.2;
+      const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+
+      // Map progress to which lines should be highlighted
+      const totalLines = lines.length;
+      const revealCount = Math.round(progress * totalLines);
+
+      lines.forEach((line, i) => {
+        if (i < revealCount) {
+          line.classList.add('highlighted');
+        } else {
+          line.classList.remove('highlighted');
         }
       });
-    }, { threshold: 0.4 });
+    });
+  }
 
-    observer.observe(section);
-  });
+  window.addEventListener('scroll', updateLines, { passive: true });
+  updateLines();
 })();
 
 /* ========== TIMELINE SCROLL ANIMATION ========== */
