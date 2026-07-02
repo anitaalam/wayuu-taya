@@ -1685,35 +1685,121 @@ em { font-style: italic; font-family: var(--font-display); }
   gap: 24px;
   margin-top: 48px;
 }
+
+/* --- Challenge image cards --- */
 .challenge-card {
-  padding: 32px;
+  position: relative;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--grey-light);
-  background: #f8f9fa;
-  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
 }
-.challenge-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+.challenge-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.challenge-card:hover .challenge-card-img {
+  transform: scale(1.05);
+}
+
+/* Bottom content: number + heading + read more */
+.challenge-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .challenge-number {
   font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--blue);
-  opacity: 0.3;
-  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
 }
 .challenge-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--text);
-  margin-bottom: 12px;
+  color: #fff;
+  line-height: 1.3;
 }
-.challenge-card p {
-  font-size: 14px;
-  color: var(--text-soft);
+.challenge-read-more {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  margin-top: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.3s;
+}
+.challenge-read-more:hover {
+  color: #fff;
+}
+
+/* Slide-up overlay */
+.challenge-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.challenge-card.active .challenge-overlay {
+  transform: translateY(0);
+}
+.challenge-overlay-inner {
+  padding: 32px 24px;
+  width: 100%;
+}
+.challenge-overlay .challenge-number {
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.challenge-overlay h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.challenge-overlay p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
   line-height: 1.7;
+}
+.challenge-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 24px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+.challenge-close:hover {
+  color: #fff;
 }
 
 /* ========== FOUNDER SECTION ========== */
@@ -1975,7 +2061,11 @@ em { font-style: italic; font-family: var(--font-display); }
   .scroll-text-line { font-size: clamp(20px, 4vw, 28px); }
 }
 @media (max-width: 480px) {
-  .challenges-grid { grid-template-columns: 1fr; }
+  .challenges-grid { grid-template-columns: repeat(2, 1fr); }
+  .challenge-card { aspect-ratio: 3 / 4; }
+  .challenge-card h3 { font-size: 18px; }
+  .challenge-overlay-inner { padding: 24px 20px; }
+  .challenge-overlay p { font-size: 14px; }
   .team-grid { grid-template-columns: 1fr; }
   .board-grid { grid-template-columns: repeat(2, 1fr); }
   .values-grid { grid-template-columns: 1fr; }
@@ -1986,6 +2076,10 @@ em { font-style: italic; font-family: var(--font-display); }
   .reveal-card-preview { font-size: 12px; max-height: 36px; }
   .reveal-card-full { font-size: 13px; line-height: 1.6; }
   .reveal-card.active .reveal-card-full { max-height: 260px; }
+}
+@media (max-width: 380px) {
+  .challenges-grid { grid-template-columns: 1fr; }
+  .challenge-card { aspect-ratio: 4 / 5; }
 }
 
 /* ========== PROGRAM DETAIL PAGE ========== */
