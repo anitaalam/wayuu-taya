@@ -1135,13 +1135,13 @@ em { font-style: italic; font-family: var(--font-display); }
   font-weight: 700;
   line-height: 1.35;
   color: rgba(255,255,255,0.12);
-  transition: color 0.6s ease, text-shadow 0.6s ease;
+  transition: color 0.3s ease;
   margin: 0;
   padding: 4px 0;
+  will-change: color;
 }
 .scroll-text-line.highlighted {
   color: var(--white);
-  text-shadow: 0 0 40px rgba(49,153,189,0.25);
 }
 
 /* ========== VISION / OBJECTIVES ========== */
