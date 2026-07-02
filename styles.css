@@ -809,7 +809,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 36, 99, 0.7);
+  background: rgba(0, 0, 0, 0.55);
 }
 .cta--video .cta-inner {
   position: relative;
