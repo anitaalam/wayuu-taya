@@ -1490,61 +1490,50 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--white);
 }
-
-/* Alternating horizontal rows (zigzag) */
-.culture-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 48px;
-}
-.culture-row {
+.culture-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 32px;
+  margin-top: 48px;
+}
+.culture-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #f8f9fa;
   border: 1px solid var(--grey-light);
   transition: transform 0.3s, box-shadow 0.3s;
-  min-height: 320px;
 }
-.culture-row:hover {
+.culture-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.1);
 }
-/* Flip: image moves to right side */
-.culture-row--flip .culture-row-img { order: 2; }
-.culture-row--flip .culture-row-body { order: 1; }
-.culture-row-img {
+.culture-card-img {
+  aspect-ratio: 16 / 10;
   overflow: hidden;
 }
-.culture-row-img img {
+.culture-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-.culture-row:hover .culture-row-img img { transform: scale(1.05); }
-.culture-row-body {
-  padding: 48px 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.culture-card:hover .culture-card-img img { transform: scale(1.05); }
+.culture-card-body {
+  padding: 28px 28px 32px;
 }
-.culture-row-body h3 {
+.culture-card-body h3 {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
-.culture-row-body p {
-  font-size: 16px;
+.culture-card-body p {
+  font-size: 15px;
   color: var(--text-soft);
-  line-height: 1.8;
+  line-height: 1.7;
 }
-.culture-row-body em { color: var(--blue); font-style: italic; }
+.culture-card-body em { color: var(--blue); font-style: italic; }
 
 /* ========== LANGUAGE SECTION ========== */
 .language-section {
@@ -1884,11 +1873,7 @@ em { font-style: italic; font-family: var(--font-display); }
     margin-top: -40px;
     margin-left: auto;
   }
-  .culture-row { grid-template-columns: 1fr; min-height: auto; }
-  .culture-row--flip .culture-row-img { order: 0; }
-  .culture-row--flip .culture-row-body { order: 0; }
-  .culture-row-img { aspect-ratio: 16 / 10; }
-  .culture-row-body { padding: 28px 24px 32px; }
+  .culture-grid { grid-template-columns: 1fr; }
   .language-grid { grid-template-columns: 1fr; }
   .founder-grid { grid-template-columns: 1fr; }
   .timeline { padding-left: 32px; }
