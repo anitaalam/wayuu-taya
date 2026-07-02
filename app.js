@@ -257,11 +257,16 @@ mainNav.querySelectorAll('a').forEach(link => {
       }
 
       // Scroll-text reveal (reversible)
+      // Progress tracks how far the user has scrolled THROUGH the section,
+      // not just when the top enters the viewport.
       scrollTextData.forEach(({ section, lines }) => {
         const rect = section.getBoundingClientRect();
-        const start = vh * 0.8;
-        const end = vh * 0.2;
-        const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+        // How far the section has scrolled past the viewport top
+        // 0 = section top just reached 80% down the viewport
+        // 1 = section bottom just reached 20% up the viewport
+        const scrolledPast = (vh * 0.8) - rect.top;
+        const totalTravel = rect.height - (vh * 0.4);
+        const progress = Math.min(1, Math.max(0, scrolledPast / totalTravel));
         const revealCount = Math.round(progress * lines.length);
         lines.forEach((line, i) => {
           line.classList.toggle('highlighted', i < revealCount);
