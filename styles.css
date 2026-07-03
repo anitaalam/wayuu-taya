@@ -1875,7 +1875,7 @@ img.cta-bg-video {
 
 .team-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: #f8f9fa;
+  background: var(--off-white);
 }
 .team-grid {
   display: grid;
