@@ -2134,9 +2134,26 @@ img.cta-bg-video {
 
 /* By the Numbers (program variant) */
 .program-numbers {
+  position: relative;
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--blue-deep);
   text-align: center;
+  overflow: hidden;
+}
+.program-numbers-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+.program-numbers .container {
+  position: relative;
+  z-index: 1;
 }
 .program-numbers-grid {
   display: grid;
