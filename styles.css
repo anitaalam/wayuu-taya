@@ -1838,11 +1838,19 @@ img.cta-bg-video {
   align-items: center;
   margin-top: 48px;
 }
+.founder-photo {
+  overflow: hidden;
+  border-radius: 18px;
+}
 .founder-photo img {
   width: 100%;
-  border-radius: 18px;
   object-fit: cover;
   aspect-ratio: 4 / 5;
+  animation: founderZoom 10s ease-in-out infinite alternate;
+}
+@keyframes founderZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 .founder-bio p {
   font-size: 1.05rem;
