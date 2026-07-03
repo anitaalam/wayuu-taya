@@ -208,6 +208,8 @@ mainNav.querySelectorAll('a').forEach(link => {
   const header = document.getElementById('header');
   const missionStack = document.querySelector('.mission-img-stack');
   const missionImgs = missionStack ? missionStack.querySelectorAll('.mission-img') : [];
+  const ctaParallaxImg = document.querySelector('.cta--video img.cta-bg-video');
+  const ctaSection = ctaParallaxImg ? ctaParallaxImg.closest('.cta--video') : null;
   const timeline = document.querySelector('.timeline');
   const timelineSection = document.querySelector('.timeline-section');
 
@@ -254,6 +256,14 @@ mainNav.querySelectorAll('a').forEach(link => {
         const progress = Math.max(0, Math.min(1, 1 - rect.bottom / (vh + rect.height)));
         const yShift = 16 * (0.5 - progress);
         missionImgs.forEach(img => { img.style.transform = `translateY(${yShift}%)`; });
+      }
+
+      // CTA background image parallax
+      if (ctaParallaxImg && ctaSection) {
+        const rect = ctaSection.getBoundingClientRect();
+        const progress = Math.max(0, Math.min(1, 1 - rect.bottom / (vh + rect.height)));
+        const yShift = (progress - 0.5) * 15;
+        ctaParallaxImg.style.transform = `translateY(${yShift}%)`;
       }
 
       // Scroll-text reveal (reversible)

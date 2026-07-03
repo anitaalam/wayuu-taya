@@ -827,6 +827,11 @@ em { font-style: italic; font-family: var(--font-display); }
   height: 100%;
   object-fit: cover;
 }
+img.cta-bg-video {
+  height: 130%;
+  top: -15%;
+  will-change: transform;
+}
 .cta-overlay {
   position: absolute;
   inset: 0;
