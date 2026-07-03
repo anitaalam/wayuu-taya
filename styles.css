@@ -1989,9 +1989,19 @@ img.cta-bg-video {
   padding: 32px;
   border: 1px solid var(--grey-light);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(40px);
 }
-.value-card:hover {
+.value-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.value-card:nth-child(1) { transition-delay: 0s; }
+.value-card:nth-child(2) { transition-delay: 0.15s; }
+.value-card:nth-child(3) { transition-delay: 0.3s; }
+.value-card:nth-child(4) { transition-delay: 0.45s; }
+.value-card.in-view:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.08);
 }
