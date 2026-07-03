@@ -2117,11 +2117,19 @@ img.cta-bg-video {
   color: var(--text-soft);
   margin-bottom: 1.2em;
 }
+.program-intro-image {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
 .program-intro-image img {
   width: 100%;
-  border-radius: var(--radius-lg);
   object-fit: cover;
   aspect-ratio: 4 / 3;
+  animation: introImgZoom 10s ease-in-out infinite alternate;
+}
+@keyframes introImgZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 
 /* By the Numbers (program variant) */
