@@ -2140,20 +2140,31 @@ img.cta-bg-video {
   text-align: center;
   overflow: hidden;
 }
-.program-numbers-bg-video {
+.program-numbers::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  width: clamp(300px, 40vw, 500px);
+  height: clamp(300px, 40vw, 500px);
+  background: url('assets/swirl.png') no-repeat center / contain;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
   z-index: 0;
   pointer-events: none;
+  animation: program-swirl-spin 60s linear infinite;
+}
+@keyframes program-swirl-spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 .program-numbers .container {
   position: relative;
   z-index: 1;
+}
+.program-numbers .section-eyebrow,
+.program-numbers .section-title {
+  text-align: left;
 }
 .program-numbers-grid {
   display: grid;
