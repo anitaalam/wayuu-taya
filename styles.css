@@ -2328,17 +2328,44 @@ img.cta-bg-video {
   border-radius: var(--radius);
   border: 1px solid var(--grey-light);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .partner-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: var(--blue);
+}
+.partner-card.active {
+  border-color: var(--blue);
+}
+.partner-arrow {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--blue);
+  margin-top: 8px;
+  transition: transform 0.4s ease;
+}
+.partner-card.active .partner-arrow {
+  transform: rotate(180deg);
+}
+.partner-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+.partner-card.active .partner-detail {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 16px;
 }
 .partner-card h4 {
   font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--text);
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 .partner-card p {
   font-size: 0.88rem;

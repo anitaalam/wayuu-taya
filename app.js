@@ -425,3 +425,14 @@ mainNav.querySelectorAll('a').forEach(link => {
   }, { threshold: 0.15 });
   cards.forEach(function (card) { observer.observe(card); });
 })();
+
+/* ========== PARTNER CARD TOGGLE ========== */
+(function () {
+  var cards = document.querySelectorAll('.partner-card');
+  if (!cards.length) return;
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      card.classList.toggle('active');
+    });
+  });
+})();
