@@ -1976,6 +1976,23 @@ img.cta-bg-video {
 .values-section {
   padding: clamp(80px, 10vw, 140px) 0;
   background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+.values-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.values-section .container {
+  position: relative;
+  z-index: 1;
 }
 .values-grid {
   display: grid;
