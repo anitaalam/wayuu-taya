@@ -2308,6 +2308,22 @@ img.cta-bg-video {
   position: relative;
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  overflow: hidden;
+}
+.partners-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+.program-partners .container {
+  position: relative;
+  z-index: 1;
 }
 .program-partners-desc {
   max-width: 750px;
