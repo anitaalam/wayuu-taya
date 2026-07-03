@@ -1500,7 +1500,7 @@ img.cta-bg-video {
   opacity: 0.06;
   filter: brightness(0) invert(1);
 }
-.about-numbers .section-eyebrow,
+.about-numbers .section-eyebrow { color: var(--blue-light); }
 .about-numbers .section-title { color: var(--white); }
 .about-numbers .section-title em { color: var(--blue-light); }
 .about-numbers .number-card {
