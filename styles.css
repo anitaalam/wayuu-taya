@@ -2336,6 +2336,8 @@ img.cta-bg-video {
   margin-top: 48px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  padding: 0 var(--gutter);
 }
 .gallery-slider-track-wrap {
   overflow: hidden;
