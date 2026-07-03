@@ -2375,16 +2375,15 @@ img.cta-bg-video {
   justify-content: center;
   transition: opacity 0.3s ease;
   z-index: 2;
-  opacity: 0.45;
+  color: #000;
+  opacity: 0.3;
 }
 .gallery-slider-btn:hover {
-  opacity: 0.75;
+  opacity: 0.55;
 }
 .gallery-slider-btn svg {
   width: 32px;
   height: 32px;
-  stroke: var(--charcoal);
-  stroke-width: 1.5;
 }
 .gallery-slider-prev { margin-right: 16px; }
 .gallery-slider-next { margin-left: 16px; }
