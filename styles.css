@@ -2257,7 +2257,7 @@ em { font-style: italic; font-family: var(--font-display); }
   background: var(--off-white);
 }
 .program-partners-desc {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 0 48px;
   text-align: left;
   font-size: 1.05rem;
