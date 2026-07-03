@@ -2375,10 +2375,10 @@ img.cta-bg-video {
   justify-content: center;
   transition: opacity 0.3s ease;
   z-index: 2;
-  opacity: 0.25;
+  opacity: 0.45;
 }
 .gallery-slider-btn:hover {
-  opacity: 0.6;
+  opacity: 0.75;
 }
 .gallery-slider-btn svg {
   width: 32px;
