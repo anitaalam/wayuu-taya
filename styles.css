@@ -1829,7 +1829,8 @@ img.cta-bg-video {
 /* ========== FOUNDER SECTION ========== */
 .founder-section {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--white);
+  background: var(--black);
+  color: rgba(255,255,255,0.85);
 }
 .founder-grid {
   display: grid;
