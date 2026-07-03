@@ -2165,6 +2165,7 @@ img.cta-bg-video {
 .program-numbers .section-eyebrow,
 .program-numbers .section-title {
   text-align: left;
+  display: block;
 }
 .program-numbers-grid {
   display: grid;
