@@ -1046,6 +1046,7 @@ img.cta-bg-video {
   padding: 32px;
   border-radius: var(--radius);
   border-top: 3px solid var(--blue);
+  scroll-margin-top: 120px;
 }
 .donate-detail-card h3 {
   font-size: 20px;
