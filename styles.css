@@ -209,7 +209,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .main-nav > a:hover, .nav-dropdown-trigger:hover,
 .main-nav > a.active { color: var(--white); }
 .nav-dropdown { position: relative; }
-.nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; user-select: none; }
 .chevron { font-size: 10px; transition: transform 0.3s; }
 .nav-dropdown-menu {
   position: absolute;
