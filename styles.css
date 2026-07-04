@@ -887,7 +887,8 @@ img.cta-bg-video {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
-.cta--video .cta-inner {
+.cta--video .cta-inner,
+.cta--video > .container {
   position: relative;
   z-index: 1;
 }
