@@ -507,23 +507,47 @@ mainNav.querySelectorAll('a').forEach(link => {
   var slider = document.getElementById('programSlider');
   if (!slider) return;
   var track = slider.querySelector('.program-other-track');
+  var wrap = slider.querySelector('.program-other-track-wrap');
   var cards = Array.from(track.children);
   var prevBtn = slider.querySelector('.program-other-prev');
   var nextBtn = slider.querySelector('.program-other-next');
   if (!cards.length) return;
 
   var idx = 0;
-  var gap = 24;
 
-  function cardWidth() {
-    return cards[0].offsetWidth + gap;
+  function getGap() {
+    var s = getComputedStyle(track);
+    return parseInt(s.gap) || 24;
+  }
+
+  function visibleCount() {
+    var w = window.innerWidth;
+    if (w <= 480) return 1;
+    if (w <= 768) return 2;
+    return 3;
+  }
+
+  function maxIdx() {
+    var m = cards.length - visibleCount();
+    return m > 0 ? m : 0;
+  }
+
+  function update() {
+    var cw = cards[0].offsetWidth + getGap();
+    track.style.transform = 'translateX(' + -(idx * cw) + 'px)';
+    // Toggle left fade only when scrolled past start
+    if (idx > 0) {
+      wrap.classList.add('has-prev');
+    } else {
+      wrap.classList.remove('has-prev');
+    }
   }
 
   function move(dir) {
     idx += dir;
-    if (idx >= cards.length) idx = 0;
-    if (idx < 0) idx = cards.length - 1;
-    track.style.transform = 'translateX(' + -(idx * cardWidth()) + 'px)';
+    if (idx > maxIdx()) idx = 0;
+    if (idx < 0) idx = maxIdx();
+    update();
   }
 
   prevBtn.addEventListener('click', function(){ move(-1); });
@@ -539,7 +563,7 @@ mainNav.querySelectorAll('a').forEach(link => {
 
   // Recalc on resize
   window.addEventListener('resize', function(){
-    if (idx >= cards.length) idx = 0;
-    track.style.transform = 'translateX(' + -(idx * cardWidth()) + 'px)';
+    if (idx > maxIdx()) idx = 0;
+    update();
   });
 })();

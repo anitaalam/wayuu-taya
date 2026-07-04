@@ -2517,6 +2517,11 @@ img.cta-bg-video {
 .program-other-track-wrap {
   overflow: hidden;
   flex: 1;
+  mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
+  transition: -webkit-mask-image 0.4s ease, mask-image 0.4s ease;
+}
+.program-other-track-wrap.has-prev {
   mask-image: linear-gradient(to right, transparent 0%, black 6%, black 88%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 88%, transparent 100%);
 }
