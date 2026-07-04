@@ -831,11 +831,18 @@ img.cta-bg-video {
   height: 130%;
   top: -15%;
   will-change: transform;
+  animation: ctaKenBurns 12s ease-in-out infinite alternate;
+}
+@keyframes ctaKenBurns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-2%, -1%); }
 }
 .cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .cta--video .cta-inner {
   position: relative;
