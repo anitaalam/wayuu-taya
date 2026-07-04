@@ -2508,13 +2508,44 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--white);
 }
-.program-other-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.program-other-slider {
+  position: relative;
   margin-top: 48px;
+  display: flex;
+  align-items: center;
 }
+.program-other-track-wrap {
+  overflow: hidden;
+  flex: 1;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 88%, transparent 100%);
+}
+.program-other-track {
+  display: flex;
+  gap: clamp(16px, 2vw, 24px);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+.program-other-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  color: #000;
+  opacity: 0.3;
+}
+.program-other-btn:hover { opacity: 0.55; }
+.program-other-btn svg { width: 28px; height: 28px; }
+.program-other-prev { margin-right: 12px; }
+.program-other-next { margin-left: 12px; }
 .program-other-card {
+  flex: 0 0 calc((100% - 48px) / 3);
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -2569,14 +2600,14 @@ img.cta-bg-video {
   .program-intro-grid { grid-template-columns: 1fr; gap: 32px; }
   .program-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .program-gallery-item.tall { grid-row: span 1; aspect-ratio: 4 / 3; }
-  .program-other-grid { grid-template-columns: 1fr; }
-  .program-other-card { aspect-ratio: 16 / 9; }
+  .program-other-card { flex: 0 0 calc((100% - 24px) / 2); aspect-ratio: 3 / 4; }
 }
 @media (max-width: 480px) {
   .program-numbers-grid { grid-template-columns: 1fr; }
   .program-partners-grid { grid-template-columns: 1fr; }
   .program-gallery-grid { grid-template-columns: 1fr; }
   .program-area-stats { flex-direction: column; }
+  .program-other-card { flex: 0 0 75%; }
 }
 
 /* ========== REDUCED MOTION ========== */
