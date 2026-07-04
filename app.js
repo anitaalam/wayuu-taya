@@ -629,3 +629,17 @@ mainNav.querySelectorAll('a').forEach(link => {
     update();
   });
 })();
+
+/* ========== DONATE PAGE SLIDESHOW ========== */
+(function(){
+  var wrap = document.getElementById('donateSlideshow');
+  if (!wrap) return;
+  var slides = wrap.querySelectorAll('.donate-slide');
+  if (slides.length < 2) return;
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }, 3000);
+})();

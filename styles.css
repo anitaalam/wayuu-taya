@@ -910,6 +910,200 @@ img.cta-bg-video {
 }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* ========== WAYS TO GIVE / DONATE PAGE ========== */
+.donate-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  background: var(--white);
+}
+.donate-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.donate-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.donate-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: donateKenBurns 6s ease-in-out infinite alternate;
+}
+.donate-slide.active {
+  opacity: 1;
+}
+@keyframes donateKenBurns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+.donate-options {
+  padding: clamp(20px, 3vw, 40px) 0;
+}
+.donate-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.15;
+  margin: 12px 0 16px;
+}
+.donate-title em {
+  color: var(--blue);
+  font-style: normal;
+}
+.donate-desc {
+  font-size: 16px;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.donate-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.donate-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--offwhite);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.donate-btn:hover {
+  background: var(--white);
+  border-color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.donate-btn-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  border-radius: 50%;
+  color: var(--white);
+}
+.donate-btn-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.donate-btn-text {
+  flex: 1;
+}
+.donate-btn-text strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.donate-btn-text span {
+  font-size: 13px;
+  color: var(--grey);
+}
+.donate-btn-arrow {
+  font-size: 20px;
+  color: var(--blue);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+.donate-btn:hover .donate-btn-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Donate detail cards */
+.donate-details {
+  padding: 80px 0;
+  background: var(--offwhite);
+}
+.donate-details .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.donate-detail-card {
+  background: var(--white);
+  padding: 32px;
+  border-radius: var(--radius);
+  border-top: 3px solid var(--blue);
+}
+.donate-detail-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+.donate-detail-card p {
+  font-size: 15px;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.donate-detail-card address {
+  font-style: normal;
+  font-size: 15px;
+  color: var(--black);
+  line-height: 1.8;
+  background: var(--offwhite);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+}
+
+/* Donate page responsive */
+@media (max-width: 900px) {
+  .donate-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .donate-slideshow {
+    aspect-ratio: 16 / 10;
+    max-height: 400px;
+  }
+  .donate-details .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .donate-hero {
+    padding: 100px 0 60px;
+  }
+  .donate-slideshow {
+    aspect-ratio: 4 / 3;
+  }
+  .donate-btn {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+  .donate-btn-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .donate-btn-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 /* ========== PAGE CONTENT (for footer reveal) ========== */
 .page-content {
   position: relative;
