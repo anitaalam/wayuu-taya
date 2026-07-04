@@ -567,3 +567,65 @@ mainNav.querySelectorAll('a').forEach(link => {
     update();
   });
 })();
+
+/* ========== HOMEPAGE PROGRAMS SLIDER ========== */
+(function(){
+  var slider = document.getElementById('programsHomeSlider');
+  if (!slider) return;
+  var track = slider.querySelector('.programs-slider-track');
+  var wrap = slider.querySelector('.programs-slider-track-wrap');
+  var cards = Array.from(track.children);
+  var prevBtn = slider.querySelector('.programs-slider-prev');
+  var nextBtn = slider.querySelector('.programs-slider-next');
+  if (!cards.length) return;
+
+  var idx = 0;
+
+  function getGap() {
+    return parseInt(getComputedStyle(track).gap) || 20;
+  }
+
+  function visibleCount() {
+    var w = window.innerWidth;
+    if (w <= 768) return 2;
+    if (w <= 1024) return 3;
+    return 4;
+  }
+
+  function maxIdx() {
+    var m = cards.length - visibleCount();
+    return m > 0 ? m : 0;
+  }
+
+  function update() {
+    var cw = cards[0].offsetWidth + getGap();
+    track.style.transform = 'translateX(' + -(idx * cw) + 'px)';
+    if (idx > 0) {
+      wrap.classList.add('has-prev');
+    } else {
+      wrap.classList.remove('has-prev');
+    }
+  }
+
+  function move(dir) {
+    idx += dir;
+    if (idx > maxIdx()) idx = 0;
+    if (idx < 0) idx = maxIdx();
+    update();
+  }
+
+  prevBtn.addEventListener('click', function(){ move(-1); });
+  nextBtn.addEventListener('click', function(){ move(1); });
+
+  var startX = 0;
+  track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) move(diff > 0 ? 1 : -1);
+  });
+
+  window.addEventListener('resize', function(){
+    if (idx > maxIdx()) idx = 0;
+    update();
+  });
+})();
