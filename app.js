@@ -448,28 +448,37 @@ mainNav.querySelectorAll('a').forEach(link => {
   if (!slides.length) return;
 
   let index = 0;
+  const gap = 16;
 
-  function getVisible() {
-    const w = window.innerWidth;
-    if (w <= 600) return 1;
-    if (w <= 900) return 2;
-    return 3;
+  function getMaxOffset() {
+    return Math.max(0, track.scrollWidth - track.parentElement.offsetWidth);
   }
 
-  function getSlideWidth() {
-    const visible = getVisible();
-    const gap = 16;
-    const trackWidth = track.parentElement.offsetWidth;
-    return (trackWidth - gap * (visible - 1)) / visible + gap;
+  function getSlideOffset(i) {
+    if (i <= 0) return 0;
+    var offset = 0;
+    for (var s = 0; s < i && s < slides.length; s++) {
+      offset += slides[s].offsetWidth + gap;
+    }
+    var max = getMaxOffset();
+    return Math.min(offset, max);
+  }
+
+  function update() {
+    track.style.transform = 'translateX(' + -getSlideOffset(index) + 'px)';
   }
 
   function move(dir) {
-    const visible = getVisible();
-    const max = slides.length - visible;
     index += dir;
-    if (index > max) index = 0;
-    if (index < 0) index = max;
-    track.style.transform = 'translateX(' + (-index * getSlideWidth()) + 'px)';
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    // If we're near the end and offset would be same as max, wrap around
+    var offset = getSlideOffset(index);
+    var max = getMaxOffset();
+    if (dir > 0 && offset >= max && index !== 0) {
+      index = 0;
+    }
+    update();
   }
 
   prevBtn.addEventListener('click', function(){ move(-1); });
@@ -485,10 +494,10 @@ mainNav.querySelectorAll('a').forEach(link => {
 
   // Recalc on resize
   window.addEventListener('resize', function(){
-    var visible = getVisible();
-    var max = slides.length - visible;
-    if (index > max) index = max;
-    if (index < 0) index = 0;
-    track.style.transform = 'translateX(' + (-index * getSlideWidth()) + 'px)';
+    var max = getMaxOffset();
+    if (getSlideOffset(index) > max) {
+      index = 0;
+    }
+    update();
   });
 })();
