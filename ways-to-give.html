@@ -147,7 +147,7 @@
       <div class="donate-detail-card" id="donate-wire">
         <h3>Donate via Wire Transfer</h3>
         <p>Gifts by wire transfer can be made by contacting a member of our Development Department.</p>
-        <a href="mailto:developmentdepartment@wayuutaya.org" class="btn btn-primary btn-sm">developmentdepartment@wayuutaya.org</a>
+        <button class="btn btn-primary btn-sm" id="copyEmailBtn" data-email="developmentdepartment@wayuutaya.org" onclick="navigator.clipboard.writeText(this.dataset.email).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='developmentdepartment@wayuutaya.org'},2000)})">developmentdepartment@wayuutaya.org</button>
       </div>
 
     </div>
