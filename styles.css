@@ -2927,3 +2927,176 @@ img.cta-bg-video {
   .challenge-card.active .challenge-preview { opacity: 0; max-height: 0; }
   .challenge-card.active .challenge-full { max-height: 200px; opacity: 1; }
 }
+
+/* ========== VIDEO EMBED (shared) ========== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-embed-single {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========== HASTA LOS HUESOS SECTION ========== */
+.hasta-section {
+  padding: 100px 0;
+  background: #0A0A0A;
+  color: #fff;
+}
+.hasta-section .section-eyebrow {
+  color: var(--blue-light);
+}
+.hasta-section .section-title {
+  color: #fff;
+}
+.hasta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+  align-items: start;
+}
+.hasta-credit {
+  margin-top: 16px;
+  text-align: center;
+}
+.hasta-artist {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.5px;
+}
+.hasta-description {
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+.hasta-description::-webkit-scrollbar {
+  width: 4px;
+}
+.hasta-description::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 2px;
+}
+.hasta-description::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+.hasta-text-block p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 12px;
+}
+.hasta-lang-label {
+  font-family: var(--font-heading);
+  font-size: 12px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue-light) !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.hasta-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 28px 0;
+}
+
+/* ========== PERFORMANCES SECTION ========== */
+.performances-section {
+  padding: 100px 0;
+  background: var(--offwhite, #f5f0e8);
+}
+.performances-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+.performances-grid .performance-card--featured {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+.performances-grid .performance-card:not(.performance-card--featured) {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+.performance-info {
+  padding: 20px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.performance-num {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue-light);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.performance-info h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.performance-info p {
+  display: none; /* full title hidden, shown on hover/mobile */
+}
+
+/* Stacked layout for performances: featured big, then 2 side by side */
+@media (min-width: 769px) {
+  .performances-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .performances-grid .performance-card--featured {
+    grid-column: 1 / -1;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hasta-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hasta-description {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+  .hasta-section {
+    padding: 64px 0;
+  }
+  .performances-section {
+    padding: 64px 0;
+  }
+  .performance-num {
+    font-size: 24px;
+  }
+  .performance-info h3 {
+    font-size: 17px;
+  }
+}
