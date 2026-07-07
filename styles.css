@@ -2960,6 +2960,9 @@ img.cta-bg-video {
   gap: 40px;
   margin-top: 24px;
 }
+.music-intro-col p + p {
+  margin-top: 1.5em;
+}
 @media (max-width: 768px) {
   .music-intro-columns {
     grid-template-columns: 1fr;
