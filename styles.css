@@ -2954,6 +2954,18 @@ img.cta-bg-video {
 .music-intro-content {
   max-width: 100%;
 }
+.music-intro-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .music-intro-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 
 /* ========== HASTA LOS HUESOS SECTION ========== */
 .hasta-section {
