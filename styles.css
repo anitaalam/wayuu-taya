@@ -875,6 +875,9 @@ img.cta-bg-video {
   top: -15%;
   will-change: transform;
   animation: ctaKenBurns 12s ease-in-out infinite alternate;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+  transform: scale(1.1);
 }
 @keyframes ctaKenBurns {
   0%   { transform: scale(1) translate(0, 0); }
@@ -883,9 +886,9 @@ img.cta-bg-video {
 .cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .cta--video .cta-inner,
 .cta--video > .container {
