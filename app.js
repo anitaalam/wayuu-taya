@@ -644,12 +644,17 @@ mainNav.querySelectorAll('a').forEach(link => {
   }, 3000);
 })();
 
-/* ========== EXPANDABLE CARD (Read more / Read less) ========== */
-document.querySelectorAll('.card-read-more').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var card = btn.closest('.program-area-card--expandable');
-    var isExpanded = card.classList.toggle('expanded');
-    btn.setAttribute('aria-expanded', isExpanded);
-    btn.firstChild.textContent = isExpanded ? 'Read less ' : 'Read more ';
+/* ========== TAB ACCORDION ========== */
+document.querySelectorAll('.tab-accordion').forEach(function(accordion) {
+  var tabs = accordion.querySelectorAll('.tab-accordion-tab');
+  var panels = accordion.querySelectorAll('.tab-accordion-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.getAttribute('data-tab');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      accordion.querySelector('[data-panel="' + target + '"]').classList.add('active');
+    });
   });
 });
