@@ -644,6 +644,22 @@ mainNav.querySelectorAll('a').forEach(link => {
   }, 3000);
 })();
 
+/* ========== HASTA LOS HUESOS LANGUAGE TABS ========== */
+document.querySelectorAll('.hasta-lang-tabs').forEach(function(tabBar) {
+  var desc = tabBar.closest('.hasta-description');
+  var tabs = tabBar.querySelectorAll('.hasta-lang-tab');
+  var panels = desc.querySelectorAll('.hasta-lang-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var lang = tab.getAttribute('data-lang');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      desc.querySelector('[data-lang-panel="' + lang + '"]').classList.add('active');
+    });
+  });
+});
+
 /* ========== TAB ACCORDION ========== */
 document.querySelectorAll('.tab-accordion').forEach(function(accordion) {
   var tabs = accordion.querySelectorAll('.tab-accordion-tab');

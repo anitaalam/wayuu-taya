@@ -3136,27 +3136,52 @@ img.cta-bg-video {
   background: rgba(255,255,255,0.2);
   border-radius: 2px;
 }
-.hasta-text-block p {
+.hasta-lang-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.hasta-lang-tab {
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+.hasta-lang-tab:hover {
+  color: rgba(255,255,255,0.7);
+}
+.hasta-lang-tab.active {
+  color: var(--blue-light);
+}
+.hasta-lang-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue-light);
+}
+.hasta-lang-panel {
+  display: none;
+}
+.hasta-lang-panel.active {
+  display: block;
+}
+.hasta-lang-panel p {
   font-size: 15px;
   line-height: 1.7;
   color: rgba(255,255,255,0.75);
   margin-bottom: 12px;
-}
-.hasta-lang-label {
-  font-family: var(--font-heading);
-  font-size: 12px !important;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--blue-light) !important;
-  margin-bottom: 16px !important;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.hasta-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 28px 0;
 }
 
 /* ========== PERFORMANCES SECTION ========== */
