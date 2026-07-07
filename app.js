@@ -643,3 +643,13 @@ mainNav.querySelectorAll('a').forEach(link => {
     slides[cur].classList.add('active');
   }, 3000);
 })();
+
+/* ========== EXPANDABLE CARD (Read more / Read less) ========== */
+document.querySelectorAll('.card-read-more').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var card = btn.closest('.program-area-card--expandable');
+    var isExpanded = card.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', isExpanded);
+    btn.firstChild.textContent = isExpanded ? 'Read less ' : 'Read more ';
+  });
+});

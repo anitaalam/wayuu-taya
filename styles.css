@@ -2928,6 +2928,45 @@ img.cta-bg-video {
   .challenge-card.active .challenge-full { max-height: 200px; opacity: 1; }
 }
 
+/* ========== EXPANDABLE CARD ========== */
+.card-expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.card-expandable-content p {
+  margin-top: 1.5em;
+}
+.program-area-card--expandable.expanded .card-expandable-content {
+  max-height: 600px;
+}
+.card-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-light);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+.card-read-more:hover {
+  opacity: 0.7;
+}
+.card-read-more-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.program-area-card--expandable.expanded .card-read-more-arrow {
+  transform: rotate(180deg);
+}
+
 /* ========== VIDEO EMBED (shared) ========== */
 .video-wrapper {
   position: relative;
