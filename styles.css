@@ -2950,9 +2950,9 @@ img.cta-bg-video {
   margin: 0 auto;
 }
 
-/* Music page intro — full content width, no side image */
+/* Music page intro — full container width, no side image */
 .music-intro-content {
-  max-width: 900px;
+  max-width: 100%;
 }
 
 /* ========== HASTA LOS HUESOS SECTION ========== */
