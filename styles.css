@@ -3109,6 +3109,65 @@ img.cta-bg-video {
   }
 }
 
+/* ========== MUSIC HEALS INTERNATIONAL (BG SLIDER) ========== */
+.music-heals-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  min-height: 500px;
+}
+.music-heals-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.music-heals-bg img.intro-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  aspect-ratio: auto;
+  animation: introImgZoom 10s ease-in-out infinite alternate;
+}
+.music-heals-bg img.intro-slide.active {
+  opacity: 1;
+  position: absolute;
+}
+.music-heals-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+.music-heals-content {
+  position: relative;
+  z-index: 2;
+}
+.music-heals-content .section-eyebrow.light {
+  color: var(--blue-light);
+}
+.music-heals-content .section-title.light {
+  color: #fff;
+}
+.music-heals-content .section-title.light em {
+  color: var(--blue-light);
+}
+.music-heals-text {
+  max-width: 800px;
+}
+.music-heals-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.music-heals-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* ========== HASTA LOS HUESOS SECTION ========== */
 .hasta-section {
   padding: 100px 0;
