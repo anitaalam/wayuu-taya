@@ -913,6 +913,118 @@ img.cta-bg-video {
 }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* ========== CONTACT PAGE ========== */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.contact-info-item .donate-btn-icon {
+  flex-shrink: 0;
+}
+.contact-info-item strong {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.contact-info-item span,
+.contact-info-item a {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  text-decoration: none;
+}
+.contact-info-item a:hover {
+  color: var(--blue);
+}
+.contact-form-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+.contact-form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-form-intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+  margin-top: 16px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.contact-form-field label {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.contact-form-field input,
+.contact-form-field textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-family: inherit;
+  background: var(--off-white);
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: var(--white);
+}
+.contact-form-field textarea {
+  resize: vertical;
+}
+.contact-donate-section {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+.contact-donate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .contact-form-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-donate-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========== WAYS TO GIVE / DONATE PAGE ========== */
 .donate-page .site-header .main-nav > a,
 .donate-page .site-header .nav-dropdown-trigger {
@@ -2432,6 +2544,11 @@ img.cta-bg-video {
 .intro-slideshow img.intro-slide.active {
   position: relative;
   opacity: 1;
+}
+.donate-slideshow.intro-slideshow img.intro-slide,
+.donate-slideshow.intro-slideshow img.intro-slide.active {
+  position: absolute;
+  animation: donateKenBurns 6s ease-in-out infinite alternate;
 }
 @keyframes introImgZoom {
   0%   { transform: scale(1); }
