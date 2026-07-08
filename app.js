@@ -674,3 +674,15 @@ document.querySelectorAll('.tab-accordion').forEach(function(accordion) {
     });
   });
 });
+
+/* ========== INTRO SLIDESHOWS (auto-rotate every 3s) ========== */
+document.querySelectorAll('.intro-slideshow').forEach(function(container) {
+  var slides = container.querySelectorAll('.intro-slide');
+  if (slides.length < 2) return;
+  var idx = 0;
+  setInterval(function() {
+    slides[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+  }, 3000);
+});

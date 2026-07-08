@@ -2410,12 +2410,28 @@ img.cta-bg-video {
 .program-intro-image {
   overflow: hidden;
   border-radius: var(--radius-lg);
+  position: relative;
 }
 .program-intro-image img {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 4 / 3;
   animation: introImgZoom 10s ease-in-out infinite alternate;
+}
+.intro-slideshow img.intro-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  aspect-ratio: 4 / 3;
+}
+.intro-slideshow img.intro-slide.active {
+  position: relative;
+  opacity: 1;
 }
 @keyframes introImgZoom {
   0%   { transform: scale(1); }
