@@ -51,7 +51,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--text);
-  background: var(--white);
+  background: var(--off-white);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -411,7 +411,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== MISSION ========== */
 .mission {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 
 /* Video background for mission section */
@@ -698,7 +698,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .map-wrap {
   margin-top: 48px;
@@ -715,7 +715,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== REPORTS & DOCUMENTS ========== */
 .reports-section {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: #f5f5f5;
+  background: var(--off-white);
 }
 .reports-section .section-eyebrow {
   display: block;
@@ -958,7 +958,7 @@ img.cta-bg-video {
   display: flex;
   align-items: center;
   padding: 120px 0 80px;
-  background: var(--white);
+  background: var(--off-white);
 }
 .donate-hero-inner {
   display: grid;
@@ -1020,7 +1020,7 @@ img.cta-bg-video {
   align-items: center;
   gap: 16px;
   padding: 20px 24px;
-  background: var(--offwhite);
+  background: var(--off-white);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--black);
@@ -1076,7 +1076,7 @@ img.cta-bg-video {
 /* Donate detail cards */
 .donate-details {
   padding: 80px 0;
-  background: var(--offwhite);
+  background: var(--off-white);
 }
 .donate-details .container {
   display: grid;
@@ -1107,7 +1107,7 @@ img.cta-bg-video {
   font-size: 15px;
   color: var(--black);
   line-height: 1.8;
-  background: var(--offwhite);
+  background: var(--off-white);
   padding: 16px 20px;
   border-radius: var(--radius);
 }
@@ -1668,7 +1668,7 @@ img.cta-bg-video {
 /* ========== TIMELINE ========== */
 .timeline-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .timeline {
   position: relative;
@@ -1804,7 +1804,7 @@ img.cta-bg-video {
 /* ========== CULTURE CARDS (The Wayuu) ========== */
 .culture-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .culture-grid {
   display: grid;
@@ -1980,7 +1980,7 @@ img.cta-bg-video {
 /* ========== CHALLENGES ========== */
 .challenges-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .challenges-grid {
   display: grid;
@@ -2072,7 +2072,7 @@ img.cta-bg-video {
 /* ========== FOUNDER SECTION ========== */
 .founder-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .founder-grid {
   display: grid;
@@ -2230,7 +2230,7 @@ img.cta-bg-video {
 /* ========== BOARD OF DIRECTORS ========== */
 .board-section {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .board-grid {
   display: grid;
@@ -2393,7 +2393,7 @@ img.cta-bg-video {
 /* Intro section */
 .program-intro {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .program-intro-grid {
   display: grid;
@@ -2617,7 +2617,7 @@ img.cta-bg-video {
 .program-gallery {
   position: relative;
   padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 
 /* Horizontal Gallery Slider */
@@ -2789,7 +2789,7 @@ img.cta-bg-video {
 /* Other Programs */
 .program-other {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: var(--white);
+  background: var(--off-white);
 }
 .program-other-slider {
   position: relative;
@@ -3190,7 +3190,7 @@ img.cta-bg-video {
 /* ========== PERFORMANCES SECTION ========== */
 .performances-section {
   padding: 100px 0;
-  background: var(--offwhite, #f5f0e8);
+  background: var(--off-white);
 }
 .performances-grid {
   display: grid;
