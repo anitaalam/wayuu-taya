@@ -3167,6 +3167,13 @@ img.cta-bg-video {
 .music-heals-text p:last-child {
   margin-bottom: 0;
 }
+.music-heals-thanks {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: center;
+  margin-top: 48px;
+}
 
 /* ========== HASTA LOS HUESOS SECTION ========== */
 .hasta-section {
