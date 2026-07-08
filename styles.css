@@ -989,7 +989,7 @@ img.cta-bg-video {
   border-radius: var(--radius);
   font-size: 16px;
   font-family: inherit;
-  background: var(--off-white);
+  background: var(--white);
   transition: border-color 0.2s, background 0.2s;
 }
 .contact-form-field input:focus,
