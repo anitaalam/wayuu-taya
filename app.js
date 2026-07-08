@@ -686,3 +686,18 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     slides[idx].classList.add('active');
   }, 3000);
 });
+
+/* ========== NEWS TIMELINE REVEAL ========== */
+(function() {
+  var items = document.querySelectorAll('.timeline-item[data-reveal]');
+  if (!items.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function(item) { observer.observe(item); });
+})();
