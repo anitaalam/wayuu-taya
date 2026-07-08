@@ -948,7 +948,72 @@ img.cta-bg-video {
 }
 .contact-form-section {
   padding: 100px 0;
-  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.contact-form-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.contact-form-bg img.intro-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  aspect-ratio: auto;
+  animation: introImgZoom 10s ease-in-out infinite alternate;
+}
+.contact-form-bg img.intro-slide.active {
+  opacity: 1;
+  position: absolute;
+}
+.contact-form-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.contact-form-glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 60px;
+}
+.contact-form-glass .section-eyebrow {
+  color: var(--blue-light);
+}
+.contact-form-glass .section-title {
+  color: #fff;
+}
+.contact-form-glass .section-title em {
+  color: var(--blue-light);
+}
+.contact-form-glass .contact-form-intro p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.contact-form-glass .contact-form-field label {
+  color: rgba(255, 255, 255, 0.7);
+}
+.contact-form-glass .contact-form-field input,
+.contact-form-glass .contact-form-field textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.contact-form-glass .contact-form-field input::placeholder,
+.contact-form-glass .contact-form-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.contact-form-glass .contact-form-field input:focus,
+.contact-form-glass .contact-form-field textarea:focus {
+  border-color: var(--blue-light);
+  background: rgba(255, 255, 255, 0.15);
 }
 .contact-form-layout {
   display: grid;
@@ -1022,6 +1087,9 @@ img.cta-bg-video {
   }
   .contact-donate-grid {
     grid-template-columns: 1fr;
+  }
+  .contact-form-glass {
+    padding: 32px 24px;
   }
 }
 

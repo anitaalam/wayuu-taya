@@ -116,34 +116,45 @@
 
   <!-- ========== CONTACT FORM ========== -->
   <section class="contact-form-section">
-    <div class="container">
-      <div class="contact-form-layout">
-        <div class="contact-form-intro reveal">
-          <span class="section-eyebrow">Send a Message</span>
-          <h2 class="section-title">We'd Love to <em>Hear From You</em></h2>
-          <p>Have a question about our programs, interested in volunteering, or want to explore partnership opportunities? Fill out the form and we'll get back to you as soon as possible.</p>
+    <div class="contact-form-bg intro-slideshow">
+      <img class="intro-slide active" src="assets/agro-2.webp" alt="" />
+      <img class="intro-slide" src="assets/water-1.webp" alt="" />
+      <img class="intro-slide" src="assets/help-8.webp" alt="" />
+      <img class="intro-slide" src="assets/edu-whatsapp-jul10.jpeg" alt="" />
+      <img class="intro-slide" src="assets/about-img5762.jpg" alt="" />
+      <img class="intro-slide" src="assets/wayuu-wt10.jpg" alt="" />
+    </div>
+    <div class="contact-form-overlay"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="contact-form-glass">
+        <div class="contact-form-layout">
+          <div class="contact-form-intro reveal">
+            <span class="section-eyebrow">Send a Message</span>
+            <h2 class="section-title">We'd Love to <em>Hear From You</em></h2>
+            <p>Have a question about our programs, interested in volunteering, or want to explore partnership opportunities? Fill out the form and we'll get back to you as soon as possible.</p>
+          </div>
+          <form class="contact-form reveal">
+            <div class="contact-form-row">
+              <div class="contact-form-field">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" placeholder="Full name" required />
+              </div>
+              <div class="contact-form-field">
+                <label for="contact-phone">Phone</label>
+                <input type="tel" id="contact-phone" placeholder="Phone number" required />
+              </div>
+            </div>
+            <div class="contact-form-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" placeholder="Email address" required />
+            </div>
+            <div class="contact-form-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" rows="5" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
-        <form class="contact-form reveal">
-          <div class="contact-form-row">
-            <div class="contact-form-field">
-              <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" placeholder="Full name" required />
-            </div>
-            <div class="contact-form-field">
-              <label for="contact-phone">Phone</label>
-              <input type="tel" id="contact-phone" placeholder="Phone number" required />
-            </div>
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" placeholder="Email address" required />
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" rows="5" placeholder="How can we help?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
       </div>
     </div>
   </section>
