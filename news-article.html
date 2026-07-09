@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News &amp; Updates — Wayuu Taya Foundation</title>
-  <meta name="description" content="Stay up to date with the latest news, stories, and updates from the Wayuu Taya Foundation." />
+  <title>News — Wayuu Taya Foundation</title>
+  <meta name="description" content="Read the latest from the Wayuu Taya Foundation." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,7 +24,7 @@
             <a href="our-story.html">Our Story</a>
             <a href="the-wayuu.html">The Wayuu</a>
             <a href="administration.html">Administration</a>
-            <a href="news.html" class="active">News &amp; Updates</a>
+            <a href="news.html">News &amp; Updates</a>
           </div>
         </div>
         <div class="nav-dropdown">
@@ -56,48 +56,30 @@
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="program-hero" style="min-height: 50vh;">
-    <img src="assets/news/news-1.jpg" alt="News & Updates" class="program-hero-img" />
-    <div class="program-hero-overlay"></div>
-    <div class="program-hero-content container">
-      <span class="eyebrow light">Stay Informed</span>
-      <h1 class="program-hero-title">News &amp; <em>Updates</em></h1>
-      <p class="program-hero-sub">The latest stories, milestones, and announcements from the Wayuu Taya Foundation.</p>
-    </div>
+  <!-- ========== ARTICLE HERO ========== -->
+  <section class="article-hero" id="articleHero">
+    <!-- Populated by JS -->
   </section>
 
-  <!-- ========== FEATURED POST (latest) ========== -->
-  <section class="news-featured-section section" id="newsFeatured">
-    <!-- Populated by JS — shows latest post as large featured card -->
-  </section>
-
-  <!-- ========== FILTER BAR ========== -->
-  <section class="news-filter-bar">
+  <!-- ========== ARTICLE BODY ========== -->
+  <section class="article-body-section section">
     <div class="container">
-      <div class="news-filters">
-        <button class="news-filter-btn active" data-filter="all">All</button>
-        <button class="news-filter-btn" data-filter="Health">Health</button>
-        <button class="news-filter-btn" data-filter="Music">Music</button>
-        <button class="news-filter-btn" data-filter="Education">Education</button>
-        <button class="news-filter-btn" data-filter="Water">Water</button>
-        <button class="news-filter-btn" data-filter="Agriculture">Agriculture</button>
-        <button class="news-filter-btn" data-filter="Community">Community</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== NEWS GRID ========== -->
-  <section class="news-grid-section section">
-    <div class="container">
-      <div class="news-grid" id="newsGrid">
-        <!-- Populated by JS — 3x3 card grid -->
-      </div>
-      <div class="news-pagination" id="newsPagination">
+      <div class="article-content" id="articleContent">
         <!-- Populated by JS -->
       </div>
-      <div class="news-no-results" id="newsNoResults" style="display:none;">
-        <p>No articles found in this category.</p>
+    </div>
+  </section>
+
+  <!-- ========== RELATED POSTS ========== -->
+  <section class="article-related section">
+    <div class="container">
+      <span class="section-eyebrow">More Stories</span>
+      <h2 class="section-title">Related <em>Articles</em></h2>
+      <div class="news-grid" id="relatedGrid">
+        <!-- Populated by JS -->
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="news.html" class="btn btn-outline">← Back to All News</a>
       </div>
     </div>
   </section>

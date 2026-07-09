@@ -271,15 +271,20 @@ mainNav.querySelectorAll('a').forEach(link => {
       // not just when the top enters the viewport.
       scrollTextData.forEach(({ section, lines }) => {
         const rect = section.getBoundingClientRect();
-        // How far the section has scrolled past the viewport top
-        // 0 = section top just reached 80% down the viewport
-        // 1 = section bottom just reached 20% up the viewport
         const scrolledPast = (vh * 0.8) - rect.top;
         const totalTravel = rect.height - (vh * 0.4);
         const progress = Math.min(1, Math.max(0, scrolledPast / totalTravel));
-        const revealCount = Math.round(progress * lines.length);
+        // Each line gets a smooth 0→1 progress for gradual color fade
+        const spread = 1 / lines.length;
         lines.forEach((line, i) => {
-          line.classList.toggle('highlighted', i < revealCount);
+          const lineStart = i * spread;
+          const lineEnd = lineStart + spread * 2; // overlap for smoother transition
+          const lineProg = Math.min(1, Math.max(0, (progress - lineStart) / (lineEnd - lineStart)));
+          // Interpolate from faint (0.12 alpha) to full white
+          const alpha = 0.12 + (lineProg * 0.88);
+          line.style.color = 'rgba(255,255,255,' + alpha.toFixed(2) + ')';
+          line.style.opacity = 0.3 + (lineProg * 0.7);
+          line.style.transform = 'translateY(' + ((1 - lineProg) * 8) + 'px)';
         });
       });
 
@@ -700,4 +705,115 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   items.forEach(function(item) { observer.observe(item); });
+})();
+
+/* ========== NEWS PAGE — GRID, FILTERS, PAGINATION ========== */
+(function() {
+  if (typeof newsData === 'undefined') return;
+  var grid = document.getElementById('newsGrid');
+  var pagWrap = document.getElementById('newsPagination');
+  var noResults = document.getElementById('newsNoResults');
+  var featWrap = document.getElementById('newsFeatured');
+  if (!grid) return;
+
+  var PER_PAGE = 9;
+  var currentFilter = 'all';
+  var currentPage = 1;
+
+  function filtered() {
+    if (currentFilter === 'all') return newsData;
+    return newsData.filter(function(p) { return p.category === currentFilter; });
+  }
+
+  function fmtDate(d) {
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var parts = d.split('-');
+    return months[parseInt(parts[1],10)-1] + ' ' + parseInt(parts[2],10) + ', ' + parts[0];
+  }
+
+  function renderFeatured() {
+    if (!featWrap) return;
+    var post = newsData[0]; // latest
+    featWrap.innerHTML = '<div class="container"><div class="news-featured-card">' +
+      '<div class="news-featured-image">' +
+        '<span class="news-featured-badge">Latest</span>' +
+        '<img src="' + post.image + '" alt="' + post.title.replace(/"/g,'&quot;') + '" loading="lazy" />' +
+      '</div>' +
+      '<div class="news-featured-body">' +
+        '<span class="news-date">' + fmtDate(post.date) + '</span> ' +
+        '<span class="news-cat">' + post.category + '</span>' +
+        '<h2>' + post.title + '</h2>' +
+        '<p>' + post.summary + '</p>' +
+      '</div>' +
+    '</div></div>';
+  }
+
+  function renderGrid() {
+    var posts = filtered();
+    // Skip featured (first post) if showing all
+    var display = currentFilter === 'all' ? posts.slice(1) : posts;
+    var total = Math.ceil(display.length / PER_PAGE) || 1;
+    if (currentPage > total) currentPage = total;
+    var start = (currentPage - 1) * PER_PAGE;
+    var page = display.slice(start, start + PER_PAGE);
+
+    if (page.length === 0) {
+      grid.innerHTML = '';
+      pagWrap.innerHTML = '';
+      noResults.style.display = 'block';
+      return;
+    }
+    noResults.style.display = 'none';
+
+    var html = '';
+    page.forEach(function(p) {
+      html += '<article class="news-card" data-category="' + p.category + '">' +
+        '<div class="news-card-image">' +
+          '<span class="news-cat">' + p.category + '</span>' +
+          '<img src="' + p.image + '" alt="' + p.title.replace(/"/g,'&quot;') + '" loading="lazy" />' +
+        '</div>' +
+        '<div class="news-card-body">' +
+          '<span class="news-date">' + fmtDate(p.date) + '</span>' +
+          '<h3>' + p.title + '</h3>' +
+          '<p>' + p.summary + '</p>' +
+        '</div>' +
+      '</article>';
+    });
+    grid.innerHTML = html;
+
+    // Pagination
+    if (total <= 1) { pagWrap.innerHTML = ''; return; }
+    var pHtml = '<button class="news-page-btn news-prev" ' + (currentPage <= 1 ? 'disabled' : '') + '>&larr; Prev</button>';
+    for (var i = 1; i <= total; i++) {
+      pHtml += '<button class="news-page-btn' + (i === currentPage ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
+    }
+    pHtml += '<button class="news-page-btn news-next" ' + (currentPage >= total ? 'disabled' : '') + '>Next &rarr;</button>';
+    pagWrap.innerHTML = pHtml;
+  }
+
+  // Filter clicks
+  document.querySelectorAll('.news-filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelector('.news-filter-btn.active').classList.remove('active');
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      currentPage = 1;
+      renderGrid();
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Pagination clicks (delegated)
+  pagWrap.addEventListener('click', function(e) {
+    var btn = e.target.closest('.news-page-btn');
+    if (!btn || btn.disabled) return;
+    if (btn.classList.contains('news-prev')) { currentPage--; }
+    else if (btn.classList.contains('news-next')) { currentPage++; }
+    else { currentPage = parseInt(btn.getAttribute('data-page'), 10); }
+    renderGrid();
+    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  renderFeatured();
+  renderGrid();
 })();
