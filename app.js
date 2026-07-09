@@ -272,13 +272,14 @@ mainNav.querySelectorAll('a').forEach(link => {
       scrollTextData.forEach(({ section, lines }) => {
         const rect = section.getBoundingClientRect();
         const scrolledPast = (vh * 0.8) - rect.top;
-        const totalTravel = rect.height - (vh * 0.4);
+        const totalTravel = rect.height;
         const progress = Math.min(1, Math.max(0, scrolledPast / totalTravel));
         // Each line gets a smooth 0→1 progress for gradual color fade
-        const spread = 1 / lines.length;
+        const n = lines.length;
+        const spread = 1 / n;
         lines.forEach((line, i) => {
           const lineStart = i * spread;
-          const lineEnd = lineStart + spread * 2; // overlap for smoother transition
+          const lineEnd = (i === n - 1) ? 1 : lineStart + spread * 2; // last line completes at progress=1
           const lineProg = Math.min(1, Math.max(0, (progress - lineStart) / (lineEnd - lineStart)));
           // Interpolate from faint (0.12 alpha) to full white
           const alpha = 0.12 + (lineProg * 0.88);
