@@ -227,9 +227,9 @@ mainNav.querySelectorAll('a').forEach(link => {
     if (lines.length) scrollTextData.push({ section, lines });
   });
 
-  // Zigzag timeline setup — build SVG path through rows
+  // Zigzag timeline setup — build SVG path through dot centers, ending at last dot
   function zzBuildPath() {
-    if (!zigzag || !zzSvg || zzRows.length < 2) return;
+    if (!zigzag || !zzSvg || zzMilestones.length < 2) return;
     var rect = zigzag.getBoundingClientRect();
     var w = rect.width;
     var h = rect.height;
@@ -251,32 +251,17 @@ mainNav.querySelectorAll('a').forEach(link => {
 
     if (pts.length < 2) return;
 
-    // Build smooth path: start from left edge row 1, go through each dot, curving at turns
-    var margin = 30;
-    var d = 'M ' + margin + ' ' + pts[0].y;
+    // Build path: start at first dot, curve through each, STOP at last dot
+    var d = 'M ' + pts[0].x + ' ' + pts[0].y;
 
-    for (var i = 0; i < pts.length; i++) {
+    for (var i = 1; i < pts.length; i++) {
+      var prev = pts[i - 1];
       var p = pts[i];
-      if (i === 0) {
-        // Straight to first dot
-        d += ' L ' + p.x + ' ' + p.y;
-      } else {
-        var prev = pts[i - 1];
-        // Curve down from previous dot to this dot
-        var midY = (prev.y + p.y) / 2;
-        // Control points push toward edges for wide zigzag curves
-        var cx1 = prev.x;
-        var cx2 = p.x;
-        d += ' C ' + cx1 + ' ' + midY + ', ' + cx2 + ' ' + midY + ', ' + p.x + ' ' + p.y;
-      }
+      // Smooth S-curve between dots
+      var midY = (prev.y + p.y) / 2;
+      d += ' C ' + prev.x + ' ' + midY + ', ' + p.x + ' ' + midY + ', ' + p.x + ' ' + p.y;
     }
-
-    // Extend to edge after last dot
-    var last = pts[pts.length - 1];
-    var lastRow = zzRows[zzRows.length - 1];
-    var isRtl = lastRow.classList.contains('zigzag-row--rtl');
-    var endX = isRtl ? margin : w - margin;
-    d += ' L ' + endX + ' ' + last.y;
+    // Path ends at the last dot — no extension
 
     zzSvg.innerHTML = '<defs><linearGradient id="zzGradient" x1="0" y1="0" x2="0" y2="1">'
       + '<stop offset="0%" stop-color="var(--blue-light)"/>'
