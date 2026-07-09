@@ -210,11 +210,15 @@ mainNav.querySelectorAll('a').forEach(link => {
   const missionImgs = missionStack ? missionStack.querySelectorAll('.mission-img') : [];
   const ctaParallaxImg = document.querySelector('.cta--video img.cta-bg-video');
   const ctaSection = ctaParallaxImg ? ctaParallaxImg.closest('.cta--video') : null;
-  const timeline = document.querySelector('.timeline');
-  const timelineSection = document.querySelector('.timeline-section');
-  const tlSpark = document.querySelector('.timeline-spark');
-  const tlItems = timeline ? Array.from(timeline.querySelectorAll('.timeline-item')) : [];
-  const tlDots = tlItems.map(item => item.querySelector('.timeline-dot'));
+  const zigzag = document.querySelector('.zigzag-timeline');
+  const zigzagSection = document.querySelector('.timeline-section');
+  const zzSpark = zigzag ? zigzag.querySelector('.zigzag-spark') : null;
+  const zzMilestones = zigzag ? Array.from(zigzag.querySelectorAll('.zigzag-milestone')) : [];
+  const zzRows = zigzag ? Array.from(zigzag.querySelectorAll('.zigzag-row')) : [];
+  const zzSvg = zigzag ? zigzag.querySelector('.zigzag-path') : null;
+  var zzPathLen = 0;
+  var zzTrackPath = null;
+  var zzFillPath = null;
 
   // Pre-cache scroll-text sections and their lines
   const scrollTextData = [];
@@ -223,15 +227,79 @@ mainNav.querySelectorAll('a').forEach(link => {
     if (lines.length) scrollTextData.push({ section, lines });
   });
 
-  // Timeline spark setup — inject particle elements into each dot
-  if (timeline && timelineSection) {
-    tlDots.forEach(dot => {
-      if (!dot) return;
-      for (let p = 0; p < 6; p++) {
-        const particle = document.createElement('span');
-        particle.className = 'tl-particle';
-        dot.appendChild(particle);
+  // Zigzag timeline setup — build SVG path through rows
+  function zzBuildPath() {
+    if (!zigzag || !zzSvg || zzRows.length < 2) return;
+    var rect = zigzag.getBoundingClientRect();
+    var w = rect.width;
+    var h = rect.height;
+    zzSvg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+    zzSvg.setAttribute('width', w);
+    zzSvg.setAttribute('height', h);
+
+    // Collect center points of each milestone dot
+    var pts = [];
+    var zigRect = zigzag.getBoundingClientRect();
+    zzMilestones.forEach(function(ms) {
+      var dot = ms.querySelector('.zigzag-dot');
+      var dr = dot.getBoundingClientRect();
+      pts.push({
+        x: dr.left + dr.width / 2 - zigRect.left,
+        y: dr.top + dr.height / 2 - zigRect.top
+      });
+    });
+
+    if (pts.length < 2) return;
+
+    // Build smooth path: start from left edge row 1, go through each dot, curving at turns
+    var margin = 30;
+    var d = 'M ' + margin + ' ' + pts[0].y;
+
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      if (i === 0) {
+        // Straight to first dot
+        d += ' L ' + p.x + ' ' + p.y;
+      } else {
+        var prev = pts[i - 1];
+        // Curve down from previous dot to this dot
+        var midY = (prev.y + p.y) / 2;
+        // Control points push toward edges for wide zigzag curves
+        var cx1 = prev.x;
+        var cx2 = p.x;
+        d += ' C ' + cx1 + ' ' + midY + ', ' + cx2 + ' ' + midY + ', ' + p.x + ' ' + p.y;
       }
+    }
+
+    // Extend to edge after last dot
+    var last = pts[pts.length - 1];
+    var lastRow = zzRows[zzRows.length - 1];
+    var isRtl = lastRow.classList.contains('zigzag-row--rtl');
+    var endX = isRtl ? margin : w - margin;
+    d += ' L ' + endX + ' ' + last.y;
+
+    zzSvg.innerHTML = '<defs><linearGradient id="zzGradient" x1="0" y1="0" x2="0" y2="1">'
+      + '<stop offset="0%" stop-color="var(--blue-light)"/>'
+      + '<stop offset="50%" stop-color="var(--blue)"/>'
+      + '<stop offset="100%" stop-color="var(--blue-dark)"/>'
+      + '</linearGradient></defs>'
+      + '<path class="zz-track" d="' + d + '"/>'
+      + '<path class="zz-fill" d="' + d + '"/>';
+
+    zzTrackPath = zzSvg.querySelector('.zz-track');
+    zzFillPath = zzSvg.querySelector('.zz-fill');
+    zzPathLen = zzFillPath.getTotalLength();
+    zzFillPath.style.strokeDasharray = zzPathLen;
+    zzFillPath.style.strokeDashoffset = zzPathLen;
+  }
+
+  if (zigzag) {
+    zzBuildPath();
+    window.addEventListener('resize', function() {
+      // Reset and rebuild on resize
+      zzMilestones.forEach(function(ms) { ms.classList.remove('zz-visible'); });
+      zigzag.classList.remove('zz-active');
+      zzBuildPath();
     });
   }
 
@@ -285,32 +353,36 @@ mainNav.querySelectorAll('a').forEach(link => {
         });
       });
 
-      // Timeline spark + line progress
-      if (timeline && timelineSection && tlSpark) {
-        const sectionRect = timelineSection.getBoundingClientRect();
-        const timelineRect = timeline.getBoundingClientRect();
-        const scrolledInto = vh - sectionRect.top;
-        const totalScroll = sectionRect.height + vh * 0.3;
-        const progress = Math.min(Math.max(scrolledInto / totalScroll, 0), 1);
+      // Zigzag timeline spark + path progress
+      if (zigzag && zigzagSection && zzSpark && zzFillPath && zzPathLen > 0) {
+        var sRect = zigzagSection.getBoundingClientRect();
+        var scrolledInto = vh - sRect.top;
+        var totalScroll = sRect.height + vh * 0.3;
+        var progress = Math.min(Math.max(scrolledInto / totalScroll, 0), 1);
 
-        // Draw the colored line
-        timeline.style.setProperty('--tl-progress', (progress * 100) + '%');
-        if (progress > 0) timeline.classList.add('tl-active');
+        // Draw the colored path
+        var offset = zzPathLen * (1 - progress);
+        zzFillPath.style.strokeDashoffset = offset;
+        if (progress > 0) zigzag.classList.add('zz-active');
 
-        // Position the spark at the tip of the colored line
-        var lineHeight = timeline.offsetHeight;
-        var sparkY = progress * lineHeight;
-        tlSpark.style.transform = 'translateY(' + sparkY + 'px)';
+        // Position spark at the tip of the drawn path
+        if (progress > 0 && progress <= 1) {
+          var pt = zzFillPath.getPointAtLength(progress * zzPathLen);
+          zzSpark.style.transform = 'translate(' + pt.x + 'px, ' + pt.y + 'px)';
+        }
 
-        // Reveal items when the spark passes their dot
-        tlItems.forEach(function(item, i) {
-          if (item.classList.contains('tl-visible')) return;
-          var dot = tlDots[i];
+        // Reveal milestones when spark passes their position on the path
+        zzMilestones.forEach(function(ms) {
+          if (ms.classList.contains('zz-visible')) return;
+          var dot = ms.querySelector('.zigzag-dot');
           if (!dot) return;
-          // Dot position relative to the timeline container
-          var dotTop = dot.getBoundingClientRect().top - timelineRect.top + 8;
-          if (sparkY >= dotTop) {
-            item.classList.add('tl-visible');
+          var dr = dot.getBoundingClientRect();
+          var dotCenterY = dr.top + dr.height / 2;
+          var zigRect = zigzag.getBoundingClientRect();
+          var dotRelY = dotCenterY - zigRect.top;
+          var sparkPt = zzFillPath.getPointAtLength(progress * zzPathLen);
+          if (sparkPt.y >= dotRelY - 10) {
+            ms.classList.add('zz-visible');
           }
         });
       }
