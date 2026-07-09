@@ -1845,6 +1845,20 @@ img.cta-bg-video {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
   overflow: hidden;
+  position: relative;
+}
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('assets/crumble-paper.png') center / cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.timeline-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .zigzag-timeline {
