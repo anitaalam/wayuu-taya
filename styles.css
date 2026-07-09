@@ -1847,8 +1847,10 @@ img.cta-bg-video {
 .timeline {
   position: relative;
   margin-top: 60px;
-  padding-left: 40px;
+  padding-left: 48px;
 }
+
+/* ---- Track line (grey base + colored fill) ---- */
 .timeline-line {
   position: absolute;
   left: 15px;
@@ -1857,7 +1859,6 @@ img.cta-bg-video {
   width: 2px;
   background: var(--grey-light);
 }
-/* The line that draws down as you scroll */
 .timeline-line::after {
   content: '';
   position: absolute;
@@ -1866,29 +1867,67 @@ img.cta-bg-video {
   width: 100%;
   height: 0;
   background: linear-gradient(to bottom, var(--blue-light), var(--blue), var(--blue-dark));
-  transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: height 0.08s linear;
 }
 .timeline.tl-active .timeline-line::after {
   height: var(--tl-progress, 0%);
 }
 
+/* ---- Spark traveler (glowing dot that rides the line) ---- */
+.timeline-spark {
+  position: absolute;
+  left: 8px;        /* center on the 2px line at left:15px → 15 - 7 = 8 */
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  box-shadow:
+    0 0 8px 3px rgba(100, 180, 255, 0.7),
+    0 0 20px 6px rgba(100, 180, 255, 0.35),
+    0 0 40px 12px rgba(100, 180, 255, 0.15);
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: none;
+}
+.timeline.tl-active .timeline-spark {
+  opacity: 1;
+}
+
+/* Trailing glow behind the spark */
+.timeline-spark::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 2px;
+  height: 40px;
+  transform: translateX(-50%);
+  background: linear-gradient(to top, rgba(100, 180, 255, 0.6), transparent);
+  border-radius: 1px;
+}
+
+/* ---- Timeline items ---- */
 .timeline-item {
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(30px) scale(0.97);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .timeline-item.tl-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 .timeline-item:last-child { margin-bottom: 0; }
 
+/* ---- Dot (starts hidden, bursts when spark arrives) ---- */
 .timeline-dot {
   position: absolute;
-  left: -33px;
+  left: -41px;
   top: 8px;
   width: 16px;
   height: 16px;
@@ -1896,14 +1935,25 @@ img.cta-bg-video {
   background: var(--blue);
   border: 3px solid var(--white);
   box-shadow: 0 0 0 3px var(--blue-light);
-  z-index: 2;
+  z-index: 3;
   transform: scale(0);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .timeline-item.tl-visible .timeline-dot {
   transform: scale(1);
 }
-/* Pulse ring on the dot when it appears */
+
+/* Burst ring 1 — expands outward */
+.timeline-item.tl-visible .timeline-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--blue-light);
+  opacity: 0;
+  animation: tl-burst-ring 0.8s 0.1s ease-out forwards;
+}
+/* Burst ring 2 — larger, delayed */
 .timeline-item.tl-visible .timeline-dot::after {
   content: '';
   position: absolute;
@@ -1911,22 +1961,50 @@ img.cta-bg-video {
   border-radius: 50%;
   border: 2px solid var(--blue);
   opacity: 0;
-  animation: tl-pulse 1s 0.4s ease-out forwards;
+  animation: tl-burst-ring 1s 0.3s ease-out forwards;
 }
-@keyframes tl-pulse {
-  0%   { transform: scale(0.6); opacity: 0.7; }
-  100% { transform: scale(1.6); opacity: 0; }
+@keyframes tl-burst-ring {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  60%  { opacity: 0.4; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
+/* Particle burst — 6 tiny dots that fly outward */
+.timeline-item.tl-visible .timeline-dot .tl-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: tl-particle-fly 0.7s ease-out forwards;
+}
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(1) { --px: -18px; --py: -14px; animation-delay: 0.05s; }
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(2) { --px: 18px;  --py: -10px; animation-delay: 0.1s; }
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(3) { --px: -14px; --py: 16px;  animation-delay: 0.08s; }
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(4) { --px: 16px;  --py: 14px;  animation-delay: 0.12s; }
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(5) { --px: -20px; --py: 2px;   animation-delay: 0.06s; }
+.timeline-item.tl-visible .timeline-dot .tl-particle:nth-child(6) { --px: 20px;  --py: -4px;  animation-delay: 0.15s; }
+
+@keyframes tl-particle-fly {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--px), var(--py)) scale(0); opacity: 0; }
+}
+
+/* ---- Card (slides in after burst) ---- */
 .timeline-card {
-  background: #f8f9fa;
+  background: var(--white);
   border-radius: var(--radius);
   padding: 28px 32px;
   border: 1px solid var(--grey-light);
   opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.6s 0.15s ease, transform 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.3s ease;
+  transform: translateX(-24px);
+  transition: opacity 0.5s 0.2s ease,
+              transform 0.5s 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
 }
 .timeline-item.tl-visible .timeline-card {
   opacity: 1;
@@ -1935,6 +2013,7 @@ img.cta-bg-video {
 .timeline-card:hover {
   transform: translateX(6px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border-color: var(--blue-light);
 }
 .timeline-year {
   font-family: var(--font-display);
@@ -2534,7 +2613,9 @@ img.cta-bg-video {
   .reveal-card-full { font-size: 14px; }
   .language-grid { grid-template-columns: 1fr; }
   .founder-grid { grid-template-columns: 1fr; }
-  .timeline { padding-left: 32px; }
+  .timeline { padding-left: 36px; }
+  .timeline-dot { left: -29px; }
+  .timeline-spark { left: 5px; }
   .scroll-text-line { font-size: clamp(20px, 4vw, 28px); }
 }
 @media (max-width: 480px) {
@@ -3099,11 +3180,14 @@ img.cta-bg-video {
   .timeline-dot,
   .timeline-card,
   .timeline-line::after,
+  .timeline-spark,
   .reveal { transition: none !important; animation: none !important; }
   .timeline-item { opacity: 1; transform: none; }
   .timeline-dot { transform: scale(1); }
   .timeline-card { opacity: 1; transform: none; }
   .timeline-line::after { height: 100% !important; }
+  .timeline-spark { display: none; }
+  .tl-particle { display: none; }
   .reveal-card img { animation: none !important; }
 }
 

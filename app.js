@@ -212,6 +212,9 @@ mainNav.querySelectorAll('a').forEach(link => {
   const ctaSection = ctaParallaxImg ? ctaParallaxImg.closest('.cta--video') : null;
   const timeline = document.querySelector('.timeline');
   const timelineSection = document.querySelector('.timeline-section');
+  const tlSpark = document.querySelector('.timeline-spark');
+  const tlItems = timeline ? Array.from(timeline.querySelectorAll('.timeline-item')) : [];
+  const tlDots = tlItems.map(item => item.querySelector('.timeline-dot'));
 
   // Pre-cache scroll-text sections and their lines
   const scrollTextData = [];
@@ -220,22 +223,15 @@ mainNav.querySelectorAll('a').forEach(link => {
     if (lines.length) scrollTextData.push({ section, lines });
   });
 
-  // Timeline items (one-time setup)
+  // Timeline spark setup — inject particle elements into each dot
   if (timeline && timelineSection) {
-    const items = timeline.querySelectorAll('.timeline-item');
-    const tlObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('tl-visible');
-          tlObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
-    items.forEach((item, i) => {
-      item.style.transitionDelay = `${i * 0.08}s`;
-      item.querySelector('.timeline-dot').style.transitionDelay = `${i * 0.08 + 0.1}s`;
-      item.querySelector('.timeline-card').style.transitionDelay = `${i * 0.08 + 0.2}s`;
-      tlObserver.observe(item);
+    tlDots.forEach(dot => {
+      if (!dot) return;
+      for (let p = 0; p < 6; p++) {
+        const particle = document.createElement('span');
+        particle.className = 'tl-particle';
+        dot.appendChild(particle);
+      }
     });
   }
 
@@ -289,14 +285,34 @@ mainNav.querySelectorAll('a').forEach(link => {
         });
       });
 
-      // Timeline line progress
-      if (timeline && timelineSection) {
-        const rect = timelineSection.getBoundingClientRect();
-        const scrolledInto = vh - rect.top;
-        const totalScroll = rect.height + vh * 0.3;
-        const progress = Math.min(Math.max(scrolledInto / totalScroll, 0), 1) * 100;
-        timeline.style.setProperty('--tl-progress', progress + '%');
+      // Timeline spark + line progress
+      if (timeline && timelineSection && tlSpark) {
+        const sectionRect = timelineSection.getBoundingClientRect();
+        const timelineRect = timeline.getBoundingClientRect();
+        const scrolledInto = vh - sectionRect.top;
+        const totalScroll = sectionRect.height + vh * 0.3;
+        const progress = Math.min(Math.max(scrolledInto / totalScroll, 0), 1);
+
+        // Draw the colored line
+        timeline.style.setProperty('--tl-progress', (progress * 100) + '%');
         if (progress > 0) timeline.classList.add('tl-active');
+
+        // Position the spark at the tip of the colored line
+        var lineHeight = timeline.offsetHeight;
+        var sparkY = progress * lineHeight;
+        tlSpark.style.transform = 'translateY(' + sparkY + 'px)';
+
+        // Reveal items when the spark passes their dot
+        tlItems.forEach(function(item, i) {
+          if (item.classList.contains('tl-visible')) return;
+          var dot = tlDots[i];
+          if (!dot) return;
+          // Dot position relative to the timeline container
+          var dotTop = dot.getBoundingClientRect().top - timelineRect.top + 8;
+          if (sparkY >= dotTop) {
+            item.classList.add('tl-visible');
+          }
+        });
       }
 
       ticking = false;
