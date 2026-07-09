@@ -1852,7 +1852,7 @@ img.cta-bg-video {
   position: absolute;
   inset: 0;
   background: url('assets/crumble-paper.png') center / cover no-repeat;
-  opacity: 0.08;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
 }
