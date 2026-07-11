@@ -574,7 +574,7 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .programs-slider .program-tile {
   flex: 0 0 calc((70vw - 60px) / 3);
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 2.6;
 }
 .programs-slider-btn {
   flex-shrink: 0;
