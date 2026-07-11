@@ -738,6 +738,26 @@ em { font-style: italic; font-family: var(--font-display); }
   z-index: 2;
   margin-bottom: -1px;
 }
+.arc-divider--crumble {
+  background: var(--off-white);
+  overflow: hidden;
+  position: relative;
+}
+.arc-divider--crumble::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+.arc-divider--crumble svg {
+  position: relative;
+  z-index: 1;
+}
 .cta--with-arc {
   margin-top: calc(-1 * clamp(60px, 8vw, 120px));
   padding-top: calc(clamp(60px, 8vw, 120px) + clamp(80px, 10vw, 140px));
@@ -769,6 +789,22 @@ em { font-style: italic; font-family: var(--font-display); }
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  position: relative;
+}
+.map-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+.map-section .container {
+  position: relative;
+  z-index: 1;
 }
 .map-wrap {
   margin-top: 48px;
