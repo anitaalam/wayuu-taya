@@ -2080,6 +2080,12 @@ img.cta-bg-video {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+.culture-swirl--top-center {
+  top: -60px;
+  left: 50%;
+  margin-left: -210px;
+  z-index: 0;
+}
 .culture-swirl--top-right {
   top: -40px;
   right: -60px;
