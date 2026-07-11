@@ -441,6 +441,9 @@ em { font-style: italic; font-family: var(--font-display); }
   align-items: center;
 }
 /* Full-width mission layout: text left, image fills right half */
+.mission:has(.mission-fullwidth) {
+  padding: 0;
+}
 .mission-fullwidth {
   display: grid;
   grid-template-columns: 1fr 1fr;
