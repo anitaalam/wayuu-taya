@@ -328,14 +328,17 @@
 }
 
 .h2-stat-card {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--h2-radius);
   padding: 32px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 .h2-stat-card--accent {
-  background: var(--h2-teal);
-  border-color: transparent;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .h2-stat-number {
   font-family: var(--font-heading);
