@@ -1,0 +1,587 @@
+/* ==========================================
+   HOME2 — VIA-inspired layout
+   ========================================== */
+
+/* ---- Color tokens ---- */
+:root {
+  --h2-navy: #1a2332;
+  --h2-navy-light: #243044;
+  --h2-teal: #3a9e8f;
+  --h2-gold: #d4a853;
+  --h2-cream: #f5f0e8;
+  --h2-white: #ffffff;
+  --h2-text: #333;
+  --h2-text-soft: #666;
+  --h2-radius: 16px;
+}
+
+/* ==========================================
+   HERO
+   ========================================== */
+.h2-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--h2-navy);
+}
+.h2-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.h2-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.h2-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 35, 50, 0.75) 0%,
+    rgba(26, 35, 50, 0.5) 50%,
+    rgba(26, 35, 50, 0.8) 100%
+  );
+}
+.h2-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 160px 20px 100px;
+}
+.h2-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  color: var(--h2-white);
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+.h2-hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.h2-hero-content .btn-primary {
+  font-size: 1rem;
+  padding: 14px 36px;
+}
+
+/* ==========================================
+   SHARED TYPOGRAPHY
+   ========================================== */
+.h2-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--h2-teal);
+  background: rgba(58, 158, 143, 0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.h2-eyebrow--center {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.h2-eyebrow--light {
+  color: var(--h2-gold);
+  background: rgba(212, 168, 83, 0.15);
+}
+.h2-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--h2-navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.h2-section-title--center {
+  text-align: center;
+}
+.h2-section-title--light {
+  color: var(--h2-white);
+}
+.h2-section-title em {
+  font-style: normal;
+  color: var(--h2-teal);
+}
+
+/* ---- Buttons ---- */
+.h2-btn {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.h2-btn-outline {
+  border: 2px solid var(--h2-navy);
+  color: var(--h2-navy);
+  background: transparent;
+}
+.h2-btn-outline:hover {
+  background: var(--h2-navy);
+  color: var(--h2-white);
+}
+.h2-btn-solid {
+  background: var(--h2-teal);
+  color: var(--h2-white);
+  border: 2px solid var(--h2-teal);
+}
+.h2-btn-solid:hover {
+  background: #2d8a7c;
+  border-color: #2d8a7c;
+}
+
+/* ==========================================
+   ABOUT / MISSION SECTION
+   ========================================== */
+.h2-about {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-cream);
+}
+.h2-about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.h2-about-text p {
+  font-size: 1rem;
+  color: var(--h2-text-soft);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.h2-about-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.h2-about-image {
+  border-radius: var(--h2-radius);
+  overflow: hidden;
+}
+.h2-about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--h2-radius);
+  transition: transform 0.6s ease;
+}
+.h2-about-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   PROGRAMS SECTION
+   ========================================== */
+.h2-programs {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-white);
+}
+.h2-programs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.h2-program-card {
+  display: flex;
+  background: var(--h2-cream);
+  border-radius: var(--h2-radius);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.h2-program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+.h2-program-img {
+  width: 45%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.h2-program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s ease;
+}
+.h2-program-card:hover .h2-program-img img {
+  transform: scale(1.05);
+}
+.h2-program-info {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.h2-program-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--h2-navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.h2-program-info p {
+  font-size: 0.88rem;
+  color: var(--h2-text-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================
+   IMPACT / STATS SECTION
+   ========================================== */
+.h2-impact {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-navy);
+}
+.h2-impact-sub {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+.h2-impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+/* Top row: big stat + image */
+.h2-stat-card--big {
+  grid-column: 1;
+  grid-row: 1;
+}
+.h2-stat-image {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: var(--h2-radius);
+  overflow: hidden;
+  min-height: 280px;
+}
+.h2-stat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+/* Bottom row: 3 cards */
+.h2-impact-grid > .h2-stat-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.h2-impact-grid > .h2-stat-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+/* Restructure to 3 cols on bottom */
+@media (min-width: 769px) {
+  .h2-impact-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .h2-stat-card--big {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .h2-stat-image {
+    grid-column: 2 / 4;
+    grid-row: 1;
+  }
+  .h2-impact-grid > .h2-stat-card:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .h2-impact-grid > .h2-stat-card:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .h2-impact-grid > .h2-stat-card:nth-child(5) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
+.h2-stat-card {
+  background: var(--h2-navy-light);
+  border-radius: var(--h2-radius);
+  padding: 32px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.h2-stat-card--accent {
+  background: var(--h2-teal);
+  border-color: transparent;
+}
+.h2-stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--h2-white);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.h2-stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+.h2-stat-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================
+   WAYS TO HELP
+   ========================================== */
+.h2-help {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-cream);
+}
+.h2-help-sub {
+  text-align: center;
+  color: var(--h2-text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+.h2-help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.h2-help-card {
+  background: var(--h2-white);
+  border-radius: var(--h2-radius);
+  padding: 36px 28px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.h2-help-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+.h2-help-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  background: rgba(58, 158, 143, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.h2-help-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--h2-teal);
+}
+.h2-help-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--h2-navy);
+  margin-bottom: 12px;
+}
+.h2-help-card p {
+  font-size: 0.88rem;
+  color: var(--h2-text-soft);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.h2-help-card .h2-btn-solid {
+  font-size: 0.8rem;
+  padding: 10px 24px;
+}
+
+/* ==========================================
+   VIDEO SECTION
+   ========================================== */
+.h2-video {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-white);
+}
+.h2-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--h2-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+.h2-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================
+   EARTHQUAKE EMERGENCY
+   ========================================== */
+.h2-emergency {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: linear-gradient(135deg, #8b2020, #b83030);
+  color: var(--h2-white);
+}
+.h2-emergency-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.h2-emergency h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--h2-white);
+  margin-bottom: 20px;
+}
+.h2-emergency p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.h2-emergency .h2-btn-solid {
+  background: var(--h2-white);
+  color: #b83030;
+  border-color: var(--h2-white);
+  font-weight: 700;
+}
+.h2-emergency .h2-btn-solid:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================
+   CTA
+   ========================================== */
+.h2-cta {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--h2-navy);
+  text-align: center;
+}
+.h2-cta-inner h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--h2-white);
+  margin-bottom: 16px;
+}
+.h2-cta-inner h2 em {
+  font-style: normal;
+  color: var(--h2-teal);
+}
+.h2-cta-inner p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.h2-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+  .h2-programs-grid {
+    gap: 24px;
+  }
+  .h2-program-img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .h2-hero {
+    min-height: 75vh;
+  }
+  .h2-hero-content {
+    padding: 140px 20px 80px;
+  }
+  .h2-about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .h2-about-image {
+    order: -1;
+  }
+  .h2-programs-grid {
+    grid-template-columns: 1fr;
+  }
+  .h2-program-card {
+    flex-direction: column;
+  }
+  .h2-program-img {
+    width: 100%;
+    height: 200px;
+  }
+  .h2-impact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .h2-stat-card--big,
+  .h2-stat-image,
+  .h2-impact-grid > .h2-stat-card:nth-child(3),
+  .h2-impact-grid > .h2-stat-card:nth-child(4),
+  .h2-impact-grid > .h2-stat-card:nth-child(5) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .h2-stat-image {
+    min-height: 220px;
+  }
+  .h2-help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .h2-hero-title {
+    font-size: 2rem;
+  }
+  .h2-about-actions {
+    flex-direction: column;
+  }
+  .h2-about-actions .h2-btn {
+    text-align: center;
+  }
+}
