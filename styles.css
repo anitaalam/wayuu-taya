@@ -502,7 +502,7 @@ em { font-style: italic; font-family: var(--font-display); }
   opacity: 0;
   transition: opacity 1.2s ease;
   will-change: transform;
-  animation: ken-burns 10s ease-in-out infinite;
+  animation: kenBurns 10s ease-in-out infinite;
 }
 .mission-img.active { opacity: 1; }
 
