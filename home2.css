@@ -303,10 +303,12 @@
 @media (min-width: 769px) {
   .h2-impact-grid {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
   }
   .h2-stat-card--big {
     grid-column: 1;
     grid-row: 1;
+    align-self: start;
   }
   .h2-stat-image {
     grid-column: 2 / 4;
