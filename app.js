@@ -299,13 +299,7 @@ mainNav.querySelectorAll('a').forEach(link => {
       // Header scroll state
       if (header) header.classList.toggle('scrolled', window.scrollY > 60);
 
-      // Mission image parallax
-      if (missionStack && missionImgs.length) {
-        const rect = missionStack.getBoundingClientRect();
-        const progress = Math.max(0, Math.min(1, 1 - rect.bottom / (vh + rect.height)));
-        const yShift = 16 * (0.5 - progress);
-        missionImgs.forEach(img => { img.style.transform = `translateY(${yShift}%)`; });
-      }
+      // Mission image rotation (no parallax shift)
 
       // CTA background image parallax
       if (ctaParallaxImg && ctaSection) {
