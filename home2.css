@@ -260,12 +260,11 @@
   background: var(--blue, #3199BD);
 }
 .h2-impact-sub {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 680px;
-  margin: 0 auto 48px;
+  margin: 0 0 48px;
 }
 .h2-impact-grid {
   display: grid;
@@ -328,17 +327,17 @@
 }
 
 .h2-stat-card {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: var(--h2-radius);
   padding: 32px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 .h2-stat-card--accent {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 .h2-stat-number {
   font-family: var(--font-heading);
@@ -359,7 +358,7 @@
 }
 .h2-stat-desc {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.65;
   margin: 0;
 }
