@@ -573,7 +573,7 @@ em { font-style: italic; font-family: var(--font-display); }
   will-change: transform;
 }
 .programs-slider .program-tile {
-  flex: 0 0 calc((70vw - 60px) / 3);
+  flex: 0 0 calc((90vw - 60px) / 3);
   aspect-ratio: 3 / 2.6;
 }
 .programs-slider-btn {
@@ -1514,7 +1514,7 @@ img.cta-bg-video {
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
-  .programs-slider .program-tile { flex: 0 0 calc((70vw - 30px) / 2); }
+  .programs-slider .program-tile { flex: 0 0 calc((90vw - 30px) / 2); }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
