@@ -941,3 +941,23 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
 
   statEls.forEach(function(el) { observer.observe(el); });
 })();
+
+/* ========== IMPACT STAT SLIDESHOW ========== */
+(function() {
+  var slideshows = document.querySelectorAll('.h2-stat-slideshow');
+  if (!slideshows.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  slideshows.forEach(function(container) {
+    var slides = container.querySelectorAll('.h2-slide');
+    if (slides.length < 2) return;
+    var current = 0;
+    var interval = parseInt(container.getAttribute('data-interval')) || 3000;
+
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, interval);
+  });
+})();
