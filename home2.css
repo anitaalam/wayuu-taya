@@ -282,7 +282,6 @@
   grid-row: 1;
   border-radius: var(--h2-radius);
   overflow: hidden;
-  min-height: 280px;
 }
 .h2-stat-image img {
   width: 100%;
@@ -313,6 +312,7 @@
   .h2-stat-image {
     grid-column: 2 / 4;
     grid-row: 1;
+    align-self: start;
   }
   .h2-impact-grid > .h2-stat-card:nth-child(3) {
     grid-column: 1;
