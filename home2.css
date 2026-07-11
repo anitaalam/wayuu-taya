@@ -257,7 +257,7 @@
    ========================================== */
 .h2-impact {
   padding: clamp(80px, 10vw, 120px) 0;
-  background: var(--h2-navy);
+  background: var(--blue, #3199BD);
 }
 .h2-impact-sub {
   text-align: center;
@@ -328,10 +328,10 @@
 }
 
 .h2-stat-card {
-  background: var(--h2-navy-light);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: var(--h2-radius);
   padding: 32px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .h2-stat-card--accent {
   background: var(--h2-teal);
