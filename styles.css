@@ -2060,10 +2060,39 @@ img.cta-bg-video {
 
 /* ========== CULTURE CARDS (The Wayuu) ========== */
 .culture-section {
+  position: relative;
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  overflow: hidden;
+}
+
+/* Spinning swirl decorations */
+.culture-swirl {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: url('assets/swirl.png') no-repeat center / contain;
+  opacity: 0.07;
+  pointer-events: none;
+  animation: culture-swirl-spin 60s linear infinite;
+}
+@keyframes culture-swirl-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.culture-swirl--top-right {
+  top: -40px;
+  right: -60px;
+  z-index: 1;
+}
+.culture-swirl--bottom-left {
+  bottom: 60px;
+  left: -80px;
+  z-index: 0;
 }
 .culture-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
