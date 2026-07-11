@@ -267,19 +267,11 @@
   margin: 0 0 48px;
 }
 .h2-impact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
-/* Top row: big stat + image */
-.h2-stat-card--big {
-  grid-column: 1;
-  grid-row: 1;
-}
 .h2-stat-image {
-  grid-column: 2;
-  grid-row: 1;
   border-radius: var(--h2-radius);
   overflow: hidden;
 }
@@ -289,42 +281,25 @@
   object-fit: cover;
   object-position: center 20%;
 }
-/* Bottom row: 3 cards */
-.h2-impact-grid > .h2-stat-card:nth-child(3) {
-  grid-column: 1;
-  grid-row: 2;
-}
-.h2-impact-grid > .h2-stat-card:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
-}
-/* Restructure to 3 cols on bottom */
+/* Restructure for desktop */
 @media (min-width: 769px) {
   .h2-impact-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
   }
+  /* Top row: card + image side by side, image matches card height */
   .h2-stat-card--big {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
+    flex: 0 0 calc(33.333% - 16px);
   }
   .h2-stat-image {
-    grid-column: 2 / 4;
-    grid-row: 1;
-    align-self: start;
+    flex: 1 1 0;
   }
-  .h2-impact-grid > .h2-stat-card:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .h2-impact-grid > .h2-stat-card:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
+  /* Bottom row: 3 equal cards */
+  .h2-impact-grid > .h2-stat-card:nth-child(3),
+  .h2-impact-grid > .h2-stat-card:nth-child(4),
   .h2-impact-grid > .h2-stat-card:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
+    flex: 1 1 calc(33.333% - 16px);
   }
 }
 
@@ -560,15 +535,14 @@
     height: 200px;
   }
   .h2-impact-grid {
-    grid-template-columns: 1fr !important;
+    flex-direction: column;
   }
   .h2-stat-card--big,
   .h2-stat-image,
   .h2-impact-grid > .h2-stat-card:nth-child(3),
   .h2-impact-grid > .h2-stat-card:nth-child(4),
   .h2-impact-grid > .h2-stat-card:nth-child(5) {
-    grid-column: 1 !important;
-    grid-row: auto !important;
+    flex: 1 1 100%;
   }
   .h2-stat-image {
     min-height: 220px;
