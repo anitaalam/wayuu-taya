@@ -568,12 +568,12 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .programs-slider-track {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
 .programs-slider .program-tile {
-  flex: 0 0 calc((100% - 60px) / 4);
+  flex: 0 0 calc((100% - 30px) / 2);
 }
 .programs-slider-btn {
   flex-shrink: 0;
@@ -609,7 +609,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .program-images {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 5;
   overflow: hidden;
 }
 .program-img {
@@ -623,13 +623,13 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .program-img.active { opacity: 1; }
 .program-info {
-  padding: 24px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .program-num {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -637,16 +637,16 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .program-info h3 {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--white);
   line-height: 1.2;
 }
 .program-link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--blue-light);
-  margin-top: 4px;
+  margin-top: 6px;
   transition: color 0.3s;
 }
 .program-tile:hover .program-link { color: var(--white); }
@@ -1513,7 +1513,7 @@ img.cta-bg-video {
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
-  .programs-slider .program-tile { flex: 0 0 calc((100% - 40px) / 3); }
+  .programs-slider .program-tile { flex: 0 0 calc((100% - 30px) / 2); }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1582,7 +1582,7 @@ img.cta-bg-video {
     margin-left: 0;
   }
   .programs-grid { grid-template-columns: 1fr; }
-  .programs-slider .program-tile { flex: 0 0 calc((100% - 20px) / 2); }
+  .programs-slider .program-tile { flex: 0 0 85%; }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-links { grid-template-columns: repeat(2, 1fr); }
