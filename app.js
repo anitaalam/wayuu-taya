@@ -661,7 +661,8 @@ mainNav.querySelectorAll('a').forEach(link => {
   function visibleCount() {
     var w = window.innerWidth;
     if (w <= 768) return 1;
-    return 1;
+    if (w <= 1024) return 2;
+    return 3;
   }
 
   function maxIdx() {
