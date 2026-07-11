@@ -739,24 +739,9 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-bottom: -1px;
 }
 .arc-divider--crumble {
-  background: var(--off-white);
+  background: transparent;
   overflow: hidden;
   position: relative;
-}
-.arc-divider--crumble::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/crumble-paper.png');
-  background-size: cover;
-  background-position: center bottom;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-}
-.arc-divider--crumble svg {
-  position: relative;
-  z-index: 1;
 }
 .cta--with-arc {
   margin-top: calc(-1 * clamp(60px, 8vw, 120px));
