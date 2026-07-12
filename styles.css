@@ -782,9 +782,9 @@ em { font-style: italic; font-family: var(--font-display); }
 .ways-help-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 420px;
 }
 .ways-help-cell {
-  min-height: 420px;
   position: relative;
   overflow: hidden;
 }
@@ -902,6 +902,7 @@ em { font-style: italic; font-family: var(--font-display); }
 @media (max-width: 768px) {
   .ways-help-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
   }
   .ways-help-cell {
     min-height: 300px;
