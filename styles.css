@@ -775,6 +775,59 @@ em { font-style: italic; font-family: var(--font-display); }
   .parallax-img { background-attachment: scroll; }
 }
 
+/* ========== EARTHQUAKE EMERGENCY ========== */
+.h2-emergency {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: linear-gradient(135deg, #8b2020, #b83030);
+  color: #fff;
+}
+.h2-emergency-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.h2-emergency h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.h2-emergency p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.h2-btn {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.h2-btn-solid {
+  background: #3a9e8f;
+  color: #fff;
+  border: 2px solid #3a9e8f;
+}
+.h2-btn-solid:hover {
+  background: #2d8a7c;
+  border-color: #2d8a7c;
+}
+.h2-emergency .h2-btn-solid {
+  background: #fff;
+  color: #b83030;
+  border-color: #fff;
+  font-weight: 700;
+}
+.h2-emergency .h2-btn-solid:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 /* ========== MAKING A DIFFERENCE (IMPACT STATS) ========== */
 .h2-impact {
   position: relative;
