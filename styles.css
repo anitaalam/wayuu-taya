@@ -748,11 +748,6 @@ em { font-style: italic; font-family: var(--font-display); }
   overflow: hidden;
   position: relative;
 }
-.arc-divider--map-curve {
-  margin-top: -120px;
-  position: relative;
-  z-index: 2;
-}
 .cta--with-arc {
   margin-top: calc(-1 * clamp(60px, 8vw, 120px));
   padding-top: calc(clamp(60px, 8vw, 120px) + clamp(80px, 10vw, 140px));
@@ -1095,10 +1090,9 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
-  padding: clamp(80px, 10vw, 140px) 0 0;
+  padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
   position: relative;
-  padding-bottom: 120px;
 }
 .map-section::before {
   content: '';
@@ -1117,17 +1111,14 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .map-wrap {
   margin-top: 48px;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--grey-light);
 }
 #map {
   width: 100%;
-  height: 700px;
+  height: 520px;
 }
 
 /* ========== REPORTS & DOCUMENTS ========== */
