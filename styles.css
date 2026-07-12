@@ -1316,6 +1316,16 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--blue-deep);
   text-align: center;
+  position: relative;
+}
+.cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
 }
 .cta .section-sub {
   margin-left: auto;
@@ -1357,7 +1367,7 @@ img.cta-bg-video {
   position: relative;
   z-index: 1;
 }
-.cta-inner { max-width: 700px; margin: 0 auto; }
+.cta-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
 .cta h2 {
   font-family: var(--font-display);
   font-size: clamp(32px, 4.5vw, 52px);
