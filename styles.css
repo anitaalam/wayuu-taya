@@ -1113,15 +1113,18 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-top: 48px;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  margin-bottom: -120px;
   width: 100vw;
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
   border: none;
+  position: relative;
+  z-index: 0;
 }
 #map {
   width: 100%;
-  height: 600px;
+  height: 700px;
 }
 
 /* ========== REPORTS & DOCUMENTS ========== */
