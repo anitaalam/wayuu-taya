@@ -267,14 +267,15 @@
   width: 400px;
   height: 400px;
   background: url(assets/swirl.png) no-repeat center / contain;
-  opacity: 0.12;
+  filter: brightness(0) invert(1);
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
   animation: spin-clockwise 60s linear infinite;
 }
 .impact-swirl--top-right {
-  top: -40px;
-  right: -40px;
+  top: 15%;
+  right: 15%;
 }
 .impact-swirl--bottom-left {
   bottom: -20px;
