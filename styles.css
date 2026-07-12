@@ -971,6 +971,11 @@ em { font-style: italic; font-family: var(--font-display); }
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: ways-help-ken-burns 10s ease-in-out infinite alternate;
+}
+@keyframes ways-help-ken-burns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 /* Text cells */
 .ways-help-cell--text {
@@ -1067,10 +1072,7 @@ em { font-style: italic; font-family: var(--font-display); }
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s ease;
-}
-.ways-help-split-img img:hover {
-  transform: scale(1.05);
+  animation: ways-help-ken-burns 10s ease-in-out infinite alternate;
 }
 /* Mobile responsive */
 @media (max-width: 768px) {
