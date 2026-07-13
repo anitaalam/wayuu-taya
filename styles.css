@@ -2320,7 +2320,7 @@ img.cta-bg-video {
 .story-img-main:hover img { transform: scale(1.03); }
 .story-img-accent {
   position: absolute;
-  bottom: -54px;
+  bottom: -84px;
   right: -24px;
   width: 45%;
   border-radius: var(--radius);
