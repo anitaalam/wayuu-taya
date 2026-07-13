@@ -2337,16 +2337,16 @@ img.cta-bg-video {
   bottom: auto;
   right: auto;
   top: -30px;
-  left: -60%;
-  width: 38%;
+  left: -30%;
+  width: 46%;
 }
 .story-img-accent--mid-left {
   bottom: auto;
   right: auto;
   top: 50%;
-  left: -60%;
+  left: -30%;
   transform: translateY(-50%);
-  width: 32%;
+  width: 38%;
 }
 .story-content p {
   font-size: 16px;
