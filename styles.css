@@ -2626,8 +2626,10 @@ img.cta-bg-video {
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 36px;
   margin-top: 48px;
+  max-width: 115%;
+  margin-left: -7.5%;
 }
 
 /* Ken Burns zoom keyframes */
