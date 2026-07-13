@@ -2729,13 +2729,11 @@ img.cta-bg-video {
 .language-section::after {
   content: '';
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 360px;
-  height: 430px;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 3px, transparent 3px);
-  background-size: 24px 24px;
+  inset: 0;
+  background-image: url(../assets/crumble-paper.png);
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
