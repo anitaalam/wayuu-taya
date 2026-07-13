@@ -1035,6 +1035,20 @@ em { font-style: italic; font-family: var(--font-display); }
   display: flex;
   align-items: center;
   padding: clamp(40px, 5vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+.ways-help-cell--text::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+  pointer-events: none;
+  z-index: 0;
 }
 .ways-help-cell--dark {
   background: #1a1a2e;
@@ -1044,6 +1058,8 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .ways-help-cell-inner {
   max-width: 520px;
+  position: relative;
+  z-index: 1;
 }
 /* Eyebrow */
 .ways-help-eyebrow {
