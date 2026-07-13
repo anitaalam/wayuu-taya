@@ -2825,6 +2825,24 @@ img.cta-bg-video {
 .challenges-section {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+.challenges-section .container {
+  position: relative;
+  z-index: 10;
+}
+.challenges-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 430px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
 }
 .challenges-grid {
   display: grid;
@@ -2834,6 +2852,8 @@ img.cta-bg-video {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0 20px;
+  position: relative;
+  z-index: 10;
 }
 
 /* --- Challenge image cards --- */
