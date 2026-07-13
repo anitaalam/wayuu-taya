@@ -2836,7 +2836,7 @@ img.cta-bg-video {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20%;
   width: 500px;
   height: 430px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
@@ -2848,7 +2848,7 @@ img.cta-bg-video {
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 20%;
   width: 500px;
   height: 430px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
