@@ -2343,7 +2343,7 @@ img.cta-bg-video {
 .story-img-accent--mid-left {
   bottom: auto;
   right: auto;
-  top: 50%;
+  top: 85%;
   left: -30%;
   transform: translateY(-50%);
   width: 38%;
