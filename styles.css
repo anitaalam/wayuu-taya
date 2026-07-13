@@ -2617,7 +2617,7 @@ img.cta-bg-video {
   z-index: 1;
 }
 .culture-swirl--bottom-left {
-  bottom: 60px;
+  bottom: 0;
   left: -80px;
   z-index: 0;
 }
