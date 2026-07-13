@@ -2333,6 +2333,21 @@ img.cta-bg-video {
   height: auto;
   display: block;
 }
+.story-img-accent--top-left {
+  bottom: auto;
+  right: auto;
+  top: -30px;
+  left: -30px;
+  width: 38%;
+}
+.story-img-accent--mid-left {
+  bottom: auto;
+  right: auto;
+  top: 50%;
+  left: -36px;
+  transform: translateY(-50%);
+  width: 32%;
+}
 .story-content p {
   font-size: 16px;
   color: var(--text-soft);
