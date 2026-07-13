@@ -2733,7 +2733,7 @@ img.cta-bg-video {
   background-image: url(../assets/crumble-paper.png);
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.08;
+  opacity: 0.10;
   pointer-events: none;
   z-index: 0;
 }
