@@ -3835,17 +3835,17 @@ img.cta-bg-video {
   background: var(--off-white);
 }
 .program-other--dark {
-  background: #0a0a0a;
+  background: var(--off-white);
 }
 .program-other--dark .section-eyebrow {
   color: var(--blue-light);
 }
 .program-other--dark .section-title,
 .program-other--dark .section-title em {
-  color: #F5F0E8;
+  color: var(--dark);
 }
 .program-other--dark .program-other-btn {
-  color: #fff;
+  color: var(--dark);
 }
 .program-other--dark .program-other-slider {
   margin-left: calc(-50vw + 50%);
@@ -3856,6 +3856,16 @@ img.cta-bg-video {
 .program-other--dark .program-tile {
   flex: 0 0 calc((100vw - 80px) / 3);
   aspect-ratio: 1.1 / 1;
+  background: rgba(0,0,0,0.03);
+}
+.program-other--dark .program-info h3 {
+  color: var(--dark);
+}
+.program-other--dark .program-link {
+  color: var(--blue-light);
+}
+.program-other--dark .program-tile:hover .program-link {
+  color: var(--blue);
 }
 @media (max-width: 1024px) {
   .program-other--dark .program-tile {
