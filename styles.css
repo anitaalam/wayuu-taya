@@ -605,11 +605,16 @@ em { font-style: italic; font-family: var(--font-display); }
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: rgba(255,255,255,0.05);
-  transition: transform var(--transition);
 }
-.program-tile:hover {
-  transform: scale(1.10);
-  z-index: 2;
+.program-tile .program-images {
+  transition: transform 0.4s ease;
+}
+.program-tile .program-info {
+  transition: transform 0.4s ease;
+}
+.program-tile:hover .program-images,
+.program-tile:hover .program-info {
+  transform: scale(1.05);
 }
 .program-images {
   position: relative;
