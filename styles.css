@@ -1043,8 +1043,8 @@ em { font-style: italic; font-family: var(--font-display); }
   position: absolute;
   top: -20px;
   right: -20px;
-  width: 432px;
-  height: 96px;
+  width: 528px;
+  height: 144px;
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -2835,8 +2835,8 @@ img.cta-bg-video {
   position: absolute;
   top: -20px;
   right: -20px;
-  width: 432px;
-  height: 96px;
+  width: 528px;
+  height: 144px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -2847,8 +2847,8 @@ img.cta-bg-video {
   position: absolute;
   bottom: -20px;
   left: -20px;
-  width: 432px;
-  height: 96px;
+  width: 528px;
+  height: 144px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -4532,8 +4532,8 @@ img.cta-bg-video {
 /* ========== Responsive Dotted Grids ========== */
 @media (max-width: 1024px) {
   .ways-help-cell--text::after {
-    width: 280px;
-    height: 80px;
+    width: 360px;
+    height: 120px;
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 2.5px);
     background-size: 20px 20px;
   }
@@ -4543,16 +4543,16 @@ img.cta-bg-video {
   }
   .challenges-section::before,
   .challenges-section::after {
-    width: 280px;
-    height: 80px;
+    width: 360px;
+    height: 120px;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2.5px, transparent 2.5px);
     background-size: 20px 20px;
   }
 }
 @media (max-width: 768px) {
   .ways-help-cell--text::after {
-    width: 192px;
-    height: 64px;
+    width: 256px;
+    height: 96px;
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
     background-size: 16px 16px;
   }
@@ -4562,8 +4562,8 @@ img.cta-bg-video {
   }
   .challenges-section::before,
   .challenges-section::after {
-    width: 192px;
-    height: 64px;
+    width: 256px;
+    height: 96px;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
     background-size: 16px 16px;
   }
