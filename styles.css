@@ -3473,6 +3473,34 @@ img.cta-bg-video {
 .program-areas--dark {
   background: #0a0a0a;
   position: relative;
+  overflow: hidden;
+}
+.areas-swirl {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: spin-clockwise 60s linear infinite;
+}
+.areas-swirl--left {
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.areas-swirl--right {
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.program-areas--dark .container {
+  position: relative;
+  z-index: 1;
 }
 .program-areas--dark .section-eyebrow {
   color: var(--blue-light);
