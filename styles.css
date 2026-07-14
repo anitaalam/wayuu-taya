@@ -3753,6 +3753,35 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
 }
+.program-other--dark {
+  background: #0a0a0a;
+}
+.program-other--dark .section-eyebrow {
+  color: var(--blue-light);
+}
+.program-other--dark .section-title {
+  color: #fff;
+}
+.program-other--dark .section-title em {
+  color: var(--blue-light);
+}
+.program-other--dark .program-other-btn {
+  color: #fff;
+}
+.program-other--dark .program-tile {
+  flex: 0 0 calc((100% - 48px) / 3);
+  aspect-ratio: 1.1 / 1;
+}
+@media (max-width: 768px) {
+  .program-other--dark .program-tile {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 480px) {
+  .program-other--dark .program-tile {
+    flex: 0 0 75%;
+  }
+}
 .program-other-slider {
   position: relative;
   margin-top: 48px;
