@@ -3394,6 +3394,61 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--off-white);
 }
+.program-areas--video {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.program-areas-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.program-areas-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.program-areas--video .container {
+  position: relative;
+  z-index: 2;
+}
+.program-areas--video .section-eyebrow {
+  color: var(--blue-light);
+}
+.program-areas--video .section-title {
+  color: #fff;
+}
+.program-areas--video .section-title em {
+  color: var(--blue-light);
+}
+.program-areas--video .program-area-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.program-areas--video .program-area-card h3 {
+  color: #fff;
+}
+.program-areas--video .program-area-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.program-areas--video .program-area-card .program-area-update {
+  color: rgba(255, 255, 255, 0.65);
+}
+.program-areas--video .program-area-icon {
+  color: var(--blue-light);
+}
+.program-areas--video .mini-stat strong {
+  color: var(--blue-light);
+}
+.program-areas--video .mini-stat span {
+  color: rgba(255, 255, 255, 0.7);
+}
 .program-areas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
