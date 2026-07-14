@@ -3867,6 +3867,25 @@ img.cta-bg-video {
 .program-other--dark .program-tile:hover .program-link {
   color: var(--blue);
 }
+.program-other--black {
+  background: #0a0a0a;
+}
+.program-other--black .section-title,
+.program-other--black .section-title em {
+  color: #F5F0E8;
+}
+.program-other--black .program-other-btn {
+  color: #fff;
+}
+.program-other--black .program-info h3 {
+  color: var(--white);
+}
+.program-other--black .program-tile {
+  background: rgba(255,255,255,0.05);
+}
+.program-other--black .program-tile:hover .program-link {
+  color: var(--white);
+}
 @media (max-width: 1024px) {
   .program-other--dark .program-tile {
     flex: 0 0 calc((100vw - 60px) / 2);
