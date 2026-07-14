@@ -3757,7 +3757,7 @@ img.cta-bg-video {
   background: #0a0a0a;
 }
 .program-other--dark .section-eyebrow {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--blue-light);
 }
 .program-other--dark .section-title,
 .program-other--dark .section-title em {
