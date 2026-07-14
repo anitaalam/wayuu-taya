@@ -575,6 +575,7 @@ em { font-style: italic; font-family: var(--font-display); }
   gap: 20px;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  padding: 20px 0;
 }
 .programs-slider .program-tile {
   flex: 0 0 calc((100vw - 80px) / 3);
@@ -3898,6 +3899,7 @@ img.cta-bg-video {
   gap: clamp(16px, 2vw, 24px);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  padding: 20px 0;
 }
 .program-other-btn {
   flex-shrink: 0;
