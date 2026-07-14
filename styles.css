@@ -3641,7 +3641,7 @@ img.cta-bg-video {
 .program-video-wrap {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1152px;
   margin: 40px auto 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
