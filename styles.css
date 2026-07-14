@@ -1041,10 +1041,10 @@ em { font-style: italic; font-family: var(--font-display); }
 .ways-help-cell--text::after {
   content: '';
   position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 400px;
-  height: 350px;
+  top: -20px;
+  right: -20px;
+  width: 432px;
+  height: 96px;
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -2833,10 +2833,10 @@ img.cta-bg-video {
 .challenges-section::before {
   content: '';
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 400px;
-  height: 350px;
+  top: -20px;
+  right: -20px;
+  width: 432px;
+  height: 96px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -2845,10 +2845,10 @@ img.cta-bg-video {
 .challenges-section::after {
   content: '';
   position: absolute;
-  bottom: -40px;
-  left: -40px;
-  width: 400px;
-  height: 350px;
+  bottom: -20px;
+  left: -20px;
+  width: 432px;
+  height: 96px;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 3px, transparent 3px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -4532,10 +4532,8 @@ img.cta-bg-video {
 /* ========== Responsive Dotted Grids ========== */
 @media (max-width: 1024px) {
   .ways-help-cell--text::after {
-    top: -80px;
-    right: -80px;
-    width: 300px;
-    height: 260px;
+    width: 280px;
+    height: 80px;
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 2.5px);
     background-size: 20px 20px;
   }
@@ -4543,29 +4541,18 @@ img.cta-bg-video {
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 2.5px);
     background-size: 20px 20px;
   }
-  .challenges-section::before {
-    top: -60px;
-    right: -60px;
-    width: 300px;
-    height: 260px;
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2.5px, transparent 2.5px);
-    background-size: 20px 20px;
-  }
+  .challenges-section::before,
   .challenges-section::after {
-    bottom: -60px;
-    left: -60px;
-    width: 300px;
-    height: 260px;
+    width: 280px;
+    height: 80px;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2.5px, transparent 2.5px);
     background-size: 20px 20px;
   }
 }
 @media (max-width: 768px) {
   .ways-help-cell--text::after {
-    top: -100px;
-    right: -100px;
-    width: 220px;
-    height: 200px;
+    width: 192px;
+    height: 64px;
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
     background-size: 16px 16px;
   }
@@ -4573,19 +4560,10 @@ img.cta-bg-video {
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
     background-size: 16px 16px;
   }
-  .challenges-section::before {
-    top: -80px;
-    right: -80px;
-    width: 220px;
-    height: 200px;
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
-    background-size: 16px 16px;
-  }
+  .challenges-section::before,
   .challenges-section::after {
-    bottom: -80px;
-    left: -80px;
-    width: 220px;
-    height: 200px;
+    width: 192px;
+    height: 64px;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
     background-size: 16px 16px;
   }
