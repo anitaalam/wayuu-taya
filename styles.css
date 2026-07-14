@@ -3449,6 +3449,38 @@ img.cta-bg-video {
 .program-areas--video .mini-stat span {
   color: rgba(255, 255, 255, 0.7);
 }
+/* Dark variant (static black background, glassy cards) */
+.program-areas--dark {
+  background: #0a0a0a;
+}
+.program-areas--dark .section-eyebrow {
+  color: var(--blue-light);
+}
+.program-areas--dark .section-title {
+  color: #F5F0E8;
+}
+.program-areas--dark .section-title em {
+  color: #F5F0E8;
+}
+.program-areas--dark .program-area-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.program-areas--dark .program-area-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.program-areas--dark .program-area-card h3 {
+  color: #fff;
+}
+.program-areas--dark .program-area-card p {
+  color: rgba(255, 255, 255, 0.75);
+}
+.program-areas--dark .program-area-icon {
+  color: var(--blue-light);
+}
 .program-areas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
