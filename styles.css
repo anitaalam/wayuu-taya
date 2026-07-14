@@ -561,7 +561,7 @@ em { font-style: italic; font-family: var(--font-display); }
   padding-right: 20px;
 }
 .programs-slider-track-wrap {
-  overflow: hidden;
+  overflow: visible;
   flex: 1;
   mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
@@ -3833,6 +3833,7 @@ img.cta-bg-video {
 .program-other {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  overflow: hidden;
 }
 .program-other--dark {
   background: var(--off-white);
@@ -3903,7 +3904,7 @@ img.cta-bg-video {
   align-items: center;
 }
 .program-other-track-wrap {
-  overflow: hidden;
+  overflow: visible;
   flex: 1;
   mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
