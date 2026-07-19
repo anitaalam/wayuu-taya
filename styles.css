@@ -3877,6 +3877,7 @@ img.cta-bg-video {
 .program-other {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  overflow: hidden;
 }
 .program-other--dark {
   background: var(--off-white);
@@ -3948,6 +3949,8 @@ img.cta-bg-video {
 }
 .program-other-track-wrap {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
   mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, transparent 100%);
   transition: -webkit-mask-image 0.4s ease, mask-image 0.4s ease;
