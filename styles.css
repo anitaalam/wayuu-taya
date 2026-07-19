@@ -3667,6 +3667,38 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--off-white);
 }
+.program-gallery--dark {
+  background: #0a0a0a;
+  overflow: hidden;
+}
+.program-gallery--dark .program-areas-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.program-gallery--dark .program-areas-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.program-gallery--dark .container,
+.program-gallery--dark .gallery-slider {
+  position: relative;
+  z-index: 2;
+}
+.program-gallery--dark .section-eyebrow {
+  color: var(--blue-light);
+}
+.program-gallery--dark .section-title {
+  color: #fff;
+}
+.program-gallery--dark .section-title em {
+  color: var(--blue-light);
+}
 
 /* Horizontal Gallery Slider */
 .gallery-slider {
@@ -4112,6 +4144,49 @@ img.cta-bg-video {
 }
 .tab-accordion-panel p + p {
   margin-top: 1.5em;
+}
+
+/* Tab accordion dark variant (inside video sections) */
+.program-areas--video .tab-accordion,
+.program-areas--dark .tab-accordion {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.program-areas--video .tab-accordion-tabs,
+.program-areas--dark .tab-accordion-tabs {
+  background: rgba(255, 255, 255, 0.04);
+  border-right-color: rgba(255, 255, 255, 0.1);
+}
+.program-areas--video .tab-accordion-tab,
+.program-areas--dark .tab-accordion-tab {
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+.program-areas--video .tab-accordion-tab:hover,
+.program-areas--dark .tab-accordion-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.program-areas--video .tab-accordion-tab.active,
+.program-areas--dark .tab-accordion-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.program-areas--video .tab-accordion-panel h3,
+.program-areas--dark .tab-accordion-panel h3 {
+  color: #fff;
+}
+.program-areas--video .tab-accordion-panel p,
+.program-areas--dark .tab-accordion-panel p {
+  color: rgba(255, 255, 255, 0.75);
+}
+.program-areas--video .music-intro-columns,
+.program-areas--dark .music-intro-columns {
+  color: rgba(255, 255, 255, 0.8);
+}
+.program-areas--video .music-intro-columns p,
+.program-areas--dark .music-intro-columns p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 768px) {
