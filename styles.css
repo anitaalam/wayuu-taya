@@ -2094,7 +2094,7 @@ img.cta-bg-video {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.page-hero-title em { color: var(--blue-light); font-style: italic; }
+.page-hero-title em { color: var(--white); font-style: italic; }
 .page-hero-sub {
   font-size: clamp(16px, 2vw, 19px);
   color: rgba(255,255,255,0.75);
