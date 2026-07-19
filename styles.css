@@ -1133,9 +1133,9 @@ em { font-style: italic; font-family: var(--font-display); }
   color: var(--blue, #3199BD);
 }
 .ways-help-btn .btn-arrow {
-  font-size: 1.05em;
+  font-size: 1.4em;
   vertical-align: middle;
-  margin-left: 4px;
+  margin-left: 6px;
 }
 /* Split images cell */
 .ways-help-cell--split-images {
