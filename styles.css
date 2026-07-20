@@ -3027,7 +3027,7 @@ img.cta-bg-video {
 /* ========== FOUNDER SECTION ========== */
 .founder-section {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: radial-gradient(ellipse at center, #1a3a6e 0%, #0d1f42 40%, #060e1f 70%, #020814 100%);
+  background: radial-gradient(ellipse at center 40%, #1a3a6e 0%, #0d1f42 30%, #060e1f 55%, #020814 85%);
   color: rgba(255,255,255,0.85);
   position: relative;
   overflow: hidden;
