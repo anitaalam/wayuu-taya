@@ -3013,6 +3013,15 @@ img.cta-bg-video {
   position: relative;
   overflow: hidden;
 }
+.founder-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/crumble-paper.png') center/cover fixed;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
 @keyframes founder-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -3063,7 +3072,18 @@ img.cta-bg-video {
 .team-section {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  position: relative;
 }
+.team-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/crumble-paper.png') center/cover fixed;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+.team-section .container { position: relative; z-index: 1; }
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3128,7 +3148,18 @@ img.cta-bg-video {
 .board-section {
   padding: clamp(60px, 8vw, 100px) 0;
   background: var(--off-white);
+  position: relative;
 }
+.board-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/crumble-paper.png') center/cover fixed;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+.board-section .container { position: relative; z-index: 1; }
 .board-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
