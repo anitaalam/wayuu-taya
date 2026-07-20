@@ -3008,7 +3008,7 @@ img.cta-bg-video {
 /* ========== FOUNDER SECTION ========== */
 .founder-section {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: var(--black);
+  background: radial-gradient(ellipse at center, #1a3a6e 0%, #0d1f42 40%, #060e1f 70%, #020814 100%);
   color: rgba(255,255,255,0.85);
 }
 .founder-grid {
