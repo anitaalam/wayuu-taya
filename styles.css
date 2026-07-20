@@ -3032,18 +3032,7 @@ img.cta-bg-video {
   position: relative;
   overflow: hidden;
 }
-.founder-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/crumble-paper.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 0.20;
-  pointer-events: none;
-  z-index: 0;
-}
+
 @keyframes founder-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
