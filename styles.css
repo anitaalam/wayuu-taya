@@ -3017,8 +3017,11 @@ img.cta-bg-video {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/crumble-paper.png') center/cover fixed;
-  opacity: 0.08;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
 }
@@ -3078,7 +3081,10 @@ img.cta-bg-video {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/crumble-paper.png') center/cover fixed;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   opacity: 0.10;
   pointer-events: none;
   z-index: 0;
@@ -3154,7 +3160,10 @@ img.cta-bg-video {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/crumble-paper.png') center/cover fixed;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   opacity: 0.10;
   pointer-events: none;
   z-index: 0;
