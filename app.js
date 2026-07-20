@@ -851,11 +851,11 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
 
     // Pagination
     if (total <= 1) { pagWrap.innerHTML = ''; return; }
-    var pHtml = '<button class="news-page-btn news-prev" ' + (currentPage <= 1 ? 'disabled' : '') + '>&larr; Prev</button>';
+    var pHtml = '<button class="news-page-btn news-prev" ' + (currentPage <= 1 ? 'disabled' : '') + '><span class="btn-arrow" style="display:inline-block;transform:scaleX(-1)">&longrightarrow;</span> Prev</button>';
     for (var i = 1; i <= total; i++) {
       pHtml += '<button class="news-page-btn' + (i === currentPage ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
     }
-    pHtml += '<button class="news-page-btn news-next" ' + (currentPage >= total ? 'disabled' : '') + '>Next &rarr;</button>';
+    pHtml += '<button class="news-page-btn news-next" ' + (currentPage >= total ? 'disabled' : '') + '>Next <span class="btn-arrow">&longrightarrow;</span></button>';
     pagWrap.innerHTML = pHtml;
   }
 
