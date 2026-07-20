@@ -867,7 +867,6 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
       currentFilter = btn.getAttribute('data-filter');
       currentPage = 1;
       renderGrid();
-      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
@@ -879,7 +878,6 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     else if (btn.classList.contains('news-next')) { currentPage++; }
     else { currentPage = parseInt(btn.getAttribute('data-page'), 10); }
     renderGrid();
-    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   renderFeatured();
