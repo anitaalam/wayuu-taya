@@ -755,6 +755,14 @@ em { font-style: italic; font-family: var(--font-display); }
   position: relative;
   z-index: 1;
 }
+/* Crumble paper clipped to concave curve on admin page */
+.arc-divider--admin-curve {
+  position: relative;
+}
+.arc-divider--admin-curve svg {
+  position: relative;
+  z-index: 1;
+}
 .arc-divider--dark {
   background: var(--blue-deep);
 }

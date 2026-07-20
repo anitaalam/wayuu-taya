@@ -89,10 +89,29 @@
   </section>
 
   <!-- ========== ARC DIVIDER ========== -->
-  <div class="arc-divider" style="background: #020814; margin-top: -1px;">
+  <div class="arc-divider arc-divider--admin-curve" style="background: #020814; margin-top: -1px;">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,120 Q720,0 1440,120 L1440,120 L0,120 Z" fill="#F5F0E8"/>
+      <path d="M0,120 Q720,0 1440,120 L1440,120 L0,120 Z" fill="#F0F4F8"/>
     </svg>
+    <div class="arc-divider-crumble" style="
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background-image: url('assets/crumble-paper.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 2;
+      mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1440 120%22 preserveAspectRatio=%22none%22%3E%3Cpath d=%22M0,120 Q720,0 1440,120 L1440,120 L0,120 Z%22 fill=%22white%22/%3E%3C/svg%3E');
+      -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1440 120%22 preserveAspectRatio=%22none%22%3E%3Cpath d=%22M0,120 Q720,0 1440,120 L1440,120 L0,120 Z%22 fill=%22white%22/%3E%3C/svg%3E');
+      mask-size: 100% 100%;
+      -webkit-mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    "></div>
   </div>
 
   <!-- ========== LEADERSHIP TEAM ========== -->
