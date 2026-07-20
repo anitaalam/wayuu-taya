@@ -736,6 +736,25 @@ em { font-style: italic; font-family: var(--font-display); }
   width: 100%;
   height: clamp(60px, 8vw, 120px);
 }
+.arc-divider--textured {
+  position: relative;
+}
+.arc-divider--textured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+}
+.arc-divider--textured svg {
+  position: relative;
+  z-index: 1;
+}
 .arc-divider--dark {
   background: var(--blue-deep);
 }
