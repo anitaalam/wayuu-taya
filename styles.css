@@ -3021,7 +3021,7 @@ img.cta-bg-video {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.12;
+  opacity: 0.20;
   pointer-events: none;
   z-index: 0;
 }
@@ -3085,7 +3085,7 @@ img.cta-bg-video {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.10;
+  opacity: 0.20;
   pointer-events: none;
   z-index: 0;
 }
@@ -3164,7 +3164,7 @@ img.cta-bg-video {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.10;
+  opacity: 0.20;
   pointer-events: none;
   z-index: 0;
 }
