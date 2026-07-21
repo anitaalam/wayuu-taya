@@ -3891,6 +3891,10 @@ img.cta-bg-video {
   border: 1px solid var(--grey-light);
   text-align: center;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .partner-card:hover {
@@ -3903,10 +3907,13 @@ img.cta-bg-video {
 }
 .partner-arrow {
   display: inline-block;
-  font-size: 18px;
   color: var(--blue);
   margin-top: 8px;
   transition: transform 0.4s ease;
+}
+.partner-arrow .btn-arrow {
+  top: 0;
+  margin-left: 0;
 }
 .partner-card.active .partner-arrow {
   transform: rotate(180deg);
