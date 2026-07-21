@@ -3939,8 +3939,16 @@ img.cta-bg-video {
   opacity: 0.7;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
-.partner-card:hover .partner-logo {
-  filter: grayscale(0%);
+.partner-logo--dark {
+  filter: grayscale(100%) brightness(0.8);
+}
+.partner-logo--darker {
+  filter: grayscale(100%) brightness(0.6);
+}
+.partner-card:hover .partner-logo,
+.partner-card:hover .partner-logo--dark,
+.partner-card:hover .partner-logo--darker {
+  filter: grayscale(0%) brightness(1);
   opacity: 1;
 }
 .partner-card p {
