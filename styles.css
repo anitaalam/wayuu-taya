@@ -3885,17 +3885,17 @@ img.cta-bg-video {
   gap: 24px;
 }
 .partner-card {
-  background: var(--white);
+  background: #2a3444;
   padding: 32px;
   border-radius: var(--radius);
-  border: 1px solid var(--grey-light);
+  border: 1px solid rgba(255,255,255,0.08);
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .partner-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   border-color: var(--blue);
 }
 .partner-card.active {
@@ -3904,7 +3904,7 @@ img.cta-bg-video {
 .partner-arrow {
   display: inline-block;
   font-size: 18px;
-  color: var(--blue);
+  color: var(--blue-light);
   margin-top: 8px;
   transition: transform 0.4s ease;
 }
@@ -3926,7 +3926,7 @@ img.cta-bg-video {
 .partner-card h4 {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  color: var(--text);
+  color: #fff;
   margin-bottom: 0;
 }
 .partner-logo {
@@ -3936,19 +3936,9 @@ img.cta-bg-video {
   max-height: 70px;
   object-fit: contain;
 }
-.partner-card--dark {
-  background: #0a0a0a;
-  border-color: #222;
-}
-.partner-card--dark:hover {
-  border-color: var(--blue);
-}
-.partner-card--dark .partner-detail p {
-  color: #ccc;
-}
 .partner-card p {
   font-size: 0.88rem;
-  color: var(--grey);
+  color: rgba(255,255,255,0.7);
   line-height: 1.5;
 }
 
