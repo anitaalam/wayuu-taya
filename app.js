@@ -309,17 +309,6 @@ mainNav.querySelectorAll('a').forEach(link => {
         ctaParallaxImg.style.transform = `translateY(${yShift}%)`;
       }
 
-      // Generic parallax images
-      document.querySelectorAll('.parallax-wrap').forEach(wrap => {
-        const img = wrap.querySelector('.parallax-img');
-        if (!img) return;
-        const rect = wrap.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > vh) return;
-        const progress = Math.max(0, Math.min(1, 1 - rect.bottom / (vh + rect.height)));
-        const yShift = (progress - 0.5) * 15;
-        img.style.transform = `translateY(${yShift}%) scale(1.08)`;
-      });
-
       // Scroll-text reveal (reversible)
       // Progress tracks how far the user has scrolled THROUGH the section,
       // not just when the top enters the viewport.

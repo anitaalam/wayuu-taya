@@ -3734,13 +3734,12 @@ img.cta-bg-video {
 }
 .stacked-block-image img {
   width: 100%;
-  height: 120%;
+  height: 100%;
   object-fit: cover;
   object-position: center 20%;
   border-radius: var(--radius);
   aspect-ratio: 4 / 3;
-  will-change: transform;
-  transition: transform 0.1s linear;
+  animation: ken-burns 10s ease-in-out infinite alternate;
 }
 .stacked-block-text h3 {
   font-family: var(--font-display);
