@@ -3736,6 +3736,22 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--off-white);
 }
+.program-gallery--textured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.program-gallery--textured > .container {
+  position: relative;
+  z-index: 1;
+}
 .program-gallery--dark {
   background: #0a0a0a;
   overflow: hidden;
