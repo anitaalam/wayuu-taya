@@ -3882,6 +3882,7 @@ img.cta-bg-video {
 .program-partners-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 24px;
 }
 .partner-card {
