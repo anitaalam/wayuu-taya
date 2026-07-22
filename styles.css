@@ -3365,7 +3365,8 @@ img.cta-bg-video {
 .program-intro--gradient .section-title em {
   color: var(--blue-light);
 }
-.program-intro--gradient p {
+.program-intro--gradient p,
+.program-intro--gradient .program-intro-text p {
   color: #fff;
 }
 .program-intro-grid {
