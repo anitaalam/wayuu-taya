@@ -3955,7 +3955,11 @@ img.cta-bg-video {
 .partner-card:hover .partner-logo,
 .partner-card:hover .partner-logo--dark,
 .partner-card:hover .partner-logo--darker {
-  filter: grayscale(100%) brightness(0);
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+.partner-card:hover .partner-logo--core {
+  filter: grayscale(100%) brightness(0) contrast(100);
   opacity: 1;
 }
 .partner-card p {
