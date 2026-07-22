@@ -3958,6 +3958,10 @@ img.cta-bg-video {
   filter: grayscale(0%) brightness(1);
   opacity: 1;
 }
+.partner-card:hover .partner-logo--core {
+  filter: grayscale(100%) brightness(0) contrast(100);
+  opacity: 1;
+}
 .partner-card p {
   font-size: 0.88rem;
   color: var(--grey);
