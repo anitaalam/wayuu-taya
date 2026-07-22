@@ -748,6 +748,21 @@ document.querySelectorAll('.tab-accordion').forEach(function(accordion) {
   });
 });
 
+/* ========== MUSIC PILL FILTER ========== */
+document.querySelectorAll('.music-pill-filter').forEach(function(filter) {
+  var btns = filter.querySelectorAll('.music-pill-btn');
+  var panels = filter.querySelectorAll('.music-pill-panel');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var target = btn.getAttribute('data-filter');
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      filter.querySelector('[data-panel="' + target + '"]').classList.add('active');
+    });
+  });
+});
+
 /* ========== INTRO SLIDESHOWS (auto-rotate every 3s) ========== */
 document.querySelectorAll('.intro-slideshow').forEach(function(container) {
   var slides = container.querySelectorAll('.intro-slide');
