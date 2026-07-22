@@ -3529,7 +3529,7 @@ img.cta-bg-video {
   color: rgba(255, 255, 255, 0.8);
 }
 .program-areas--video .program-area-card .program-area-update {
-  color: rgba(255, 255, 255, 0.65);
+  color: #fff !important;
 }
 .program-areas--video .program-area-icon {
   color: var(--blue-light);
