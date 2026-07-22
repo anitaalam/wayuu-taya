@@ -3739,7 +3739,7 @@ img.cta-bg-video {
   object-position: center 20%;
   border-radius: var(--radius);
   aspect-ratio: 4 / 3;
-  animation: ken-burns 10s ease-in-out infinite alternate;
+  animation: kenBurns 10s ease-in-out infinite alternate;
 }
 .stacked-block-text h3 {
   font-family: var(--font-display);
