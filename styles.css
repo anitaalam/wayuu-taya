@@ -3366,7 +3366,7 @@ img.cta-bg-video {
   color: var(--blue-light);
 }
 .program-intro--gradient p {
-  color: rgba(255,255,255,0.8);
+  color: #fff;
 }
 .program-intro-grid {
   display: grid;
