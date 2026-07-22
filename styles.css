@@ -4126,7 +4126,7 @@ img.cta-bg-video {
   background: radial-gradient(ellipse at center 40%, #1a3a6e 0%, #0d1f42 30%, #060e1f 55%, #020814 85%);
 }
 .program-other--gradient .section-eyebrow {
-  color: var(--blue-lighter);
+  color: var(--blue);
 }
 .program-other--gradient .section-title,
 .program-other--gradient .section-title em {
@@ -4139,9 +4139,9 @@ img.cta-bg-video {
   color: #fff;
 }
 .program-other--gradient .program-link {
-  color: var(--blue-lighter);
+  color: #fff;
 }
-.program-other--gradient .program-tile:hover .program-link {
+.program-other--gradient .program-link .btn-arrow {
   color: #fff;
 }
 .program-other--gradient .program-other-slider {
