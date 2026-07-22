@@ -3369,6 +3369,28 @@ img.cta-bg-video {
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--off-white);
 }
+.program-intro--textured,
+.program-areas--textured {
+  position: relative;
+}
+.program-intro--textured::after,
+.program-areas--textured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.program-intro--textured > .container,
+.program-areas--textured > .container {
+  position: relative;
+  z-index: 1;
+}
 .program-intro--gradient {
   background: radial-gradient(ellipse at center 40%, #1a3a6e 0%, #0d1f42 30%, #060e1f 55%, #020814 85%);
   position: relative;
