@@ -3367,7 +3367,7 @@ img.cta-bg-video {
 }
 .program-intro--gradient p,
 .program-intro--gradient .program-intro-text p {
-  color: #fff;
+  color: #fff !important;
 }
 .program-intro-grid {
   display: grid;
