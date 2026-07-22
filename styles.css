@@ -4122,6 +4122,39 @@ img.cta-bg-video {
 .program-other--dark .program-tile:hover .program-link {
   color: var(--blue);
 }
+.program-other--gradient {
+  background: radial-gradient(ellipse at center 40%, #1a3a6e 0%, #0d1f42 30%, #060e1f 55%, #020814 85%);
+}
+.program-other--gradient .section-eyebrow {
+  color: var(--blue-lighter);
+}
+.program-other--gradient .section-title,
+.program-other--gradient .section-title em {
+  color: #F5F0E8;
+}
+.program-other--gradient .program-other-btn {
+  color: #fff;
+}
+.program-other--gradient .program-info h3 {
+  color: #fff;
+}
+.program-other--gradient .program-link {
+  color: var(--blue-lighter);
+}
+.program-other--gradient .program-tile:hover .program-link {
+  color: #fff;
+}
+.program-other--gradient .program-other-slider {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.program-other--gradient .program-tile {
+  flex: 0 0 calc((100vw - 80px) / 3);
+  aspect-ratio: 1.1 / 1;
+  background: rgba(0,0,0,0.03);
+}
 .program-other--black {
   background: #0a0a0a;
 }
@@ -4142,12 +4175,14 @@ img.cta-bg-video {
   color: var(--white);
 }
 @media (max-width: 1024px) {
-  .program-other--dark .program-tile {
+  .program-other--dark .program-tile,
+  .program-other--gradient .program-tile {
     flex: 0 0 calc((100vw - 60px) / 2);
   }
 }
 @media (max-width: 480px) {
-  .program-other--dark .program-tile {
+  .program-other--dark .program-tile,
+  .program-other--gradient .program-tile {
     flex: 0 0 75vw;
   }
 }
