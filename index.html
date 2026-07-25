@@ -111,87 +111,74 @@
 
   <!-- ========== PROGRAMS ========== -->
   <section class="programs" id="programs">
-
     <div class="container">
       <span class="section-eyebrow">What We Do</span>
       <h2 class="section-title">Our Programs</h2>
-      <div class="programs-slider" id="programsHomeSlider">
-        <button class="programs-slider-btn programs-slider-prev" aria-label="Previous">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div class="programs-slider-track-wrap">
-          <div class="programs-slider-track">
-
-            <a href="programs/help-for-those-in-need.html" class="program-tile">
-              <div class="program-images">
-                <img class="program-img active" src="assets/help-8.webp" alt="Help for those in need" />
-                <img class="program-img" src="assets/help-3.webp" alt="Community aid" />
-                <img class="program-img" src="assets/help-5.webp" alt="Community support" />
-              </div>
-              <div class="program-info">
-                <span class="program-num">Program 01</span>
-                <h3>Help for Those in Need</h3>
-                <span class="program-link">Read More <span class="btn-arrow">&longrightarrow;</span></span>
-              </div>
-            </a>
-
-            <a href="programs/water-for-all.html" class="program-tile">
-              <div class="program-images">
-                <img class="program-img active" src="assets/water-1.webp" alt="Water for all" />
-                <img class="program-img" src="assets/water-3.webp" alt="Water access" />
-                <img class="program-img" src="assets/water-5.webp" alt="Clean water" />
-              </div>
-              <div class="program-info">
-                <span class="program-num">Program 02</span>
-                <h3>Water for All</h3>
-                <span class="program-link">Read More <span class="btn-arrow">&longrightarrow;</span></span>
-              </div>
-            </a>
-
-            <a href="programs/agroecology.html" class="program-tile">
-              <div class="program-images">
-                <img class="program-img active" src="assets/agro-2.webp" alt="Agroecology program" />
-                <img class="program-img" src="assets/agro-4.webp" alt="Sustainable farming" />
-                <img class="program-img" src="assets/agro-6.webp" alt="Agriculture" />
-              </div>
-              <div class="program-info">
-                <span class="program-num">Program 03</span>
-                <h3>Agroecology</h3>
-                <span class="program-link">Read More <span class="btn-arrow">&longrightarrow;</span></span>
-              </div>
-            </a>
-
-            <a href="programs/education.html" class="program-tile">
-              <div class="program-images">
-                <img class="program-img active" src="assets/edu-1.webp" alt="Education program" />
-                <img class="program-img" src="assets/edu-2.webp" alt="Wayuu children learning" />
-                <img class="program-img" src="assets/edu-3.webp" alt="Classroom activities" />
-              </div>
-              <div class="program-info">
-                <span class="program-num">Program 04</span>
-                <h3>Education</h3>
-                <span class="program-link">Read More <span class="btn-arrow">&longrightarrow;</span></span>
-              </div>
-            </a>
-
-            <a href="programs/music.html" class="program-tile">
-              <div class="program-images">
-                <img class="program-img active" src="assets/edu-5.webp" alt="Music program" />
-                <img class="program-img" src="assets/edu-6.webp" alt="Wayuu Taya Orchestra" />
-                <img class="program-img" src="assets/edu-4.webp" alt="Young musicians" />
-              </div>
-              <div class="program-info">
-                <span class="program-num">Program 05</span>
-                <h3>Music</h3>
-                <span class="program-link">Read More <span class="btn-arrow">&longrightarrow;</span></span>
-              </div>
-            </a>
-
-          </div>
+    </div>
+    <div class="programs-grid-alt">
+      <!-- Row 1: Image left, Text right (dark bg) -->
+      <div class="programs-alt-cell programs-alt-cell--image">
+        <img src="assets/help-8.webp" alt="Help for Those in Need" class="programs-alt-img">
+      </div>
+      <div class="programs-alt-cell programs-alt-cell--text programs-alt-cell--dark">
+        <div class="programs-alt-cell-inner">
+          <span class="programs-alt-eyebrow">Program 01 <span class="programs-alt-dash">—</span></span>
+          <h3 class="programs-alt-heading">Help for Those in Need</h3>
+          <p class="programs-alt-desc">Providing emergency food, safe drinking water, medical supplies, hygiene kits, and temporary shelter to help families survive crisis and rebuild their lives.</p>
+          <a href="programs/help-for-those-in-need.html" class="programs-alt-btn">Read More <span class="btn-arrow">&longrightarrow;</span></a>
         </div>
-        <button class="programs-slider-btn programs-slider-next" aria-label="Next">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
+      </div>
+
+      <!-- Row 2: Text left (blue bg), Image right -->
+      <div class="programs-alt-cell programs-alt-cell--text programs-alt-cell--blue">
+        <div class="programs-alt-cell-inner">
+          <span class="programs-alt-eyebrow programs-alt-eyebrow--light">Program 02 <span class="programs-alt-dash">—</span></span>
+          <h3 class="programs-alt-heading">Water for All</h3>
+          <p class="programs-alt-desc">Delivering clean, safe drinking water to indigenous communities facing water scarcity, offering relief and hope through sustainable water solutions.</p>
+          <a href="programs/water-for-all.html" class="programs-alt-btn programs-alt-btn--light">Read More <span class="btn-arrow">&longrightarrow;</span></a>
+        </div>
+      </div>
+      <div class="programs-alt-cell programs-alt-cell--image">
+        <img src="assets/water-1.webp" alt="Water for All" class="programs-alt-img">
+      </div>
+
+      <!-- Row 3: Image left, Text right (dark bg) -->
+      <div class="programs-alt-cell programs-alt-cell--image">
+        <img src="assets/agro-2.webp" alt="Agroecology" class="programs-alt-img">
+      </div>
+      <div class="programs-alt-cell programs-alt-cell--text programs-alt-cell--dark">
+        <div class="programs-alt-cell-inner">
+          <span class="programs-alt-eyebrow">Program 03 <span class="programs-alt-dash">—</span></span>
+          <h3 class="programs-alt-heading">Agroecology</h3>
+          <p class="programs-alt-desc">Empowering communities through sustainable farming practices, seed preservation, and agricultural training to build food sovereignty and resilience.</p>
+          <a href="programs/agroecology.html" class="programs-alt-btn">Read More <span class="btn-arrow">&longrightarrow;</span></a>
+        </div>
+      </div>
+
+      <!-- Row 4: Text left (blue bg), Image right -->
+      <div class="programs-alt-cell programs-alt-cell--text programs-alt-cell--blue">
+        <div class="programs-alt-cell-inner">
+          <span class="programs-alt-eyebrow programs-alt-eyebrow--light">Program 04 <span class="programs-alt-dash">—</span></span>
+          <h3 class="programs-alt-heading">Education</h3>
+          <p class="programs-alt-desc">Building schools, training teachers, and providing educational resources to Wayuu children, fostering knowledge while preserving cultural identity.</p>
+          <a href="programs/education.html" class="programs-alt-btn programs-alt-btn--light">Read More <span class="btn-arrow">&longrightarrow;</span></a>
+        </div>
+      </div>
+      <div class="programs-alt-cell programs-alt-cell--image">
+        <img src="assets/edu-1.webp" alt="Education" class="programs-alt-img">
+      </div>
+
+      <!-- Row 5: Image left, Text right (dark bg) -->
+      <div class="programs-alt-cell programs-alt-cell--image">
+        <img src="assets/edu-5.webp" alt="Music" class="programs-alt-img">
+      </div>
+      <div class="programs-alt-cell programs-alt-cell--text programs-alt-cell--dark">
+        <div class="programs-alt-cell-inner">
+          <span class="programs-alt-eyebrow">Program 05 <span class="programs-alt-dash">—</span></span>
+          <h3 class="programs-alt-heading">Music</h3>
+          <p class="programs-alt-desc">Bringing the power of music to indigenous communities through orchestral training, ancestral music preservation, and cultural exchange programs.</p>
+          <a href="programs/music.html" class="programs-alt-btn">Read More <span class="btn-arrow">&longrightarrow;</span></a>
+        </div>
       </div>
     </div>
   </section>
