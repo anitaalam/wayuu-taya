@@ -666,7 +666,7 @@ em { font-style: italic; font-family: var(--font-display); }
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--heading);
   line-height: 1.2;
 }
 .program-link {
@@ -676,7 +676,7 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-top: 6px;
   transition: color 0.3s;
 }
-.program-tile:hover .program-link { color: var(--white); }
+.program-tile:hover .program-link { color: var(--heading); }
 
 /* ========== BY THE NUMBERS ========== */
 .numbers {
