@@ -509,7 +509,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== PROGRAMS ========== */
 .programs {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--off-white);
+  background: var(--blue, #3199BD);
   position: relative;
   overflow: hidden;
 }
