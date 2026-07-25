@@ -1308,6 +1308,24 @@ em { font-style: italic; font-family: var(--font-display); }
   }
 }
 
+/* ========== INSTAGRAM FEED ========== */
+.instagram-feed {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: var(--off-white);
+}
+.instagram-feed .section-eyebrow {
+  color: var(--blue);
+}
+.instagram-feed .section-title {
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--heading);
+}
+.instagram-feed .section-sub {
+  max-width: 600px;
+  margin: 0 auto 48px;
+  color: var(--text-soft);
+}
+
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
