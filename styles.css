@@ -507,6 +507,42 @@ em { font-style: italic; font-family: var(--font-display); }
 .mission-img.active { opacity: 1; }
 
 /* ========== PROGRAMS ========== */
+/* ========== PARTNER LOGOS MARQUEE ========== */
+.partner-marquee {
+  background: #fff;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+}
+.partner-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+.partner-marquee-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.6);
+  transition: filter 0.3s ease;
+  flex-shrink: 0;
+}
+.partner-marquee-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+.partner-marquee-logo--darker {
+  filter: grayscale(1) opacity(0.6) brightness(0.5);
+}
+.partner-marquee-logo--darker:hover {
+  filter: grayscale(0) opacity(1) brightness(1);
+}
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .programs {
   padding: 0;
   background: var(--off-white);
