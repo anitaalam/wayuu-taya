@@ -1347,7 +1347,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== NEWS & UPDATES PREVIEW ========== */
 .news-preview {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: #fff;
+  background: var(--off-white);
 }
 .news-preview .section-eyebrow {
   color: var(--blue);
