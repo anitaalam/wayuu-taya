@@ -707,7 +707,7 @@ em { font-style: italic; font-family: var(--font-display); }
   overflow: hidden;
 }
 .programs-alt-cell--dark {
-  background: #1a1a2e;
+  background: #2a3150;
 }
 .programs-alt-cell--blue {
   background: var(--blue, #3199BD);
@@ -766,7 +766,7 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .programs-alt-btn:hover {
   background: var(--white, #fff);
-  color: #1a1a2e;
+  color: #2a3150;
 }
 .programs-alt-btn--light:hover {
   color: var(--blue, #3199BD);
