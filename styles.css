@@ -1344,6 +1344,102 @@ em { font-style: italic; font-family: var(--font-display); }
   }
 }
 
+/* ========== NEWS & UPDATES PREVIEW ========== */
+.news-preview {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: #fff;
+}
+.news-preview .section-eyebrow {
+  color: var(--blue);
+}
+.news-preview .section-title {
+  color: var(--heading);
+  margin-bottom: 48px;
+}
+.news-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.news-preview-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--off-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+.news-preview-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.news-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.news-preview-card:hover .news-preview-img {
+  transform: scale(1.06);
+}
+.news-preview-text {
+  padding: 24px;
+}
+.news-preview-category {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.news-preview-title {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+.news-preview-date {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin: 0;
+}
+.news-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  color: var(--white);
+  background: var(--blue);
+  transition: all 0.3s ease;
+}
+.news-preview-btn:hover {
+  background: var(--blue-light);
+}
+@media (max-width: 768px) {
+  .news-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 /* ========== INSTAGRAM FEED ========== */
 .instagram-feed {
   padding: clamp(80px, 10vw, 140px) 0;
