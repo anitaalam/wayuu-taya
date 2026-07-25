@@ -1441,6 +1441,9 @@ img.cta-bg-video {
   margin-bottom: 36px;
   line-height: 1.7;
 }
+.cta--video h2 { color: var(--white); }
+.cta--video h2 em { color: var(--blue-light); }
+.cta--video p { color: rgba(255,255,255,0.7); }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ========== CONTACT PAGE ========== */
