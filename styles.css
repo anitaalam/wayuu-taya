@@ -1325,6 +1325,71 @@ em { font-style: italic; font-family: var(--font-display); }
   margin: 0 auto 48px;
   color: var(--text-soft);
 }
+.ig-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.ig-placeholder-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.ig-placeholder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.ig-placeholder-card:hover .ig-placeholder-img {
+  transform: scale(1.08);
+}
+.ig-placeholder-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.ig-placeholder-card:hover .ig-placeholder-overlay {
+  opacity: 1;
+}
+.ig-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 36px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  color: var(--white);
+  background: var(--blue);
+  transition: all 0.3s ease;
+}
+.ig-follow-btn:hover {
+  background: var(--blue-light);
+}
+@media (max-width: 768px) {
+  .ig-placeholder-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .ig-placeholder-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
