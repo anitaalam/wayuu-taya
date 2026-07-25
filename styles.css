@@ -1322,8 +1322,9 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .instagram-feed .section-sub {
   max-width: 600px;
-  margin: 0 auto 48px;
+  margin: 0 0 48px;
   color: var(--text-soft);
+  text-align: left;
 }
 .ig-placeholder-grid {
   display: grid;
