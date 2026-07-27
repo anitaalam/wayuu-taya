@@ -2077,13 +2077,13 @@ img.cta-bg-video {
   object-fit: contain;
 }
 .contact-swirl--left {
-  left: -80px;
-  top: 50%;
+  left: calc(-80px + 20%);
+  top: 35%;
   transform: translateY(-50%);
 }
 .contact-swirl--right {
-  right: -80px;
-  top: 50%;
+  right: calc(-80px + 30%);
+  top: 45%;
   transform: translateY(-50%);
 }
 .contact-details > .container {
