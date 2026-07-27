@@ -2077,12 +2077,12 @@ img.cta-bg-video {
   object-fit: contain;
 }
 .contact-swirl--left {
-  left: calc(-80px + 20%);
+  left: calc(-80px + 5%);
   top: 35%;
   transform: translateY(-50%);
 }
 .contact-swirl--right {
-  right: calc(-80px + 30%);
+  right: calc(-80px + 20%);
   top: 45%;
   transform: translateY(-50%);
 }
