@@ -5204,7 +5204,7 @@ img.cta-bg-video {
   background-image: url('assets/crumble-paper.png');
   background-position: center;
   background-size: cover;
-  opacity: 0.15;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
