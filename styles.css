@@ -5194,7 +5194,23 @@ img.cta-bg-video {
 /* Featured post */
 .news-featured-section {
   padding: 80px 0 40px;
-  background: var(--black);
+  background: var(--off-white);
+  position: relative;
+}
+.news-featured-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.news-featured-section > .container {
+  position: relative;
+  z-index: 1;
 }
 .news-featured-card {
   display: grid;
@@ -5229,14 +5245,14 @@ img.cta-bg-video {
   z-index: 2;
 }
 .news-featured-body {
-  color: var(--white);
+  color: var(--heading);
 }
 .news-featured-body .news-date {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-soft);
   margin-right: 12px;
 }
 .news-featured-body .news-cat {
@@ -5244,7 +5260,7 @@ img.cta-bg-video {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--blue-light);
+  color: var(--blue);
 }
 .news-featured-body h2 {
   font-family: var(--font-display);
@@ -5252,7 +5268,7 @@ img.cta-bg-video {
   font-weight: 700;
   line-height: 1.2;
   margin: 14px 0 20px;
-  color: var(--white);
+  color: var(--heading);
 }
 .news-featured-body h2 em {
   color: var(--blue);
@@ -5261,7 +5277,7 @@ img.cta-bg-video {
 .news-featured-body p {
   font-size: 16px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-soft);
   margin-bottom: 24px;
 }
 
