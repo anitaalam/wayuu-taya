@@ -2528,6 +2528,64 @@ img.cta-bg-video {
   background: var(--black);
 }
 
+/* Option B — Formal stacked text layout */
+.vision-section--formal {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: var(--off-white);
+}
+.vision-formal-block {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 0 60px;
+  border-left: 3px solid var(--blue);
+  padding-left: 40px;
+  text-align: left;
+}
+.vision-formal-block + .vision-formal-block {
+  margin-top: 60px;
+  padding-bottom: 0;
+}
+.vision-formal-accent {
+  width: 48px;
+  height: 3px;
+  background: var(--blue);
+  margin: 16px 0 24px;
+}
+.vision-formal-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.vision-formal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vision-formal-list li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-left: 20px;
+  position: relative;
+}
+.vision-formal-list li:last-child {
+  border-bottom: none;
+}
+.vision-formal-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
 /* Full-width split layout */
 .vision-split {
   display: grid;
