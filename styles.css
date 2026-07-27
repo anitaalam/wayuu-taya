@@ -2675,6 +2675,23 @@ img.cta-bg-video {
 .vision-section--clean {
   padding: clamp(80px, 10vw, 120px) 0;
   background: #fff;
+  position: relative;
+}
+.vision-section--clean::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.vision-section--clean > .container {
+  position: relative;
+  z-index: 1;
 }
 .vision-clean-grid {
   display: grid;
