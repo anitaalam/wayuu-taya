@@ -2082,7 +2082,7 @@ img.cta-bg-video {
   transform: translateY(-50%);
 }
 .contact-swirl--right {
-  right: calc(-80px + 20%);
+  right: calc(-80px + 10%);
   top: 45%;
   transform: translateY(-50%);
 }
@@ -2164,10 +2164,25 @@ a.contact-detail-row:hover .btn-arrow {
   opacity: 1;
   transform: translateX(4px);
 }
+@media (max-width: 1024px) {
+  .contact-swirl {
+    width: 200px;
+    height: 200px;
+  }
+  .contact-swirl--left {
+    left: -60px;
+  }
+  .contact-swirl--right {
+    right: -60px;
+  }
+}
 @media (max-width: 768px) {
   .contact-details-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .contact-swirl {
+    display: none;
   }
 }
 
