@@ -2671,41 +2671,6 @@ img.cta-bg-video {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Option D — Static panels, no hover interactivity */
-.vision-panel--static {
-  cursor: default;
-}
-.vision-panel--static img {
-  animation: none;
-  transform: scale(1.04);
-}
-.vision-panel--static:hover img {
-  animation: none;
-  transform: scale(1.04);
-}
-.vision-panel--static .vision-panel-overlay {
-  background: rgba(0, 0, 0, 0.65);
-}
-.vision-panel--static:hover .vision-panel-overlay {
-  background: rgba(0, 0, 0, 0.65);
-}
-.vision-panel--static .vision-label {
-  transition: none;
-}
-.vision-panel--static:hover .vision-label {
-  transform: none;
-}
-.vision-panel--static .vision-body {
-  max-height: 350px;
-  opacity: 1;
-  overflow: visible;
-  transition: none;
-}
-.vision-panel--static:hover .vision-body {
-  max-height: 350px;
-  opacity: 1;
-}
-
 /* ========== FOUNDING STORY ========== */
 .story-section {
   padding: clamp(80px, 10vw, 140px) 0;
