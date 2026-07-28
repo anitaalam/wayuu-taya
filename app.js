@@ -296,8 +296,10 @@ mainNav.querySelectorAll('a').forEach(link => {
     requestAnimationFrame(() => {
       const vh = window.innerHeight;
 
-      // Header scroll state
-      if (header) header.classList.toggle('scrolled', window.scrollY > 60);
+      // Header scroll state (skip if header has .header-fixed-dark)
+      if (header && !header.classList.contains('header-fixed-dark')) {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+      }
 
       // Mission image rotation (no parallax shift)
 
