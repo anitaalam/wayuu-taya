@@ -2132,8 +2132,8 @@ img.cta-bg-video {
 }
 .store-product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 .store-product {
   text-decoration: none;
@@ -2175,6 +2175,11 @@ img.cta-bg-video {
 }
 
 /* Store Responsive */
+@media (max-width: 1024px) {
+  .store-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .store-product-grid {
     grid-template-columns: repeat(2, 1fr);
