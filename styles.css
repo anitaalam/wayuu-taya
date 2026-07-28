@@ -1289,7 +1289,7 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-bottom: 16px;
 }
 .ways-help-eyebrow--light {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--blue, #3199BD);
 }
 .ways-help-dash {
   color: inherit;
