@@ -2405,22 +2405,16 @@ img.cta-bg-video {
   font-size: 1rem;
 }
 .product-cart-btn {
-  display: inline-block;
-  text-align: center;
   padding: 14px 32px;
   font-size: 1rem;
   cursor: pointer;
-  background: rgba(49, 153, 189, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(49, 153, 189, 0.3);
-  color: var(--blue);
-  border-radius: 50px;
-  transition: all 0.25s ease;
+  background: transparent;
+  border: 2px solid rgba(0,0,0,0.25);
+  color: var(--heading);
 }
 .product-cart-btn:hover {
-  background: rgba(49, 153, 189, 0.15);
-  border-color: var(--blue);
+  border-color: var(--heading);
+  background: rgba(0,0,0,0.05);
   transform: translateY(-2px);
 }
 .product-note {
