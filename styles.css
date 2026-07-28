@@ -5348,6 +5348,118 @@ a.contact-detail-row:hover .btn-arrow {
   .program-other-card { flex: 0 0 75%; }
 }
 
+/* ========== OTHER PROGRAMS 2×2 GRID ========== */
+.program-grid-section {
+  padding: 0;
+  margin: 0;
+}
+.program-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+}
+.program-grid-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: #fff;
+}
+.program-grid-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s ease;
+}
+.program-grid-card:hover .program-grid-img {
+  transform: scale(1.05);
+}
+.program-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.1) 100%);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+.program-grid-card:hover .program-grid-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%);
+}
+.program-grid-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  width: 100%;
+}
+.program-grid-eyebrow {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--blue-light, #5DADE2);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.program-grid-title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+.program-grid-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--blue-light, #5DADE2);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.program-grid-link .btn-arrow {
+  font-size: 1.4em;
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  transition: transform 0.3s ease;
+}
+.program-grid-card:hover .program-grid-link .btn-arrow {
+  transform: translateX(4px);
+}
+.program-grid-card:hover .program-grid-link {
+  color: #fff;
+}
+
+/* Responsive: 2×2 → 1×4 on mobile */
+@media (max-width: 768px) {
+  .program-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+  .program-grid-card {
+    aspect-ratio: 16 / 9;
+  }
+  .program-grid-content {
+    padding: 28px;
+  }
+}
+@media (max-width: 480px) {
+  .program-grid-card {
+    aspect-ratio: 4 / 3;
+  }
+  .program-grid-content {
+    padding: 20px;
+  }
+  .program-grid-title {
+    font-size: 1.3rem;
+  }
+}
+
 /* ========== REDUCED MOTION ========== */
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: none !important; animation: none !important; }
