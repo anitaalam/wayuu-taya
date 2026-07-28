@@ -2392,13 +2392,24 @@ img.cta-bg-video {
   text-align: right;
 }
 
-/* Buy Button */
+/* Product Buttons */
+.product-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
 .product-buy-btn {
   display: inline-block;
   text-align: center;
   padding: 14px 48px;
   font-size: 1rem;
-  margin-bottom: 16px;
+}
+.product-cart-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 32px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 .product-note {
   font-size: 0.8rem;
