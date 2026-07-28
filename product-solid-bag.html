@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Store — Wayuu Taya Foundation</title>
-  <meta name="description" content="Shop handcrafted Wayuu products. All proceeds support the Wayuu Taya Foundation's programs." />
+  <title>Solid Bag — Store — Wayuu Taya Foundation</title>
+  <meta name="description" content="Handcrafted Wayuu Solid Bag. 100% cotton fiber, handwoven by a single artisan over 20 days." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -56,23 +56,82 @@
     </div>
   </header>
 
-  <!-- ========== STORE ========== -->
-  <section class="store-shop">
+  <!-- ========== PRODUCT ========== -->
+  <section class="product-page">
     <div class="container">
-      <div class="store-shop-header">
-        <h1 class="store-shop-title">Store</h1>
-        <p class="store-shop-sub">Handcrafted by Wayuu artisans. All proceeds support our programs.</p>
-        <div class="store-filters">
-          <button class="store-filter-btn active" data-filter="all">All</button>
-          <button class="store-filter-btn" data-filter="bags">Bags</button>
-          <button class="store-filter-btn" data-filter="accessories">Accessories</button>
-          <button class="store-filter-btn" data-filter="jewelry">Jewelry</button>
+
+      <!-- Breadcrumb -->
+      <nav class="product-breadcrumb">
+        <a href="store.html">Store</a>
+        <span class="product-breadcrumb-sep">/</span>
+        <span>Solid Bag</span>
+      </nav>
+
+      <div class="product-layout">
+
+        <!-- Left: Image Gallery -->
+        <div class="product-gallery">
+          <div class="product-main-img-wrap">
+            <img src="assets/store/solid-bag.webp" alt="Solid Bag" class="product-main-img" id="productMainImg" />
+          </div>
+          <div class="product-thumbs">
+            <button class="product-thumb active" data-img="assets/store/solid-bag.webp">
+              <img src="assets/store/solid-bag.webp" alt="Solid Bag — View 1" />
+            </button>
+            <button class="product-thumb" data-img="assets/store/solid-bag-2.webp">
+              <img src="assets/store/solid-bag-2.webp" alt="Solid Bag — View 2" />
+            </button>
+          </div>
         </div>
+
+        <!-- Right: Product Details -->
+        <div class="product-details">
+          <span class="product-category-tag">Bags</span>
+          <h1 class="product-title">Solid Bag</h1>
+          <p class="product-price">$60.00</p>
+
+          <div class="product-description">
+            <p>Wayuubags (mochilas), also known as Susu, are handwoven by Wayuu women who put all their magic, passion, and love into each piece. Each bag is done solely by one person, from beginning to end, and it takes approximately 20 days of intricate work to make each one.</p>
+            <p>No two bags are alike — slight variations in color and pattern make each one uniquely yours.</p>
+          </div>
+
+          <div class="product-meta">
+            <div class="product-meta-row">
+              <span class="product-meta-label">Material</span>
+              <span class="product-meta-value">100% Cotton Fiber</span>
+            </div>
+            <div class="product-meta-row">
+              <span class="product-meta-label">Craft Time</span>
+              <span class="product-meta-value">~20 days of hand-weaving</span>
+            </div>
+            <div class="product-meta-row">
+              <span class="product-meta-label">Care</span>
+              <span class="product-meta-value">Hand wash or delicate cycle. Hang to dry.</span>
+            </div>
+            <div class="product-meta-row">
+              <span class="product-meta-label">Guarantee</span>
+              <span class="product-meta-value">Lifetime guarantee included</span>
+            </div>
+          </div>
+
+          <a href="https://www.wayuulove.com/collections/solid-bags" class="btn btn-primary product-buy-btn" target="_blank" rel="noopener">
+            Buy Now <span class="btn-arrow">&longrightarrow;</span>
+          </a>
+
+          <p class="product-note">Sold through our partner <a href="https://www.wayuulove.com" target="_blank" rel="noopener">Wayuulove</a>. 15% of select products goes directly to the Wayuu Taya Foundation.</p>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <div class="store-product-grid">
+  <!-- ========== RELATED PRODUCTS ========== -->
+  <section class="product-related">
+    <div class="container">
+      <h2 class="product-related-title">You May Also Like</h2>
+      <div class="product-related-grid">
 
-        <a href="https://www.wayuulove.com/collections/wayuu-taya" target="_blank" rel="noopener" class="store-product" data-category="bags">
+        <a href="product-solid-bag.html" class="store-product" data-category="bags">
           <div class="store-product-img-wrap">
             <img src="assets/store/printed-bag.webp" alt="Printed Bag" class="store-product-img" />
           </div>
@@ -84,26 +143,6 @@
 
         <a href="product-solid-bag.html" class="store-product" data-category="bags">
           <div class="store-product-img-wrap">
-            <img src="assets/store/solid-bag.webp" alt="Solid Bag" class="store-product-img" />
-          </div>
-          <div class="store-product-info">
-            <h3>Solid Bag</h3>
-            <span class="store-product-price">$60.00</span>
-          </div>
-        </a>
-
-        <a href="product-solid-bag.html" class="store-product" data-category="bags">
-          <div class="store-product-img-wrap">
-            <img src="assets/store/solid-bag-2.webp" alt="Solid Bag" class="store-product-img" />
-          </div>
-          <div class="store-product-info">
-            <h3>Solid Bag</h3>
-            <span class="store-product-price">$60.00</span>
-          </div>
-        </a>
-
-        <a href="https://www.wayuulove.com/collections/maxi-tote-bag" target="_blank" rel="noopener" class="store-product" data-category="bags">
-          <div class="store-product-img-wrap">
             <img src="assets/store/wayuu-tote.webp" alt="Wayuu Tote" class="store-product-img" />
           </div>
           <div class="store-product-info">
@@ -112,7 +151,7 @@
           </div>
         </a>
 
-        <a href="https://www.wayuulove.com/collections/maxi-tote-bag" target="_blank" rel="noopener" class="store-product" data-category="bags">
+        <a href="product-solid-bag.html" class="store-product" data-category="bags">
           <div class="store-product-img-wrap">
             <img src="assets/store/wayuu-tote-2.webp" alt="Wayuu Tote" class="store-product-img" />
           </div>
@@ -122,29 +161,9 @@
           </div>
         </a>
 
-        <a href="https://www.wayuulove.com/collections/maxi-tote-bag" target="_blank" rel="noopener" class="store-product" data-category="bags">
+        <a href="product-solid-bag.html" class="store-product" data-category="bags">
           <div class="store-product-img-wrap">
             <img src="assets/store/wayuu-tote-3.webp" alt="Wayuu Tote" class="store-product-img" />
-          </div>
-          <div class="store-product-info">
-            <h3>Wayuu Tote</h3>
-            <span class="store-product-price">$120.00</span>
-          </div>
-        </a>
-
-        <a href="https://www.wayuulove.com/collections/maxi-tote-bag" target="_blank" rel="noopener" class="store-product" data-category="bags">
-          <div class="store-product-img-wrap">
-            <img src="assets/store/wayuu-tote-4.webp" alt="Wayuu Tote" class="store-product-img" />
-          </div>
-          <div class="store-product-info">
-            <h3>Wayuu Tote</h3>
-            <span class="store-product-price">$120.00</span>
-          </div>
-        </a>
-
-        <a href="https://www.wayuulove.com/collections/maxi-tote-bag" target="_blank" rel="noopener" class="store-product" data-category="bags">
-          <div class="store-product-img-wrap">
-            <img src="assets/store/wayuu-tote-5.webp" alt="Wayuu Tote" class="store-product-img" />
           </div>
           <div class="store-product-info">
             <h3>Wayuu Tote</h3>

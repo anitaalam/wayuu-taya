@@ -992,3 +992,19 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     });
   });
 })();
+
+/* ========== PRODUCT PAGE THUMBNAIL SWITCHER ========== */
+(function() {
+  var thumbs = document.querySelectorAll('.product-thumb');
+  var mainImg = document.getElementById('productMainImg');
+  if (!thumbs.length || !mainImg) return;
+
+  thumbs.forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      var src = this.getAttribute('data-img');
+      mainImg.src = src;
+      thumbs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+})();

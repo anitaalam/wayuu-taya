@@ -2239,6 +2239,220 @@ img.cta-bg-video {
   }
 }
 
+/* ===== Product Page ===== */
+.product-page {
+  padding: clamp(120px, 14vw, 160px) 0 clamp(60px, 8vw, 100px);
+  background: var(--off-white);
+  position: relative;
+}
+.product-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+}
+.product-page > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Breadcrumb */
+.product-breadcrumb {
+  margin-bottom: 32px;
+  font-size: 0.85rem;
+}
+.product-breadcrumb a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.product-breadcrumb a:hover {
+  text-decoration: underline;
+}
+.product-breadcrumb-sep {
+  margin: 0 8px;
+  color: var(--grey);
+}
+.product-breadcrumb span:last-child {
+  color: var(--grey);
+}
+
+/* 2-Column Layout */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Image Gallery */
+.product-main-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.product-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.product-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.product-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-thumb.active,
+.product-thumb:hover {
+  border-color: var(--blue);
+}
+
+/* Product Details */
+.product-category-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  background: rgba(49, 153, 189, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.product-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--heading);
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 0 0 28px;
+  display: block;
+}
+.product-description {
+  margin-bottom: 28px;
+}
+.product-description p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--grey);
+  margin: 0 0 12px;
+}
+.product-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Product Meta */
+.product-meta {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 20px;
+  margin-bottom: 32px;
+}
+.product-meta-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+}
+.product-meta-label {
+  font-weight: 600;
+  color: var(--heading);
+}
+.product-meta-value {
+  color: var(--grey);
+  text-align: right;
+}
+
+/* Buy Button */
+.product-buy-btn {
+  width: 100%;
+  text-align: center;
+  padding: 16px 32px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.product-note {
+  font-size: 0.8rem;
+  color: var(--grey);
+  text-align: center;
+  line-height: 1.6;
+}
+.product-note a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.product-note a:hover {
+  text-decoration: underline;
+}
+
+/* Related Products */
+.product-related {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--off-white);
+}
+.product-related-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 0 0 32px;
+}
+.product-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Product Page Responsive */
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .product-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .product-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .product-thumb {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 /* ===== Contact Details Section ===== */
 .contact-details {
   padding: clamp(80px, 10vw, 120px) 0;
