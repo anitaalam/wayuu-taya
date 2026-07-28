@@ -1385,6 +1385,23 @@ em { font-style: italic; font-family: var(--font-display); }
 .news-preview {
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
+  position: relative;
+}
+.news-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.news-preview > .container {
+  position: relative;
+  z-index: 1;
 }
 .news-preview .section-eyebrow {
   color: var(--blue);
