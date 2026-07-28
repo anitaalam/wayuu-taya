@@ -2113,6 +2113,23 @@ img.cta-bg-video {
 .store-shop {
   padding: clamp(120px, 14vw, 180px) 0 clamp(80px, 10vw, 140px);
   background: var(--off-white);
+  position: relative;
+}
+.store-shop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+}
+.store-shop > .container {
+  position: relative;
+  z-index: 1;
 }
 .store-shop-header {
   margin-bottom: 48px;
@@ -2128,7 +2145,34 @@ img.cta-bg-video {
 .store-shop-sub {
   font-size: 1rem;
   color: var(--grey);
-  margin: 0;
+  margin: 0 0 24px;
+}
+.store-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.store-filter-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--grey-light, #ccc);
+  border-radius: 30px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grey);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.store-filter-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.store-filter-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
 }
 .store-product-grid {
   display: grid;

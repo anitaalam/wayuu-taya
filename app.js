@@ -968,3 +968,27 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     }, interval);
   });
 })();
+
+/* ========== STORE FILTER ========== */
+(function() {
+  var filterBtns = document.querySelectorAll('.store-filter-btn');
+  var products = document.querySelectorAll('.store-product');
+  if (!filterBtns.length || !products.length) return;
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.getAttribute('data-filter');
+
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      products.forEach(function(product) {
+        if (filter === 'all' || product.getAttribute('data-category') === filter) {
+          product.style.display = '';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
