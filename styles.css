@@ -940,8 +940,7 @@ em { font-style: italic; font-family: var(--font-display); }
   position: relative;
 }
 .cta--with-arc {
-  margin-top: calc(-1 * clamp(60px, 8vw, 120px));
-  padding-top: calc(clamp(60px, 8vw, 120px) + clamp(80px, 10vw, 140px));
+  margin-top: 0;
 }
 
 /* ========== PARALLAX BREAK ========== */
