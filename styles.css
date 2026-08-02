@@ -3746,6 +3746,10 @@ a.contact-detail-row:hover .btn-arrow {
   margin-left: calc(-50vw + 50%);
   padding: 0 20px;
 }
+.culture-grid .reveal-card:nth-child(2),
+.culture-grid .reveal-card:nth-child(4) {
+  transform: translateY(5%);
+}
 
 /* Ken Burns zoom keyframes */
 @keyframes card-zoom {
