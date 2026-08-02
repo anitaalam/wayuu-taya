@@ -4565,7 +4565,7 @@ a.contact-detail-row:hover .btn-arrow {
 .program-areas--video {
   position: relative;
   overflow: hidden;
-  background: #0a0a0a;
+  background: #1a1a1a;
 }
 .program-areas-bg-video {
   position: absolute;
@@ -4639,7 +4639,7 @@ a.contact-detail-row:hover .btn-arrow {
 
 /* Dark variant (static black background, glassy cards) */
 .program-areas--dark {
-  background: #0a0a0a;
+  background: #1a1a1a;
   position: relative;
   overflow: hidden;
 }
@@ -4859,7 +4859,7 @@ a.contact-detail-row:hover .btn-arrow {
 /* Video section (after gallery) */
 .program-video-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--black);
+  background: #1a1a1a;
 }
 .program-video-section .section-eyebrow { color: var(--blue-light); }
 .program-video-section .section-title { color: var(--white); }
@@ -4907,7 +4907,7 @@ a.contact-detail-row:hover .btn-arrow {
   z-index: 1;
 }
 .program-gallery--dark {
-  background: #0a0a0a;
+  background: #1a1a1a;
   overflow: hidden;
 }
 .program-gallery--dark .program-areas-bg-video {
@@ -5216,7 +5216,7 @@ a.contact-detail-row:hover .btn-arrow {
   background: rgba(0,0,0,0.03);
 }
 .program-other--black {
-  background: #0a0a0a;
+  background: #1a1a1a;
 }
 .program-other--black .section-title,
 .program-other--black .section-title em {
@@ -5850,7 +5850,7 @@ a.contact-detail-row:hover .btn-arrow {
 /* ========== HASTA LOS HUESOS SECTION ========== */
 .hasta-section {
   padding: 100px 0;
-  background: #0A0A0A;
+  background: #1a1a1a;
   color: #fff;
 }
 .hasta-section .section-eyebrow {
