@@ -3691,6 +3691,9 @@ a.contact-detail-row:hover .btn-arrow {
 .about-numbers .number-card:hover { background: rgba(255,255,255,0.1); }
 .about-numbers .number-value { color: var(--blue-light); }
 .about-numbers .number-label { color: rgba(255,255,255,0.7); }
+.about-numbers + .arc-divider + .cta--with-arc {
+  margin-top: calc(-1 * clamp(60px, 8vw, 120px));
+}
 
 /* ========== CULTURE CARDS (The Wayuu) ========== */
 .culture-section {
