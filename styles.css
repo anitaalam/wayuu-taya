@@ -2460,29 +2460,50 @@ img.cta-bg-video {
   position: relative;
   overflow: hidden;
 }
-.contact-swirl {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  animation: spin 60s linear infinite;
+.contact-details--video {
+  background: #1a1a1a;
 }
-.contact-swirl img {
+.contact-details-bg-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  z-index: 0;
 }
-.contact-swirl--left {
-  left: calc(-80px + 5%);
-  top: 35%;
-  transform: translateY(-50%);
+.contact-details-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
 }
-.contact-swirl--right {
-  right: calc(-80px + 10%);
-  top: 45%;
-  transform: translateY(-50%);
+.contact-details--video .section-eyebrow {
+  color: #85C1E9 !important;
+}
+.contact-details--video .section-title {
+  color: #fff;
+}
+.contact-details--video .section-title em {
+  color: #fff;
+}
+.contact-details--video .contact-details-intro p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.contact-details--video .contact-detail-row {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+.contact-details--video .contact-detail-row strong {
+  color: #fff;
+}
+.contact-details--video .contact-detail-row span {
+  color: rgba(255, 255, 255, 0.8);
+}
+.contact-details--video .contact-detail-icon {
+  stroke: #85C1E9;
+}
+.contact-details--video .btn-arrow {
+  color: rgba(255, 255, 255, 0.5);
 }
 .contact-details > .container {
   position: relative;
