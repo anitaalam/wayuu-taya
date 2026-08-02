@@ -4636,20 +4636,6 @@ a.contact-detail-row:hover .btn-arrow {
 .squiggle-divider--bottom {
   margin-top: -1px;
 }
-.squiggle-divider--textured::after,
-.arc-divider--textured::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/crumble-paper.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Dark variant (static black background, glassy cards) */
 .program-areas--dark {
   background: #1a1a1a;
