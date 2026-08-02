@@ -1995,6 +1995,10 @@ img.cta-bg-video {
   padding: 100px 0;
   background: var(--off-white);
 }
+.contact-donate-section + .cta--with-arc {
+  padding-top: clamp(150px, 18vw, 250px);
+  padding-bottom: clamp(100px, 13vw, 180px);
+}
 .contact-donate-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
