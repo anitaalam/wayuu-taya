@@ -3691,10 +3691,13 @@ a.contact-detail-row:hover .btn-arrow {
 .about-numbers .number-card:hover { background: rgba(255,255,255,0.1); }
 .about-numbers .number-value { color: var(--blue-light); }
 .about-numbers .number-label { color: rgba(255,255,255,0.7); }
-.about-numbers + .arc-divider + .cta--with-arc,
-.news-grid-section + .arc-divider + .cta--with-arc {
+.about-numbers + .arc-divider + .cta--with-arc {
   margin-top: calc(-1 * clamp(60px, 8vw, 120px));
   padding-top: clamp(100px, 13vw, 180px);
+  padding-bottom: clamp(100px, 13vw, 180px);
+}
+.news-grid-section + .cta--with-arc {
+  padding-top: clamp(130px, 16vw, 220px);
   padding-bottom: clamp(100px, 13vw, 180px);
 }
 
