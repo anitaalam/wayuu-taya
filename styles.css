@@ -462,13 +462,13 @@ em { font-style: italic; font-family: var(--font-display); }
   background: rgba(0, 0, 0, 0.45);
 }
 .mission-text-side .section-eyebrow {
-  color: #85C1E9;
+  color: #3199BD;
 }
 .mission-text-side .section-title {
   color: #fff;
 }
 .mission-text-side .section-title em {
-  color: #85C1E9;
+  color: #3199BD;
 }
 .mission-text-side p {
   color: rgba(255, 255, 255, 0.85) !important;
