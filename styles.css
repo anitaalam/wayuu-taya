@@ -3721,6 +3721,10 @@ a.contact-detail-row:hover .btn-arrow {
   padding-top: clamp(130px, 16vw, 220px);
   padding-bottom: clamp(100px, 13vw, 180px);
 }
+.map-section + .cta--with-arc {
+  padding-top: clamp(150px, 18vw, 250px);
+  padding-bottom: clamp(100px, 13vw, 180px);
+}
 
 /* ========== CULTURE CARDS (The Wayuu) ========== */
 .culture-section {

@@ -338,24 +338,17 @@
     </div>
   </section>
 
-  <!-- ========== ARC DIVIDER ========== -->
-  <div class="arc-divider arc-divider--over-video arc-divider--crumble">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="crumblePattern" patternUnits="userSpaceOnUse" width="1440" height="120">
-          <rect width="1440" height="120" fill="#F5F0E8"/>
-          <image href="assets/crumble-paper.png" x="0" y="-200" width="1440" height="900" opacity="0.3" preserveAspectRatio="xMidYMid slice"/>
-        </pattern>
-      </defs>
-      <path d="M0,0 L0,0 Q720,120 1440,0 L1440,0 L0,0 Z" fill="url(#crumblePattern)"/>
-    </svg>
-  </div>
-
   <!-- ========== CTA ========== -->
   <section class="cta cta--video cta--with-arc" id="cta">
     <video class="cta-bg-video" autoplay muted loop playsinline>
       <source src="assets/forest.mp4" type="video/mp4" />
     </video>
+    <!-- Arc divider inside CTA so background video fills the curve -->
+    <div class="arc-divider arc-divider--over-video" style="position:absolute;top:0;left:0;width:100%;z-index:2;" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,120 Q720,0 1440,120 L1440,0 L0,0 Z" fill="#F5F0E8"/>
+      </svg>
+    </div>
     <div class="cta-overlay"></div>
     <div class="container cta-inner">
       <h2>Together we can make a <em>difference</em></h2>
