@@ -1615,18 +1615,6 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(80px, 10vw, 140px) 0;
   background: var(--off-white);
   position: relative;
-  overflow: visible;
-}
-.map-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/crumble-paper.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
 }
 .map-section .container {
   position: relative;
