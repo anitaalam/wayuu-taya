@@ -3693,6 +3693,8 @@ a.contact-detail-row:hover .btn-arrow {
 .about-numbers .number-label { color: rgba(255,255,255,0.7); }
 .about-numbers + .arc-divider + .cta--with-arc {
   margin-top: calc(-1 * clamp(60px, 8vw, 120px));
+  padding-top: clamp(100px, 13vw, 180px);
+  padding-bottom: clamp(100px, 13vw, 180px);
 }
 
 /* ========== CULTURE CARDS (The Wayuu) ========== */
