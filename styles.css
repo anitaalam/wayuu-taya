@@ -2660,7 +2660,7 @@ a.contact-detail-row:hover .btn-arrow {
   z-index: 1;
 }
 .donate-hero + .cta--with-arc {
-  padding-top: clamp(130px, 16vw, 220px);
+  padding-top: clamp(150px, 18vw, 250px);
   padding-bottom: clamp(100px, 13vw, 180px);
 }
 .donate-hero-inner {
