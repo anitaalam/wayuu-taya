@@ -5945,6 +5945,23 @@ a.contact-detail-row:hover .btn-arrow {
 .performances-section {
   padding: 100px 0;
   background: var(--off-white);
+  position: relative;
+}
+.performances-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.performances-section > .container {
+  position: relative;
+  z-index: 1;
 }
 .performances-grid {
   display: grid;
