@@ -2641,6 +2641,23 @@ a.contact-detail-row:hover .btn-arrow {
   align-items: center;
   padding: 120px 0 80px;
   background: var(--off-white);
+  position: relative;
+}
+.donate-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.donate-hero > .container {
+  position: relative;
+  z-index: 1;
 }
 .donate-hero-inner {
   display: grid;
