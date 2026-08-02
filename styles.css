@@ -458,6 +458,20 @@ em { font-style: italic; font-family: var(--font-display); }
   align-items: center;
   padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 80px);
   padding-right: clamp(40px, 5vw, 80px);
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+}
+.mission-text-side .section-eyebrow {
+  color: #85C1E9;
+}
+.mission-text-side .section-title {
+  color: #fff;
+}
+.mission-text-side .section-title em {
+  color: #fff;
+}
+.mission-text-side p {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 .mission-text-inner {
   max-width: 560px;
