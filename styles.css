@@ -1753,7 +1753,7 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== NON-DISCRIMINATION POLICY ========== */
 .policy-section {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: var(--black);
+  background: #1a1a1a;
 }
 .policy-section .section-title {
   text-align: center;
