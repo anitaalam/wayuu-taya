@@ -266,22 +266,19 @@
     </div>
   </section>
 
-  <!-- ========== ARC DIVIDER ========== -->
-  <div class="arc-divider arc-divider--over-video">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 L0,120 Q720,0 1440,120 L1440,0 Z" fill="var(--blue-deep, #0a1628)"/>
-    </svg>
-  </div>
-
   <!-- ========== CTA ========== -->
   <section class="cta cta--video cta--with-arc">
-    <video class="cta-bg-video" autoplay muted loop playsinline>
-      <source src="assets/forest.mp4" type="video/mp4" />
-    </video>
+    <img src="assets/help-9.webp" alt="" class="cta-bg-video" aria-hidden="true" />
+    <!-- Arc divider inside CTA so background image fills the curve -->
+    <div class="arc-divider arc-divider--over-video" style="position:absolute;top:0;left:0;width:100%;z-index:2;" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L0,120 Q720,0 1440,120 L1440,0 Z" fill="#F5F0E8"/>
+      </svg>
+    </div>
     <div class="cta-overlay"></div>
-    <div class="container cta-inner">
-      <h2>Together we can make a <em>difference</em></h2>
-      <p>Your contribution fuels diverse programs touching lives and building sustainable development across communities.</p>
+    <div class="cta-inner container" style="text-align:center;">
+      <h2>Support Our <em>Mission</em></h2>
+      <p>Your contribution helps us reach more families, preserve cultural heritage, and build sustainable futures for indigenous communities.</p>
       <div class="cta-actions">
         <a href="https://donate.wayuutaya.org/give/340494#!/donation/checkout" class="btn btn-primary" target="_blank" rel="noopener">Donate Now</a>
         <a href="ways-to-give.html" class="btn btn-outline-light">Ways to Give</a>
