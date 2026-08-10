@@ -1063,7 +1063,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .h2-impact {
   position: relative;
   overflow: hidden;
-  padding: clamp(80px, 10vw, 120px) 0;
+  padding: clamp(60px, 7vw, 90px) 0;
   background: var(--blue, #3199BD);
 }
 .impact-swirl {
@@ -1208,6 +1208,24 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .h2-stat-card--big {
   padding: 36px 32px;
+}
+.h2-stat-card--full {
+  grid-column: 1 / -1;
+}
+.h2-impact-grid--clean {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+.h2-impact-grid--clean > .h2-stat-card--full {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+@media (max-width: 768px) {
+  .h2-impact-grid--clean {
+    grid-template-columns: 1fr;
+  }
 }
 .h2-stat-number {
   font-family: var(--font-display);
