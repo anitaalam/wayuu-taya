@@ -738,9 +738,9 @@ em { font-style: italic; font-family: var(--font-display); }
   overflow: hidden;
 }
 .programs-showcase-inner {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 4vw, 48px);
+  padding: 0 0 0 clamp(24px, 4vw, 48px);
+  padding-left: max(clamp(24px, 4vw, 48px), calc((100% - 1280px) / 2 + clamp(24px, 4vw, 48px)));
   display: flex;
   align-items: center;
   gap: clamp(40px, 5vw, 80px);
@@ -767,8 +767,9 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .programs-showcase-right {
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  margin-right: 0;
 }
 .programs-showcase-track {
   display: flex;
@@ -846,6 +847,7 @@ em { font-style: italic; font-family: var(--font-display); }
   .programs-showcase-inner {
     flex-direction: column;
     text-align: center;
+    padding: 0 24px;
   }
   .programs-showcase-left {
     flex: none;
