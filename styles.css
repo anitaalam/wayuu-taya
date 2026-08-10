@@ -1689,6 +1689,25 @@ em { font-style: italic; font-family: var(--font-display); }
 .instagram-feed--video {
   background: #0a0a0a;
 }
+.instagram-feed--blue {
+  background: var(--blue);
+}
+.instagram-feed--blue .section-eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+.instagram-feed--blue .section-title {
+  color: var(--white);
+}
+.instagram-feed--blue .section-sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+.instagram-feed--blue .ig-follow-btn {
+  background: var(--white);
+  color: var(--blue);
+}
+.instagram-feed--blue .ig-follow-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
 .ig-bg-video {
   position: absolute;
   top: 0;
