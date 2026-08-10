@@ -1010,3 +1010,52 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     });
   });
 })();
+
+/* ========== PROGRAMS SHOWCASE AUTO-SLIDE ========== */
+(function() {
+  var track = document.querySelector('.programs-showcase-track');
+  if (!track) return;
+  var cards = track.querySelectorAll('.programs-showcase-card');
+  if (cards.length === 0) return;
+
+  var currentIndex = 0;
+  var interval = 3000;
+
+  function getVisibleCount() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function slide() {
+    var visible = getVisibleCount();
+    var maxIndex = cards.length - visible;
+    if (maxIndex <= 0) {
+      track.style.transform = 'translateX(0)';
+      return;
+    }
+    currentIndex++;
+    if (currentIndex > maxIndex) {
+      // Reset to first card
+      currentIndex = 0;
+    }
+    var gap = 20;
+    var cardWidth = cards[0].offsetWidth + gap;
+    track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
+  }
+
+  var timer = setInterval(slide, interval);
+
+  // Pause on hover, resume on leave
+  var showcase = document.querySelector('.programs-showcase-right');
+  if (showcase) {
+    showcase.addEventListener('mouseenter', function() { clearInterval(timer); });
+    showcase.addEventListener('mouseleave', function() { timer = setInterval(slide, interval); });
+  }
+
+  // Reset on resize
+  window.addEventListener('resize', function() {
+    currentIndex = 0;
+    track.style.transform = 'translateX(0)';
+  });
+})();
