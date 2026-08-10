@@ -1237,7 +1237,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .donate-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 600px;
+  min-height: 510px;
 }
 .donate-split-image {
   position: relative;
