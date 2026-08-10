@@ -767,7 +767,7 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .programs-showcase-right {
   flex: 1;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   margin-right: 0;
 }
