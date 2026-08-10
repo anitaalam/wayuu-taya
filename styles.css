@@ -776,11 +776,11 @@ em { font-style: italic; font-family: var(--font-display); }
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .programs-showcase-card {
-  flex: 0 0 calc((100% - 40px) / 3);
+  flex: 0 0 calc((100% - 40px) / 2.5);
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4.8;
   text-decoration: none;
   display: block;
   cursor: pointer;
