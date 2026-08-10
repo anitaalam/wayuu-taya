@@ -1212,7 +1212,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .h2-impact-grid--clean {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  grid-template-rows: 200px auto !important;
+  grid-template-rows: 240px auto !important;
   gap: 24px;
 }
 /* Row 1: 24+ card col 1, photo col 2-3 */
