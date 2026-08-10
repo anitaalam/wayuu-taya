@@ -1011,51 +1011,53 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
   });
 })();
 
-/* ========== PROGRAMS SHOWCASE AUTO-SLIDE ========== */
+/* ========== PROGRAMS SHOWCASE AUTO-SLIDE (supports multiple instances) ========== */
 (function() {
-  var track = document.querySelector('.programs-showcase-track');
-  if (!track) return;
-  var cards = track.querySelectorAll('.programs-showcase-card');
-  if (cards.length === 0) return;
+  var tracks = document.querySelectorAll('.programs-showcase-track');
+  if (!tracks.length) return;
 
-  var currentIndex = 0;
-  var interval = 3000;
+  tracks.forEach(function(track) {
+    var cards = track.querySelectorAll('.programs-showcase-card');
+    if (cards.length === 0) return;
 
-  function getVisibleCount() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 2;
-  }
+    var currentIndex = 0;
+    var interval = 3000;
 
-  function slide() {
-    var visible = getVisibleCount();
-    var maxIndex = cards.length - visible;
-    if (maxIndex <= 0) {
-      track.style.transform = 'translateX(0)';
-      return;
+    function getVisibleCount() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 2;
     }
-    currentIndex++;
-    if (currentIndex > maxIndex) {
-      // Reset to first card
+
+    function slide() {
+      var visible = getVisibleCount();
+      var maxIndex = cards.length - visible;
+      if (maxIndex <= 0) {
+        track.style.transform = 'translateX(0)';
+        return;
+      }
+      currentIndex++;
+      if (currentIndex > maxIndex) {
+        currentIndex = 0;
+      }
+      var gap = 20;
+      var cardWidth = cards[0].offsetWidth + gap;
+      track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
+    }
+
+    var timer = setInterval(slide, interval);
+
+    // Pause on hover, resume on leave
+    var showcase = track.closest('.programs-showcase-right');
+    if (showcase) {
+      showcase.addEventListener('mouseenter', function() { clearInterval(timer); });
+      showcase.addEventListener('mouseleave', function() { timer = setInterval(slide, interval); });
+    }
+
+    // Reset on resize
+    window.addEventListener('resize', function() {
       currentIndex = 0;
-    }
-    var gap = 20;
-    var cardWidth = cards[0].offsetWidth + gap;
-    track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
-  }
-
-  var timer = setInterval(slide, interval);
-
-  // Pause on hover, resume on leave
-  var showcase = document.querySelector('.programs-showcase-right');
-  if (showcase) {
-    showcase.addEventListener('mouseenter', function() { clearInterval(timer); });
-    showcase.addEventListener('mouseleave', function() { timer = setInterval(slide, interval); });
-  }
-
-  // Reset on resize
-  window.addEventListener('resize', function() {
-    currentIndex = 0;
-    track.style.transform = 'translateX(0)';
+      track.style.transform = 'translateX(0)';
+    });
   });
 })();
