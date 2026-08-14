@@ -460,19 +460,19 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 80px);
   padding-right: clamp(40px, 5vw, 80px);
   position: relative;
-  background: rgba(0, 0, 0, 0.60);
+  background: var(--off-white);
 }
 .mission-text-side .section-eyebrow {
   color: #3199BD;
 }
 .mission-text-side .section-title {
-  color: #fff;
+  color: var(--text);
 }
 .mission-text-side .section-title em {
   color: #3199BD;
 }
 .mission-text-side p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--text-soft) !important;
 }
 .mission-text-inner {
   max-width: 560px;
@@ -559,31 +559,40 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 /* Partner Logos Static Grid */
 .partner-grid-section {
-  background: var(--off-white);
-  padding: 60px 0;
+  background: #3199BD;
+  padding: 40px 0;
 }
 .partner-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 48px 64px;
+  flex-wrap: nowrap;
+  gap: 48px;
 }
 .partner-grid-logo {
-  height: 40px;
+  height: 36px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(1) opacity(0.6);
+  filter: grayscale(1) brightness(10) opacity(0.7);
   transition: filter 0.3s ease;
 }
 .partner-grid-logo:hover {
-  filter: grayscale(0) opacity(1);
+  filter: grayscale(0) brightness(10) opacity(1);
 }
 .partner-grid-logo--darker {
-  filter: grayscale(1) opacity(0.6) brightness(0.5);
+  filter: grayscale(1) brightness(10) opacity(0.7);
 }
 .partner-grid-logo--darker:hover {
-  filter: grayscale(0) opacity(1) brightness(1);
+  filter: grayscale(0) brightness(10) opacity(1);
+}
+@media (max-width: 768px) {
+  .partner-grid {
+    flex-wrap: wrap;
+    gap: 32px 40px;
+  }
+  .partner-grid-logo {
+    height: 28px;
+  }
 }
 
 .programs {
