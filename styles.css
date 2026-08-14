@@ -460,19 +460,19 @@ em { font-style: italic; font-family: var(--font-display); }
   padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 80px);
   padding-right: clamp(40px, 5vw, 80px);
   position: relative;
-  background: var(--off-white);
+  background: var(--black);
 }
 .mission-text-side .section-eyebrow {
-  color: #3199BD;
+  color: #85C1E9;
 }
 .mission-text-side .section-title {
-  color: var(--text);
+  color: #fff;
 }
 .mission-text-side .section-title em {
-  color: #3199BD;
+  color: #85C1E9;
 }
 .mission-text-side p {
-  color: var(--text-soft) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 .mission-text-inner {
   max-width: 560px;
@@ -3049,10 +3049,12 @@ a.contact-detail-row:hover .btn-arrow {
   padding: clamp(20px, 3vw, 40px) 0;
 }
 .donate-title {
-  font-size: clamp(32px, 4vw, 52px);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 700;
   color: var(--black);
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin: 12px 0 16px;
 }
 .donate-title em {
