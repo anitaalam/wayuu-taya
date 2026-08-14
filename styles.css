@@ -557,6 +557,34 @@ em { font-style: italic; font-family: var(--font-display); }
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+/* Partner Logos Static Grid */
+.partner-grid-section {
+  background: var(--off-white);
+  padding: 60px 0;
+}
+.partner-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 48px 64px;
+}
+.partner-grid-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.6);
+  transition: filter 0.3s ease;
+}
+.partner-grid-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+.partner-grid-logo--darker {
+  filter: grayscale(1) opacity(0.6) brightness(0.5);
+}
+.partner-grid-logo--darker:hover {
+  filter: grayscale(0) opacity(1) brightness(1);
+}
 
 .programs {
   padding: 0;
