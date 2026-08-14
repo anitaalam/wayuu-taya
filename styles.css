@@ -2221,14 +2221,14 @@ img.cta-bg-video {
   animation: kenburns 18s ease-in-out infinite alternate;
 }
 .donate-split-content {
-  background: #1a1a1a;
+  background: #3199BD;
   padding: clamp(48px, 6vw, 80px) clamp(40px, 5vw, 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .donate-split-content .section-eyebrow {
-  color: #85C1E9;
+  color: rgba(255, 255, 255, 0.8);
 }
 .donate-split-content .section-title {
   color: #fff;
@@ -2273,13 +2273,13 @@ img.cta-bg-video {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(49, 153, 189, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
 .donate-split-buttons .donate-btn-icon svg {
   width: 20px;
   height: 20px;
-  stroke: #85C1E9;
+  stroke: #fff;
 }
 .donate-split-buttons .donate-btn-text strong {
   display: block;
