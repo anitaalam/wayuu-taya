@@ -2268,7 +2268,10 @@ img.cta-bg-video {
 }
 .donate-split-content > *,
 .donate-split-content .donate-split-buttons {
-  max-width: 85%;
+  max-width: 80%;
+}
+.donate-split-buttons .donate-btn {
+  width: 100%;
 }
 .donate-split-content .section-eyebrow {
   color: rgba(255, 255, 255, 0.8);
