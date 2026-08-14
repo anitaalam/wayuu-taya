@@ -2290,8 +2290,8 @@ img.cta-bg-video {
   margin-bottom: 32px;
 }
 .donate-split-buttons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 .donate-split-buttons .donate-btn {
@@ -2347,6 +2347,9 @@ img.cta-bg-video {
   }
   .donate-split-image {
     min-height: 300px;
+  }
+  .donate-split-buttons {
+    grid-template-columns: 1fr;
   }
 }
 .contact-donate-section + .cta--with-arc {
