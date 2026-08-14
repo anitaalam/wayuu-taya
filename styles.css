@@ -2206,6 +2206,7 @@ img.cta-bg-video {
   grid-template-columns: 1fr 1fr;
   padding: 0;
   overflow: hidden;
+  border-radius: 0 0 24px 24px;
 }
 .donate-split-image {
   position: relative;
