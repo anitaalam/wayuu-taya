@@ -2665,9 +2665,10 @@ img.cta-bg-video {
 /* ===== Contact Details Section ===== */
 .contact-details {
   padding: clamp(80px, 10vw, 120px) 0;
-  background: #fff;
+  background: var(--off-white);
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .contact-details--video {
   background: #1a1a1a;
