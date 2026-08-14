@@ -2209,7 +2209,7 @@ img.cta-bg-video {
 }
 .donate-split-image {
   position: relative;
-  min-height: 550px;
+  min-height: 385px;
 }
 .donate-split-image img {
   position: absolute;
@@ -2222,7 +2222,7 @@ img.cta-bg-video {
 }
 .donate-split-content {
   background: #3199BD;
-  padding: clamp(48px, 6vw, 80px) clamp(40px, 5vw, 72px);
+  padding: clamp(32px, 4vw, 56px) clamp(40px, 5vw, 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
