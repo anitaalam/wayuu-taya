@@ -2668,8 +2668,8 @@ img.cta-bg-video {
   background: var(--off-white);
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .contact-details--video {
   background: #1a1a1a;
 }
@@ -2718,6 +2718,8 @@ img.cta-bg-video {
 .contact-details > .container {
   position: relative;
   z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: clamp(80px, 10vw, 120px);
 }
 .contact-details-grid {
   display: grid;
