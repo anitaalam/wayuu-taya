@@ -2264,6 +2264,11 @@ img.cta-bg-video {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+.donate-split-content > *,
+.donate-split-content .donate-split-buttons {
+  max-width: 420px;
 }
 .donate-split-content .section-eyebrow {
   color: rgba(255, 255, 255, 0.8);
@@ -2284,20 +2289,20 @@ img.cta-bg-video {
 .donate-split-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 .donate-split-buttons .donate-btn {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 10px 16px;
+  border-radius: 8px;
+  padding: 7px 12px;
   color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 .donate-split-buttons .donate-btn:hover {
@@ -2305,8 +2310,8 @@ img.cta-bg-video {
   transform: translateY(-2px);
 }
 .donate-split-buttons .donate-btn-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -2315,8 +2320,8 @@ img.cta-bg-video {
   border-radius: 8px;
 }
 .donate-split-buttons .donate-btn-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: #fff;
 }
 .donate-split-buttons .donate-btn-text strong {
