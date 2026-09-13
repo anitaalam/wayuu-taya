@@ -297,7 +297,7 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 .hero-video-yt {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   width: 120vw;
   height: 120vh;
