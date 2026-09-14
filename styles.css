@@ -573,12 +573,15 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-top: 32px;
 }
 .partner-grid-logo.partner-grid-logo--color {
-  height: 36px;
+  height: 90px;
 }
 .partner-grid-logo {
-  height: 36px;
+  height: 90px;
   width: auto;
   object-fit: contain;
+}
+.partner-grid-logo--original-size {
+  height: 36px;
 }
 @media (max-width: 768px) {
   .partner-grid {
