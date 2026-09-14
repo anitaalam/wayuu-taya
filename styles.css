@@ -805,11 +805,15 @@ em { font-style: italic; font-family: var(--font-display); }
   margin: 0 auto;
   max-width: 600px;
 }
-/* 4-card single row */
+/* 4-card single row (homepage), 3-card centered (program pages) */
 .programs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
+}
+.programs-grid .programs-showcase-card {
+  flex: 0 0 calc((100% - 72px) / 4);
 }
 .programs-showcase-card {
   position: relative;
@@ -873,8 +877,8 @@ em { font-style: italic; font-family: var(--font-display); }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .programs-grid {
-    grid-template-columns: 1fr;
+  .programs-grid .programs-showcase-card {
+    flex: 0 0 100%;
   }
 }
 
@@ -3309,7 +3313,7 @@ a.contact-detail-row:hover .btn-arrow {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
-  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .programs-grid .programs-showcase-card { flex: 0 0 calc((100% - 24px) / 2); }
   .programs-slider .program-tile { flex: 0 0 calc((100vw - 60px) / 2); }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -3378,7 +3382,7 @@ a.contact-detail-row:hover .btn-arrow {
   .mission-text-inner {
     margin-left: 0;
   }
-  .programs-grid { grid-template-columns: 1fr; }
+  .programs-grid .programs-showcase-card { flex: 0 0 100%; }
   .programs-slider .program-tile { flex: 0 0 75vw; }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
