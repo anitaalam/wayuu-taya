@@ -3305,7 +3305,7 @@ a.contact-detail-row:hover .btn-arrow {
 .footer-badges {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 32px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(26,26,26,0.1);
