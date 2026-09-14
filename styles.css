@@ -573,17 +573,12 @@ em { font-style: italic; font-family: var(--font-display); }
   margin-top: 32px;
 }
 .partner-grid-logo.partner-grid-logo--color {
-  filter: none;
-  background: #fff;
-  border-radius: 8px;
-  padding: 8px 16px;
-  height: 48px;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+  height: 43px;
+  filter: grayscale(1) brightness(10) opacity(0.7);
+  transition: filter 0.3s ease;
 }
 .partner-grid-logo.partner-grid-logo--color:hover {
-  filter: none;
-  opacity: 1;
+  filter: grayscale(0) brightness(10) opacity(1);
 }
 .partner-grid-logo {
   height: 36px;
