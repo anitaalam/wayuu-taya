@@ -3302,11 +3302,28 @@ a.contact-detail-row:hover .btn-arrow {
 }
 .footer-social a:hover { background: var(--blue); color: var(--white); }
 .footer-social svg { width: 18px; height: 18px; }
+.footer-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.1);
+  margin-bottom: 24px;
+}
+.footer-badge {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.footer-badge:hover { opacity: 1; }
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
+  padding-top: 0;
   font-size: 13px;
   color: rgba(26,26,26,0.35);
 }
@@ -3401,6 +3418,8 @@ a.contact-detail-row:hover .btn-arrow {
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-links { grid-template-columns: repeat(2, 1fr); }
+  .footer-badges { gap: 20px; }
+  .footer-badge { height: 48px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   #map { height: 380px; }
 }
