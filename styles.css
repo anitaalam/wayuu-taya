@@ -2851,7 +2851,6 @@ img.cta-bg-video {
 .contact-details > .container {
   position: relative;
   z-index: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: clamp(80px, 10vw, 120px);
 }
 .contact-details-grid {
