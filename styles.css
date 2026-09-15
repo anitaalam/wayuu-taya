@@ -3074,19 +3074,18 @@ a.contact-detail-row:hover .btn-arrow {
   justify-content: center;
   text-align: center;
   padding: 32px 24px;
-  background: var(--white);
-  border: 1px solid rgba(0,0,0,0.08);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.12);
   border-radius: var(--radius-lg);
   text-decoration: none;
   color: var(--black);
   transition: all 0.3s ease;
   position: relative;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .donate-chart-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
-  border-color: var(--blue);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.25);
 }
 .donate-chart-card--primary {
   background: var(--blue);
