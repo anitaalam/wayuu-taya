@@ -524,9 +524,26 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== PROGRAMS ========== */
 /* Partner Logos Marquee */
 .partner-grid-section {
-  background: #f9f9f9;
+  background: var(--off-white);
   padding: 40px 0;
   overflow: hidden;
+  position: relative;
+}
+.partner-grid-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.partner-grid-section > .partner-marquee {
+  position: relative;
+  z-index: 1;
 }
 .partner-grid-header {
   text-align: center;
