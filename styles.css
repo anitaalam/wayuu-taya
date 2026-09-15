@@ -3076,10 +3076,8 @@ a.contact-detail-row:hover .btn-arrow {
   border: 1px solid transparent;
 }
 .donate-btn:hover {
-  background: var(--white);
-  border-color: var(--blue);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .donate-btn-icon {
   flex-shrink: 0;
