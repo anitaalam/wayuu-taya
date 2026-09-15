@@ -3122,7 +3122,7 @@ a.contact-detail-row:hover .btn-arrow {
 /* Donate detail cards */
 .donate-details {
   padding: 80px 0;
-  background: var(--off-white);
+  background: var(--white);
 }
 .donate-details .container {
   display: grid;
@@ -3135,6 +3135,7 @@ a.contact-detail-row:hover .btn-arrow {
   border-radius: var(--radius);
   border-top: 3px solid var(--blue);
   scroll-margin-top: 120px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .donate-detail-card h3 {
   font-size: 20px;
