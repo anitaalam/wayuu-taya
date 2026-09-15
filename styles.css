@@ -5066,10 +5066,10 @@ a.contact-detail-row:hover .btn-arrow {
   color: var(--blue-light);
 }
 .program-areas--dark .section-title {
-  color: #F5F0E8;
+  color: #f9f9f9;
 }
 .program-areas--dark .section-title em {
-  color: #F5F0E8;
+  color: #f9f9f9;
 }
 .program-areas--dark .program-area-card {
   background: rgba(255, 255, 255, 0.06);
@@ -5612,7 +5612,7 @@ a.contact-detail-row:hover .btn-arrow {
 }
 .program-other--black .section-title,
 .program-other--black .section-title em {
-  color: #F5F0E8;
+  color: #f9f9f9;
 }
 .program-other--black .program-other-btn {
   color: #fff;
