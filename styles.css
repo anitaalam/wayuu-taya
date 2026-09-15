@@ -1704,6 +1704,22 @@ em { font-style: italic; font-family: var(--font-display); }
   position: relative;
   overflow: hidden;
 }
+.instagram-feed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.instagram-feed > .container {
+  position: relative;
+  z-index: 1;
+}
 .instagram-feed--video {
   background: #0a0a0a;
 }
