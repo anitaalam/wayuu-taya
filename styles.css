@@ -153,6 +153,7 @@ em { font-style: italic; font-family: var(--font-display); }
 .site-header.scrolled .lang-toggle:hover {
   color: var(--text);
 }
+.site-header.scrolled .lang-toggle .lang-active { color: var(--blue); }
 .site-header.scrolled .nav-toggle span {
   background: var(--text);
 }
@@ -258,6 +259,7 @@ em { font-style: italic; font-family: var(--font-display); }
   transition: color 0.3s;
 }
 .lang-toggle:hover { color: var(--white); }
+.lang-toggle .lang-active { color: var(--blue); }
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -2965,6 +2967,7 @@ a.contact-detail-row:hover .btn-arrow {
 .donate-page .site-header .lang-toggle:hover {
   color: var(--text);
 }
+.donate-page .site-header .lang-toggle .lang-active { color: var(--blue); }
 .donate-page .site-header .nav-toggle span {
   background: var(--text);
 }
