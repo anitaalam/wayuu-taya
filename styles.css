@@ -1836,8 +1836,18 @@ em { font-style: italic; font-family: var(--font-display); }
 /* ========== WHERE WE WORK (MAP) ========== */
 .map-section {
   padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--off-white);
+  background: var(--blue);
   position: relative;
+  color: #fff;
+}
+.map-section .section-eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+.map-section .section-title {
+  color: #fff;
+}
+.map-section .section-sub {
+  color: rgba(255, 255, 255, 0.8);
 }
 .map-section .container {
   position: relative;
