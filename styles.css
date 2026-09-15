@@ -559,7 +559,7 @@ em { font-style: italic; font-family: var(--font-display); }
 }
 /* Partner Logos Static Grid */
 .partner-grid-section {
-  background: var(--off-white);
+  background: #F0F4F8;
   padding: 40px 0;
 }
 .partner-grid-header {
