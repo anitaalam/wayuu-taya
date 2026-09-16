@@ -5062,8 +5062,8 @@ a.contact-detail-row:hover .btn-arrow {
 .squiggle-divider--bottom {
   margin-top: -1px;
 }
-/* Blue variant (brand blue background) */
-.program-areas--blue {
+/* Blue variant (brand blue background — overrides --dark) */
+.program-areas--dark.program-areas--blue {
   background: var(--blue);
 }
 /* Dark variant (static black background, glassy cards) */
