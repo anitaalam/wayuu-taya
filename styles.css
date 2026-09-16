@@ -2356,10 +2356,10 @@ img.cta-bg-video {
   transform: translateY(-2px);
 }
 .donate-split-buttons .donate-btn--primary {
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 .donate-split-buttons .donate-btn--primary:hover {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.75);
 }
 .donate-split-buttons .donate-btn-icon {
   width: 28px;
