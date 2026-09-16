@@ -122,15 +122,63 @@ em { font-style: italic; font-family: var(--font-display); }
 .btn-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
 .btn-sm { padding: 10px 22px; font-size: 14px; }
 
-/* ========== HEADER ========== */
-.site-header {
+/* ========== ANNOUNCEMENT BAR ========== */
+.announcement-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 101;
+  background: #c41e3a;
+  color: var(--white);
+  text-align: center;
+  padding: 10px 24px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.announcement-bar a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  transition: opacity var(--transition);
+}
+.announcement-bar a:hover {
+  opacity: 0.8;
+}
+.announcement-bar .ann-arrow {
+  font-size: 1.1em;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+@media (max-width: 600px) {
+  .announcement-bar {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+    gap: 10px;
+  }
+  .site-header {
+    top: 36px;
+  }
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
   z-index: 100;
   padding: 0 0;
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), box-shadow var(--transition), top var(--transition);
 }
 .site-header.scrolled {
   background: rgba(250,247,242,0.88);
