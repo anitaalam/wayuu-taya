@@ -3209,7 +3209,7 @@ a.contact-detail-row:hover .btn-arrow {
 /* Donate detail cards */
 .donate-details {
   padding: 80px 0;
-  background: var(--white);
+  background: #ffffff;
 }
 .donate-details .container {
   display: grid;
