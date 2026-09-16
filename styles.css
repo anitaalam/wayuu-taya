@@ -2355,6 +2355,12 @@ img.cta-bg-video {
   background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
 }
+.donate-split-buttons .donate-btn--primary {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.donate-split-buttons .donate-btn--primary:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
 .donate-split-buttons .donate-btn-icon {
   width: 28px;
   height: 28px;
