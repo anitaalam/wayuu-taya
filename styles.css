@@ -3223,6 +3223,16 @@ a.contact-detail-row:hover .btn-arrow {
   border-top: 3px solid var(--blue);
   scroll-margin-top: 120px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.donate-detail-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('assets/texture-bg.png') repeat;
+  opacity: 0.08;
+  pointer-events: none;
 }
 .donate-detail-card h3 {
   font-size: 20px;
