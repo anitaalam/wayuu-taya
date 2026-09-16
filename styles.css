@@ -2257,52 +2257,6 @@ img.cta-bg-video {
 .donate-split-content {
   background: #3199BD;
   padding: clamp(32px, 4vw, 56px) clamp(40px, 5vw, 72px);
-}
-/* Invert chart card colors on blue background */
-.contact-donate-split .donate-chart-card {
-  background: transparent;
-  border-color: rgba(255,255,255,0.25);
-  color: var(--white);
-}
-.contact-donate-split .donate-chart-card:hover {
-  border-color: rgba(255,255,255,0.5);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-}
-.contact-donate-split .donate-chart-icon {
-  background: rgba(255,255,255,0.15);
-  color: var(--white);
-}
-.contact-donate-split .donate-chart-title {
-  color: var(--white);
-}
-.contact-donate-split .donate-chart-desc {
-  color: rgba(255,255,255,0.7);
-}
-.contact-donate-split .donate-chart-action {
-  color: var(--white);
-}
-/* Primary card = white to stand out on blue */
-.contact-donate-split .donate-chart-card--primary {
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--dark);
-}
-.contact-donate-split .donate-chart-card--primary:hover {
-  background: #f0f0f0;
-  border-color: #f0f0f0;
-}
-.contact-donate-split .donate-chart-card--primary .donate-chart-icon {
-  background: rgba(49,153,189,0.1);
-  color: var(--blue);
-}
-.contact-donate-split .donate-chart-card--primary .donate-chart-title {
-  color: var(--dark);
-}
-.contact-donate-split .donate-chart-card--primary .donate-chart-desc {
-  color: var(--grey);
-}
-.contact-donate-split .donate-chart-card--primary .donate-chart-action {
-  color: var(--blue);
   display: flex;
   flex-direction: column;
   justify-content: center;
