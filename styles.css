@@ -3096,6 +3096,25 @@ a.contact-detail-row:hover .btn-arrow {
   100% { transform: scale(1.06); }
 }
 /* ===== Donation Card (UNICEF-inspired) ===== */
+.donate-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 12px 0 16px;
+}
+.donate-title em {
+  color: var(--blue);
+  font-style: normal;
+}
+.donate-desc {
+  font-size: 16px;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
 .donate-card-wrapper {
   display: flex;
   flex-direction: column;
