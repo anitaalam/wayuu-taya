@@ -3549,10 +3549,18 @@ a.contact-detail-row:hover .btn-arrow {
   transition: color 0.3s;
 }
 .footer-col a:hover { color: var(--text); }
+.footer-social-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.1);
+  margin-bottom: 24px;
+}
 .footer-social {
   display: flex;
   gap: 16px;
-  padding: 32px 0;
+  align-items: center;
 }
 .footer-social a {
   width: 40px;
@@ -3571,9 +3579,6 @@ a.contact-detail-row:hover .btn-arrow {
   align-items: center;
   justify-content: flex-end;
   gap: 32px;
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(26,26,26,0.1);
-  margin-bottom: 24px;
 }
 .footer-badge {
   height: 64px;
@@ -3682,6 +3687,7 @@ a.contact-detail-row:hover .btn-arrow {
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-links { grid-template-columns: repeat(2, 1fr); }
+  .footer-social-badges { flex-direction: column; align-items: flex-start; gap: 20px; }
   .footer-badges { gap: 20px; }
   .footer-badge { height: 48px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
