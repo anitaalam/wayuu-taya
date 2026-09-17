@@ -705,18 +705,34 @@ mainNav.querySelectorAll('a').forEach(link => {
   });
 })();
 
-/* ========== DONATE PAGE SLIDESHOW ========== */
+/* ========== DONATE PAGE SLIDESHOWS ========== */
 (function(){
+  // Hero background slideshow
   var wrap = document.getElementById('donateSlideshow');
-  if (!wrap) return;
-  var slides = wrap.querySelectorAll('.donate-slide');
-  if (slides.length < 2) return;
-  var cur = 0;
-  setInterval(function(){
-    slides[cur].classList.remove('active');
-    cur = (cur + 1) % slides.length;
-    slides[cur].classList.add('active');
-  }, 3000);
+  if (wrap) {
+    var slides = wrap.querySelectorAll('.donate-slide');
+    if (slides.length >= 2) {
+      var cur = 0;
+      setInterval(function(){
+        slides[cur].classList.remove('active');
+        cur = (cur + 1) % slides.length;
+        slides[cur].classList.add('active');
+      }, 3000);
+    }
+  }
+  // Section image slideshow
+  var wrap2 = document.getElementById('donateSlideshow2');
+  if (wrap2) {
+    var slides2 = wrap2.querySelectorAll('.donate-slide-img');
+    if (slides2.length >= 2) {
+      var cur2 = 0;
+      setInterval(function(){
+        slides2[cur2].classList.remove('active');
+        cur2 = (cur2 + 1) % slides2.length;
+        slides2[cur2].classList.add('active');
+      }, 3000);
+    }
+  }
 })();
 
 /* ========== HASTA LOS HUESOS LANGUAGE TABS ========== */
