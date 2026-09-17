@@ -77,76 +77,91 @@
         <img src="assets/wayuu-dsc00071.jpg" alt="" class="donate-slide" />
       </div>
 
-      <!-- RIGHT: Donation Options -->
-      <div class="donate-options">
-        <span class="section-eyebrow" style="color: var(--blue-light);">Ways to Give</span>
-        <h1 class="donate-title">Make a <em>Difference</em> Today</h1>
-        <p class="donate-desc">Every contribution supports clean water, food, education, healthcare, and cultural preservation for Wayuu communities.</p>
+      <!-- RIGHT: Donation Card -->
+      <div class="donate-card-wrapper">
 
-        <div class="donate-chart">
-          <a href="https://donate.wayuutaya.org/give/340494#!/donation/checkout" class="donate-chart-card donate-chart-card--primary" target="_blank" rel="noopener">
-            <div class="donate-chart-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+        <!-- Thank You Ticker -->
+        <div class="donate-ticker" id="donateTicker">
+          <div class="donate-ticker-inner">
+            <div class="donate-ticker-heart">
+              <svg viewBox="0 0 24 24" fill="#e74c7a" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </div>
-            <h3 class="donate-chart-title">Donate Online</h3>
-            <p class="donate-chart-desc">Make a secure one-time or recurring gift</p>
-            <span class="donate-chart-action">Give Now <span class="btn-arrow">&longrightarrow;</span></span>
-          </a>
+            <p class="donate-ticker-text">
+              Thank you to <strong>Maria G.</strong> for her donation of <strong>$50</strong>.
+            </p>
+          </div>
+        </div>
 
-          <a href="https://donatestock.com/wayuu-taya-foundation-inc" class="donate-chart-card" target="_blank" rel="noopener">
-            <div class="donate-chart-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
-            </div>
-            <h3 class="donate-chart-title">Donate Stock</h3>
-            <p class="donate-chart-desc">Transfer appreciated securities tax-free</p>
-            <span class="donate-chart-action">Learn More <span class="btn-arrow">&longrightarrow;</span></span>
-          </a>
+        <!-- Donation Form Card -->
+        <div class="donate-form-card">
 
-          <a href="#donate-check" class="donate-chart-card">
-            <div class="donate-chart-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-            </div>
-            <h3 class="donate-chart-title">Donate via Check</h3>
-            <p class="donate-chart-desc">Mail a check to our office</p>
-            <span class="donate-chart-action">See Details <span class="btn-arrow">&longrightarrow;</span></span>
-          </a>
+          <!-- Secure Header -->
+          <div class="donate-secure-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            <h2>Your donation is secure</h2>
+          </div>
 
-          <a href="#donate-wire" class="donate-chart-card">
-            <div class="donate-chart-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+          <!-- Method Tabs -->
+          <div class="donate-method-tabs">
+            <button class="donate-method-tab active" data-method="online">Donate Online</button>
+            <button class="donate-method-tab" data-method="stock">Donate Stock</button>
+            <button class="donate-method-tab" data-method="check">Via Check</button>
+            <button class="donate-method-tab" data-method="wire">Via Wire</button>
+          </div>
+
+          <!-- Tab Content: Donate Online -->
+          <div class="donate-method-content active" id="method-online">
+            <p class="donate-popular">Popular <span class="donate-popular-heart">&#x1F499;</span></p>
+            <div class="donate-amount-grid">
+              <button class="donate-amount-btn" data-amount="25">$25</button>
+              <button class="donate-amount-btn active" data-amount="50">$50</button>
+              <button class="donate-amount-btn" data-amount="100">$100</button>
             </div>
-            <h3 class="donate-chart-title">Donate via Wire</h3>
-            <p class="donate-chart-desc">Send a direct bank wire transfer</p>
-            <span class="donate-chart-action">See Details <span class="btn-arrow">&longrightarrow;</span></span>
-          </a>
+            <div class="donate-amount-free">
+              <input type="number" placeholder="Free amount" class="donate-amount-input" id="donateAmountInput" min="1" />
+              <span class="donate-amount-currency">$</span>
+            </div>
+            <a href="https://donate.wayuutaya.org/give/340494#!/donation/checkout" class="donate-cta-btn" target="_blank" rel="noopener">MAKE A DONATION</a>
+          </div>
+
+          <!-- Tab Content: Donate Stock -->
+          <div class="donate-method-content" id="method-stock">
+            <div class="donate-method-info">
+              <h3>Transfer Appreciated Securities Tax-Free</h3>
+              <p>Donating stock can provide significant tax benefits while supporting our mission. You may be eligible for a tax deduction equal to the full fair market value of the stock.</p>
+              <a href="https://donatestock.com/wayuu-taya-foundation-inc" class="donate-cta-btn" target="_blank" rel="noopener">DONATE STOCK</a>
+            </div>
+          </div>
+
+          <!-- Tab Content: Donate via Check -->
+          <div class="donate-method-content" id="method-check">
+            <div class="donate-method-info">
+              <h3>Send a Check to Support Our Mission</h3>
+              <p>Please make your check payable to <strong>"The Wayuu Taya Foundation"</strong> and mail it to:</p>
+              <address>
+                The Wayuu Taya Foundation<br />
+                12021 Cinnamon Fern Dr.<br />
+                Riverview, FL 33579
+              </address>
+            </div>
+          </div>
+
+          <!-- Tab Content: Donate via Wire -->
+          <div class="donate-method-content" id="method-wire">
+            <div class="donate-method-info">
+              <h3>Donate via Wire Transfer</h3>
+              <p>Gifts by wire transfer can be made by contacting a member of our Development Department.</p>
+              <button class="donate-copy-email" data-email="developmentdepartment@wayuutaya.org" onclick="navigator.clipboard.writeText(this.dataset.email).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='developmentdepartment@wayuutaya.org'},2000)})">developmentdepartment@wayuutaya.org</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ========== DONATION DETAILS ========== -->
-  <section class="donate-details">
-    <div class="container">
 
-      <div class="donate-detail-card" id="donate-check">
-        <h3>Send a Check to Support Our Mission</h3>
-        <p>To make a contribution by check, please make it payable to<br /><strong>"The Wayuu Taya Foundation"</strong> and mail it to the following address:</p>
-        <address>
-          The Wayuu Taya Foundation<br />
-          12021 Cinnamon Fern Dr.<br />
-          Riverview, FL 33579
-        </address>
-      </div>
-
-      <div class="donate-detail-card" id="donate-wire">
-        <h3>Donate via Wire Transfer</h3>
-        <p>Gifts by wire transfer can be made by contacting a member of our Development Department.</p>
-        <button class="btn btn-primary btn-sm" id="copyEmailBtn" data-email="developmentdepartment@wayuutaya.org" onclick="navigator.clipboard.writeText(this.dataset.email).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='developmentdepartment@wayuutaya.org'},2000)})">developmentdepartment@wayuutaya.org</button>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ========== PARTNER LOGOS MARQUEE ========== -->
   <section class="partner-grid-section">

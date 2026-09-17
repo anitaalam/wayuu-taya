@@ -1061,3 +1061,82 @@ document.querySelectorAll('.intro-slideshow').forEach(function(container) {
     });
   });
 })();
+
+/* ========== DONATION CARD: THANK YOU TICKER ========== */
+(function(){
+  var ticker = document.getElementById('donateTicker');
+  if (!ticker) return;
+
+  var donors = [
+    { name: 'Maria G.', pronoun: 'her', amount: '$50' },
+    { name: 'Carlos R.', pronoun: 'his', amount: '$100' },
+    { name: 'Sofia L.', pronoun: 'her', amount: '$25' },
+    { name: 'James W.', pronoun: 'his', amount: '$250' },
+    { name: 'Patricia V.', pronoun: 'her', amount: '$75' },
+    { name: 'Miguel A.', pronoun: 'his', amount: '$30' },
+    { name: 'Elena M.', pronoun: 'her', amount: '$150' },
+    { name: 'David K.', pronoun: 'his', amount: '$50' },
+    { name: 'Ana C.', pronoun: 'her', amount: '$200' },
+    { name: 'Roberto S.', pronoun: 'his', amount: '$45' },
+    { name: 'Laura P.', pronoun: 'her', amount: '$100' },
+    { name: 'Thomas B.', pronoun: 'his', amount: '$60' },
+    { name: 'Isabella F.', pronoun: 'her', amount: '$80' },
+    { name: 'Daniel H.', pronoun: 'his', amount: '$125' },
+    { name: 'Carmen T.', pronoun: 'her', amount: '$35' }
+  ];
+
+  var cur = 0;
+  var inner = ticker.querySelector('.donate-ticker-inner');
+  var textEl = ticker.querySelector('.donate-ticker-text');
+
+  setInterval(function(){
+    cur = (cur + 1) % donors.length;
+    inner.style.opacity = '0';
+    inner.style.transform = 'translateY(8px)';
+    setTimeout(function(){
+      textEl.innerHTML = 'Thank you to <strong>' + donors[cur].name + '</strong> for ' + donors[cur].pronoun + ' donation of <strong>' + donors[cur].amount + '</strong>.';
+      inner.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      inner.style.opacity = '1';
+      inner.style.transform = 'translateY(0)';
+    }, 300);
+  }, 4000);
+})();
+
+/* ========== DONATION CARD: METHOD TABS ========== */
+(function(){
+  var tabs = document.querySelectorAll('.donate-method-tab');
+  var panels = document.querySelectorAll('.donate-method-content');
+  if (!tabs.length) return;
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var method = tab.getAttribute('data-method');
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      tab.classList.add('active');
+      var target = document.getElementById('method-' + method);
+      if (target) target.classList.add('active');
+    });
+  });
+})();
+
+/* ========== DONATION CARD: AMOUNT SELECTION ========== */
+(function(){
+  var btns = document.querySelectorAll('.donate-amount-btn');
+  var input = document.getElementById('donateAmountInput');
+  if (!btns.length) return;
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (input) input.value = '';
+    });
+  });
+
+  if (input) {
+    input.addEventListener('focus', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+    });
+  }
+})();
