@@ -3048,82 +3048,76 @@ a.contact-detail-row:hover .btn-arrow {
   color: var(--text);
   background: rgba(0,0,0,0.03);
 }
-.donate-hero {
-  min-height: 100vh;
+/* Full-screen Donate Hero */
+.donate-hero-fullscreen {
+  position: relative;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 80px;
-  background: var(--off-white);
-  position: relative;
-}
-
-.donate-hero > .container {
-  position: relative;
-  z-index: 1;
-}
-.donate-hero + .cta--with-arc {
-  padding-top: clamp(150px, 18vw, 250px);
-  padding-bottom: clamp(100px, 13vw, 180px);
-}
-.donate-hero-header {
-  text-align: center;
-  margin-bottom: clamp(32px, 4vw, 56px);
-}
-.donate-hero-header .donate-desc {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.donate-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 5vw, 80px);
-  align-items: start;
-}
-.donate-slideshow {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  border-radius: var(--radius-lg);
+  justify-content: center;
   overflow: hidden;
 }
-.donate-slide {
+.donate-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.donate-hero-bg .donate-slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   opacity: 0;
-  transition: opacity 1s ease;
-  animation: donateKenBurns 6s ease-in-out infinite alternate;
+  transition: opacity 1.2s ease;
+  animation: donateKenBurns 10s ease-in-out infinite alternate;
 }
-.donate-slide.active {
+.donate-hero-bg .donate-slide.active {
   opacity: 1;
 }
 @keyframes donateKenBurns {
   0%   { transform: scale(1); }
-  100% { transform: scale(1.06); }
+  100% { transform: scale(1.08); }
 }
-/* ===== Donation Card (UNICEF-inspired) ===== */
-.donate-title {
+.donate-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+}
+.donate-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 160px 20px 100px;
+}
+.donate-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 56px);
+  font-size: clamp(36px, 6vw, 72px);
   font-weight: 700;
-  color: var(--black);
+  color: var(--white);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 12px 0 16px;
+  margin: 16px 0 20px;
 }
-.donate-title em {
-  color: var(--blue);
-  font-style: normal;
+.donate-hero-sub {
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
 }
-.donate-desc {
-  font-size: 16px;
-  color: var(--grey);
-  line-height: 1.7;
-  margin-bottom: 0;
+
+/* Donation Card Section */
+.donate-card-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--white);
 }
+.donate-card-layout {
+  max-width: 520px;
+  margin: 0 auto;
+}
+/* ===== Donation Card (UNICEF-inspired) ===== */
 .donate-card-wrapper {
   display: flex;
   flex-direction: column;
@@ -3397,19 +3391,20 @@ a.contact-detail-row:hover .btn-arrow {
 
 /* Donate page responsive */
 @media (max-width: 900px) {
-  .donate-hero-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .donate-hero-fullscreen {
+    min-height: 70vh;
   }
-  .donate-slideshow {
-    aspect-ratio: 16 / 10;
-    max-height: 400px;
-  }
-  .donate-card-wrapper {
-    max-width: 100%;
+  .donate-hero-content {
+    padding: 140px 20px 80px;
   }
 }
 @media (max-width: 600px) {
+  .donate-hero-fullscreen {
+    min-height: 60vh;
+  }
+  .donate-hero-content {
+    padding: 120px 16px 60px;
+  }
   .donate-method-tabs {
     padding: 0 16px;
     margin-top: 16px;
@@ -3432,12 +3427,6 @@ a.contact-detail-row:hover .btn-arrow {
   }
 }
 @media (max-width: 480px) {
-  .donate-hero {
-    padding: 100px 0 60px;
-  }
-  .donate-slideshow {
-    aspect-ratio: 4 / 3;
-  }
   .donate-amount-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
