@@ -3416,6 +3416,21 @@ a.contact-detail-row:hover .btn-arrow {
   border-color: rgba(49,153,189,0.4);
 }
 
+/* Donate impact blurb */
+.donate-impact-blurb {
+  margin-top: 20px;
+  padding: 20px 24px;
+  background: rgba(49, 153, 189, 0.06);
+  border-radius: 12px;
+  border-left: 3px solid var(--blue);
+}
+.donate-impact-blurb p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
 /* Donate page responsive */
 @media (max-width: 900px) {
   .donate-hero-fullscreen {
