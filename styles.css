@@ -7064,6 +7064,12 @@ a.contact-detail-row:hover .btn-arrow {
 .emergency-intro-image {
   border-radius: 12px;
   overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.emergency-intro-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
 }
 .emergency-intro-image img {
   width: 100%;
