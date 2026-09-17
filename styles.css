@@ -3065,11 +3065,20 @@ a.contact-detail-row:hover .btn-arrow {
   padding-top: clamp(150px, 18vw, 250px);
   padding-bottom: clamp(100px, 13vw, 180px);
 }
+.donate-hero-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+.donate-hero-header .donate-desc {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .donate-hero-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(40px, 5vw, 80px);
-  align-items: center;
+  align-items: start;
 }
 .donate-slideshow {
   position: relative;
@@ -3113,7 +3122,7 @@ a.contact-detail-row:hover .btn-arrow {
   font-size: 16px;
   color: var(--grey);
   line-height: 1.7;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 .donate-card-wrapper {
   display: flex;
