@@ -595,6 +595,15 @@ em { font-style: italic; font-family: var(--font-display); }
   position: relative;
   z-index: 1;
 }
+.partner-marquee-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
 .partner-grid-header {
   text-align: center;
   margin-bottom: 32px;
