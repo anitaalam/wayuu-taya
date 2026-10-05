@@ -5124,6 +5124,9 @@ a.contact-detail-row:hover .btn-arrow {
 .program-hero {
   min-height: 60vh;
 }
+.program-hero--tall {
+  min-height: 80vh;
+}
 
 /* Intro section */
 .program-intro {
