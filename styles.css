@@ -3602,7 +3602,25 @@ a.contact-detail-row:hover .btn-arrow {
 /* Charity Badges (below partner marquee) */
 .charity-badges-section {
   padding: 32px 0 48px;
-  background: var(--white);
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+.charity-badges-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/crumble-paper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.charity-badges-section > .container {
+  position: relative;
+  z-index: 1;
 }
 .charity-badges {
   display: flex;
