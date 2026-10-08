@@ -2365,10 +2365,10 @@ img.cta-bg-video {
   gap: 8px;
 }
 .donate-split-buttons .donate-btn {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
   padding: 7px 12px;
   color: #fff;
@@ -2379,16 +2379,16 @@ img.cta-bg-video {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 .donate-split-buttons .donate-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.28);
   transform: translateY(-2px);
 }
 .donate-split-buttons .donate-btn--primary {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 .donate-split-buttons .donate-btn--primary:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.38);
+  border-color: rgba(255, 255, 255, 0.85);
 }
 .donate-split-buttons .donate-btn-icon {
   width: 28px;
@@ -2397,7 +2397,7 @@ img.cta-bg-video {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 8px;
 }
 .donate-split-buttons .donate-btn-icon svg {
@@ -2412,11 +2412,11 @@ img.cta-bg-video {
 }
 .donate-split-buttons .donate-btn-text span {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
 }
 .donate-split-buttons .donate-btn-arrow {
   margin-left: auto;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.4em;
 }
 @media (max-width: 768px) {
