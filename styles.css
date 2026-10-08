@@ -7104,6 +7104,9 @@ a.contact-detail-row:hover .btn-arrow {
 }
 
 /* ========== EMERGENCY RESPONSE PAGE ========== */
+.emergency-intro {
+  padding: clamp(60px, 8vw, 100px) 0;
+}
 .emergency-intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7112,6 +7115,24 @@ a.contact-detail-row:hover .btn-arrow {
 }
 .emergency-intro-text {
   text-align: left;
+}
+.emergency-intro-text .section-title {
+  margin-bottom: 24px;
+  color: var(--blue);
+}
+.emergency-intro-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+.emergency-intro-text p:last-of-type {
+  margin-bottom: 24px;
+}
+.emergency-intro-text a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: underline;
 }
 .emergency-intro-image {
   border-radius: 12px;
@@ -7131,6 +7152,9 @@ a.contact-detail-row:hover .btn-arrow {
   border-radius: 12px;
   display: block;
 }
+.emergency-video {
+  padding: 0 0 clamp(60px, 8vw, 100px) 0;
+}
 .emergency-video-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -7147,6 +7171,30 @@ a.contact-detail-row:hover .btn-arrow {
   height: 100%;
   border: none;
 }
+.emergency-qr {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--blue);
+}
+.emergency-qr-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.emergency-qr .section-title {
+  color: #fff;
+  margin-bottom: 0;
+}
+.emergency-qr-image {
+  text-align: center;
+}
+.emergency-qr-image img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 12px;
+}
 @media (max-width: 768px) {
   .emergency-intro-grid {
     grid-template-columns: 1fr;
@@ -7154,5 +7202,10 @@ a.contact-detail-row:hover .btn-arrow {
   }
   .emergency-intro-image img {
     max-height: 400px;
+  }
+  .emergency-qr-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
   }
 }
