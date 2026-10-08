@@ -7103,6 +7103,51 @@ a.contact-detail-row:hover .btn-arrow {
   }
 }
 
+/* ========== EMERGENCY HIGHLIGHT (HOMEPAGE) ========== */
+.emergency-highlight {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: #ffffff;
+}
+.emergency-highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.emergency-highlight-image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.emergency-highlight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 12px;
+  display: block;
+}
+.emergency-highlight-content .section-eyebrow {
+  color: var(--blue);
+}
+.emergency-highlight-content .section-title {
+  margin-bottom: 24px;
+}
+.emergency-highlight-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+.emergency-highlight-content .btn {
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .emergency-highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ========== EMERGENCY RESPONSE PAGE ========== */
 .emergency-intro {
   padding: clamp(60px, 8vw, 100px) 0;
